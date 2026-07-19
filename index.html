@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dotcom Trading by remoteblackgirl</title>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Comic+Neue:wght@700;800&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:#008080;
+  font-family:'Comic Neue',cursive;
+  min-height:100vh;
+  position:relative;
+  overflow-x:hidden;
+  padding-bottom:60px;
+}
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size:16px 16px;
+  pointer-events:none;z-index:0;
+}
+
+/* TASKBAR */
+.taskbar{
+  position:fixed;bottom:0;left:0;right:0;height:36px;
+  background:#c3c3c3;border-top:2px solid #fff;
+  display:flex;align-items:center;gap:8px;padding:0 6px;
+  z-index:500;box-shadow:0 -2px 0 #808080 inset;
+}
+.start-btn{background:#c3c3c3;border:2px outset #fff;padding:4px 12px;font-weight:800;font-size:14px;display:flex;align-items:center;gap:6px;cursor:default}
+.start-flag{width:14px;height:14px;background:conic-gradient(#f25022 0 90deg,#7fba00 90deg 180deg,#00a4ef 180deg 270deg,#ffb900 270deg 360deg);border-radius:1px}
+.taskbar-divider{width:2px;height:24px;background:#808080;box-shadow:1px 0 0 #fff}
+.taskbar-item{background:#c3c3c3;border:2px inset #fff;padding:4px 12px;font-size:13px;font-weight:700}
+.clock-box{margin-left:auto;background:#c3c3c3;border:2px inset #fff;padding:4px 10px;font-size:13px;font-weight:700}
+
+/* DESKTOP ICONS — minimal, only what serves the offer */
+.desktop-icons{position:fixed;top:20px;left:20px;z-index:10;display:flex;flex-direction:column;gap:22px;width:90px}
+.d-icon{display:flex;flex-direction:column;align-items:center;gap:4px;color:#fff;font-size:11px;text-align:center;text-shadow:1px 1px 1px #000;cursor:pointer;background:none;border:none;padding:0}
+.d-icon-emoji{width:38px;height:34px;display:flex;align-items:center;justify-content:center;font-size:24px}
+
+.content{max-width:720px;margin:0 auto;padding:24px 16px 40px;position:relative;z-index:1}
+
+/* WINDOW CHROME */
+.win95-window{background:#c3c3c3;border:2px solid #fff;box-shadow:2px 2px 0 #000, inset -1px -1px 0 #808080, inset 1px 1px 0 #dfdfdf;margin-bottom:22px}
+.win-titlebar{background:linear-gradient(90deg,#000080,#1084d0);color:#fff;font-weight:800;font-size:14px;padding:4px 6px;display:flex;align-items:center;justify-content:space-between;gap:6px}
+.win-title-left{display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.win-icon{width:14px;height:14px;background:#fff;border-radius:1px}
+.win-controls{display:flex;gap:3px;flex-shrink:0}
+.win-btn{width:16px;height:14px;background:#c3c3c3;border:1px outset #fff;font-size:10px;line-height:14px;text-align:center;color:#000;font-weight:900}
+.win-body{padding:16px}
+
+/* HERO / WORDMARK */
+.myspace-hero{
+  background:#000;
+  background-image:radial-gradient(circle at 10% 20%, rgba(255,20,147,0.13) 0, transparent 22%),
+                    radial-gradient(circle at 85% 15%, rgba(0,240,255,0.13) 0, transparent 22%);
+  padding:2rem 1.5rem;position:relative;text-align:center;
+}
+.dc-wordmark{font-weight:800;font-size:clamp(24px,5.5vw,34px);letter-spacing:0.02em;margin-bottom:2px}
+
+/* TICKER TAPE */
+.ticker-tape{
+  background:#FF1493;border-top:2px solid #fff;border-bottom:2px solid #000;
+  overflow:hidden;white-space:nowrap;margin-bottom:16px;
+}
+.ticker-track{
+  display:inline-flex;animation:tickerScroll 22s linear infinite;
+}
+.ticker-item{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 20px;font-family:'VT323',monospace;font-size:16px;
+  border-right:1px dashed rgba(255,255,255,0.4);
+}
+.ticker-sym{color:#fff;font-weight:700}
+.ticker-up{color:#39FF14}
+.ticker-down{color:#1a1a1a}
+@keyframes tickerScroll{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+
+.dc-byline{font-family:'Dancing Script',cursive;font-size:clamp(14px,3vw,18px);color:#00F0FF;margin-bottom:10px;font-weight:600}
+.bling{position:relative;color:#fff;text-shadow:0 0 8px rgba(255,20,147,0.6), 0 0 16px rgba(0,240,255,0.3)}
+.bling::after{content:'✦';position:absolute;top:-10px;right:-14px;font-size:14px;color:#00F0FF;animation:sparkleTwinkle 2s ease-in-out infinite}
+@keyframes sparkleTwinkle{0%,100%{opacity:0.3;transform:scale(0.8) rotate(0deg)}50%{opacity:1;transform:scale(1.2) rotate(20deg)}}
+.hero-eyebrow{font-family:'VT323',monospace;color:#39FF14;font-size:16px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;text-shadow:0 0 5px rgba(57,255,20,0.4)}
+.hero-h1{font-weight:800;font-size:clamp(22px,5vw,30px);line-height:1.25;color:#fff;margin-bottom:12px}
+
+/* VIDEO EMBED */
+.video-frame{
+  position:relative;width:100%;padding-top:56.25%;
+  background:#000;border:3px solid #00F0FF;border-radius:8px;overflow:hidden;margin-top:1.25rem;
+}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+.glossy-btn{display:inline-block;background:linear-gradient(180deg,#ff69c4 0%,#FF1493 45%,#c40068 100%);color:#fff;font-weight:800;font-size:16px;padding:12px 22px;border-radius:22px;border:2px solid #fff;box-shadow:0 4px 0 #8a0047, 0 6px 14px rgba(0,0,0,0.4), inset 0 8px 10px rgba(255,255,255,0.35);text-decoration:none;text-align:center;text-shadow:1px 1px 1px rgba(0,0,0,0.3);transition:all 0.15s;cursor:pointer;width:100%}
+.glossy-btn:active:not(:disabled){transform:translateY(3px)}
+.glossy-btn:disabled{opacity:0.35;cursor:not-allowed;filter:grayscale(0.4)}
+.glossy-btn.cyan{background:linear-gradient(180deg,#7df9ff 0%,#00d4f0 45%,#0090a8 100%);box-shadow:0 4px 0 #005f6e, 0 6px 14px rgba(0,0,0,0.4), inset 0 8px 10px rgba(255,255,255,0.45);color:#002a30}
+
+.section-title{font-weight:800;font-size:20px;color:#000;background:#FF1493;display:inline-block;padding:5px 16px;border-radius:8px;border:2px solid #000;box-shadow:3px 3px 0 #000;margin-bottom:14px;transform:rotate(-1deg)}
+.section-title.cyan{background:#00F0FF}
+.section-title.green{background:#39FF14}
+
+/* MEMBERSHIP / PAYMENT BOX */
+.membership-window .win-body{background:#111}
+.cohort-meta{font-family:'VT323',monospace;font-size:13px;color:#999;margin-bottom:4px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.price-card{background:linear-gradient(160deg,#1a0a1a,#000);border:3px solid #FF1493;border-radius:10px;padding:1.5rem;text-align:center;box-shadow:0 0 24px rgba(255,20,147,0.35)}
+.price-tag{font-family:'VT323',monospace;color:#39FF14;font-size:15px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px}
+.price-amount{font-weight:800;font-size:40px;color:#fff}
+.price-amount span{font-size:16px;color:#999;font-weight:400}
+.price-sub{color:#aaa;font-size:12.5px;margin:4px 0 1.25rem}
+.price-features{text-align:left;color:#ccc;font-size:13.5px;line-height:2.1;max-width:320px;margin:0 auto 1.25rem}
+.price-features li{list-style:none;padding-left:22px;position:relative}
+.price-features li::before{content:'✓';position:absolute;left:0;color:#39FF14;font-weight:900}
+
+/* REQUIRED DISCLAIMER GATE */
+.disclaimer-gate{
+  background:#1a1a1a;border:2px solid #FFB000;border-radius:8px;
+  padding:12px 14px;margin-bottom:1rem;text-align:left;
+}
+.disclaimer-gate label{display:flex;gap:10px;align-items:flex-start;cursor:pointer;font-size:12px;color:#ddd;line-height:1.6}
+.disclaimer-gate input[type=checkbox]{width:18px;height:18px;flex-shrink:0;margin-top:1px;accent-color:#FFB000;cursor:pointer}
+.disclaimer-gate a{color:#00F0FF}
+
+/* TRADE VISIBILITY SECTION */
+.trades-window .win-body{background:#0d0d0d}
+.journey-text{color:#c9c9c9;font-size:14.5px;line-height:1.8;margin-bottom:1rem}
+
+/* TRADING CALCULATOR — old beige desktop calculator / 10-key aesthetic */
+.calc-body{
+  background:linear-gradient(160deg,#d8d2c4,#c4bdac);
+  border:3px solid #8a8372;border-radius:14px;padding:1.25rem;
+  box-shadow:inset 0 2px 4px rgba(255,255,255,0.4), inset 0 -3px 6px rgba(0,0,0,0.15), 0 4px 12px rgba(0,0,0,0.3);
+  max-width:380px;margin:0 auto;
+}
+.calc-mode-toggle{display:flex;gap:6px;margin-bottom:12px}
+.calc-mode-btn{
+  flex:1;background:#b8b0a0;border:2px outset #e8e2d4;border-radius:6px;
+  padding:8px 6px;font-size:10.5px;font-weight:700;color:#3a3428;cursor:pointer;
+  font-family:'Comic Neue',cursive;line-height:1.3;
+}
+.calc-mode-btn.active{background:#39FF14;border-color:#8fff6b;box-shadow:inset 0 0 8px rgba(0,0,0,0.2)}
+
+.calc-screen{
+  background:#0a1a0a;border:3px inset #6a6458;border-radius:6px;
+  padding:10px 14px;margin-bottom:14px;text-align:right;
+}
+.calc-screen-label{font-family:'VT323',monospace;font-size:11px;color:#4a9a4a;letter-spacing:0.1em;text-align:left}
+.calc-screen-main{font-family:'VT323',monospace;font-size:34px;color:#39FF14;text-shadow:0 0 8px rgba(57,255,20,0.6);line-height:1.2;overflow-wrap:break-word}
+.calc-screen-sub{font-family:'VT323',monospace;font-size:13px;color:#3a8a3a}
+
+.calc-inputs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.calc-input-group label{display:block;font-size:9.5px;color:#4a4436;font-weight:700;margin-bottom:3px;font-family:'Comic Neue',cursive}
+.calc-field{
+  width:100%;padding:8px 10px;border-radius:5px;border:2px inset #8a8372;
+  background:#f4f0e6;font-family:'VT323',monospace;font-size:16px;color:#2a2418;
+}
+
+.calc-keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.calc-key{
+  background:linear-gradient(180deg,#e8e2d4,#c4bdac);
+  border:2px outset #f0eade;border-radius:6px;
+  padding:12px 0;font-family:'VT323',monospace;font-size:18px;font-weight:700;color:#2a2418;
+  cursor:pointer;box-shadow:0 2px 3px rgba(0,0,0,0.2);
+}
+.calc-key:active{border-style:inset;transform:translateY(1px)}
+.calc-key-clear{background:linear-gradient(180deg,#ff8a7a,#e05a4a);color:#fff}
+
+/* LIP GLOSS ANALOGY MOTION GRAPHIC */
+.lg-stage{position:relative;max-width:360px;margin:0 auto;min-height:260px}
+.lg-scene{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity 0.6s ease;text-align:center;
+}
+.lg-scene.active{opacity:1;pointer-events:auto}
+
+.lg-tube-wrap{position:relative;height:110px;display:flex;align-items:flex-end;justify-content:center;margin-bottom:12px}
+.lg-tube{display:flex;flex-direction:column;align-items:center;transition:transform 0.4s ease}
+.lg-tube-cap{width:34px;height:20px;border-radius:6px 6px 3px 3px;background:#D4AC5C}
+.lg-tube-body{width:26px;height:70px;border-radius:4px 4px 10px 10px;background:var(--lg-color,#C4727A);margin-top:-2px;box-shadow:inset -4px 0 6px rgba(0,0,0,0.15)}
+.lg-tube-normal{--lg-color:#C4727A}
+.lg-tube-hot{--lg-color:#FF1493;transform:scale(1.08)}
+.lg-tube-dead{--lg-color:#5a4a52;opacity:0.55}
+.lg-fire{position:absolute;top:-8px;right:38%;font-size:22px;animation:lgBounce 1s ease-in-out infinite}
+.lg-dust{position:absolute;top:-4px;right:36%;font-size:20px;opacity:0.7}
+@keyframes lgBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+.lg-tag{font-family:'VT323',monospace;font-size:15px;color:#ccc;margin-bottom:8px}
+.lg-tag-up{color:#39FF14}
+.lg-tag-down{color:#ff6a6a}
+.lg-zone-label{font-weight:800;font-size:14px;padding:4px 12px;border-radius:6px;margin-bottom:8px}
+.lg-zone-demand{background:#39FF14;color:#062b00}
+.lg-zone-supply{background:#ff6a6a;color:#3a0505}
+.lg-caption{color:#aaa;font-size:12.5px;max-width:280px;line-height:1.6}
+.lg-tieback{color:#fff;font-size:18px;font-weight:700;line-height:1.6;padding:0 1rem}
+
+.lg-dots{position:absolute;bottom:-28px;left:0;right:0;display:flex;justify-content:center;gap:8px}
+.lg-dot{width:8px;height:8px;border-radius:50%;background:#444;cursor:pointer;transition:background 0.3s}
+.lg-dot.active{background:#00F0FF}
+
+
+
+.journey-stats{display:flex;gap:10px;margin-bottom:1rem}
+.journey-stat{flex:1;background:#000;border:2px solid #333;border-radius:8px;padding:0.75rem;text-align:center}
+.js-num{font-family:'VT323',monospace;font-size:26px;font-weight:700}
+.js-label{font-size:10px;color:#999;text-transform:uppercase;letter-spacing:0.05em;margin-top:2px}
+
+.journey-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:1rem}
+.journey-col{background:#000;border:2px solid #333;border-radius:8px;padding:0.85rem}
+.journey-col-title{font-family:'VT323',monospace;font-size:14px;letter-spacing:0.08em;margin-bottom:8px;border-bottom:1px dashed #333;padding-bottom:6px}
+.journey-row{display:flex;justify-content:space-between;font-size:12.5px;color:#ccc;padding:5px 0;border-bottom:1px dotted #222}
+.journey-row:last-child{border-bottom:none}
+.jr-win{color:#39FF14;font-weight:700}
+.jr-loss{color:#C4506A;font-weight:700}
+@media(max-width:500px){.journey-grid{grid-template-columns:1fr}}
+.journey-text strong{color:#39FF14}
+
+/* SUITE ACCESS */
+.suite-window .win-body{background:#0d0d0d}
+
+/* MYSPACE PROFILE BOX */
+
+/* PROOF GALLERY */
+
+.proof-window .win-body{background:#000}
+.testimonial-quote{color:#eee;font-size:15px;line-height:1.7;font-style:italic;border-left:3px solid #FF1493;padding-left:14px;margin-bottom:10px}
+.testimonial-attribution{color:#00F0FF;font-family:'VT323',monospace;font-size:14px;margin-bottom:16px}
+.proof-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.proof-screenshot-frame{border:3px solid #00F0FF;border-radius:6px;overflow:hidden;background:#111;display:flex;flex-direction:column}
+.proof-screenshot-frame img{width:100%;height:auto;display:block;max-height:280px;object-fit:cover;object-position:top}
+.proof-caption{color:#bbb;font-size:13px;margin-top:12px;font-style:italic;line-height:1.6}
+
+/* FOOTER DISCLAIMER */
+.foot-disclaimer{background:#c3c3c3;border:2px inset #fff;margin:1.5rem auto 0;padding:12px 16px;font-family:'VT323',monospace;font-size:12.5px;color:#333;line-height:1.6}
+.placeholder-flag{display:inline-block;background:#FFB000;color:#000;font-size:10px;font-weight:800;padding:2px 8px;border-radius:4px;margin-left:6px;letter-spacing:0.02em;vertical-align:middle}
+
+@media(max-width:640px){
+  .desktop-icons{display:none}
+  .proof-gallery{grid-template-columns:1fr}
+  .win-titlebar{font-size:12px}
+  .taskbar-item{display:none}
+}
+@media(min-width:641px) and (max-width:880px){
+  .proof-gallery{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<div class="desktop-icons">
+  <button class="d-icon" onclick="document.getElementById('join').scrollIntoView({behavior:'smooth'})">
+    <div class="d-icon-emoji">🖥️</div>Join Now
+  </button>
+  <button class="d-icon" onclick="document.querySelector('.foot-disclaimer').scrollIntoView({behavior:'smooth'})">
+    <div class="d-icon-emoji">🗑️</div>Disclaimer
+  </button>
+</div>
+
+<div class="content">
+
+  <!-- ============ TICKER TAPE ============ -->
+  <div class="ticker-tape">
+    <div class="ticker-track">
+      <span class="ticker-item"><span class="ticker-sym">$WFC</span> <span class="ticker-up">▲ +2.4%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">$SPY</span> <span class="ticker-up">▲ +0.8%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">$AAPL</span> <span class="ticker-down">▼ -1.2%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">$C</span> <span class="ticker-up">▲ +3.1%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">$IWM</span> <span class="ticker-down">▼ -0.5%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">$QQQ</span> <span class="ticker-up">▲ +1.7%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">$WFC</span> <span class="ticker-up">▲ +2.4%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">$SPY</span> <span class="ticker-up">▲ +0.8%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">$AAPL</span> <span class="ticker-down">▼ -1.2%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">$C</span> <span class="ticker-up">▲ +3.1%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">$IWM</span> <span class="ticker-down">▼ -0.5%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">$QQQ</span> <span class="ticker-up">▲ +1.7%</span></span>
+    </div>
+  </div>
+
+  <!-- ============ HERO — VIDEO ============ -->
+  <div class="win95-window">
+    <div class="win-titlebar">
+      <div class="win-title-left"><div class="win-icon"></div> DotComTrading.exe — [Running]</div>
+      <div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div>
+    </div>
+    <div class="win-body" style="padding:0">
+      <div class="myspace-hero">
+        <div class="dc-wordmark"><span class="bling">DOTCOM</span> <span style="color:#00F0FF">TRADING</span></div>
+        <div class="dc-byline">by remoteblackgirl</div>
+        <div class="hero-eyebrow">&gt; i didn't know you could make money online trading stock options</div>
+        <div class="hero-eyebrow" style="color:#00F0FF;text-shadow:0 0 5px rgba(0,240,255,0.4)">and then i found supply and demand zones</div>
+        <h1 class="hero-h1">Watch me set up my charts</h1>
+
+        <div class="video-frame">
+          <div id="hero-yt-player"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ LIP GLOSS ANALOGY — MOTION GRAPHIC ============ -->
+  <div class="win95-window">
+    <div class="win-titlebar">
+      <div class="win-title-left"><div class="win-icon"></div> how_zones_work.exe</div>
+      <div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div>
+    </div>
+    <div class="win-body" style="background:#0d0d0d">
+      <div class="section-title">💄 supply &amp; demand, explained with lip gloss</div>
+
+      <div class="lg-stage">
+        <div class="lg-scene active" id="lg-scene-0">
+          <div class="lg-tube-wrap">
+            <div class="lg-tube lg-tube-normal">
+              <div class="lg-tube-cap"></div>
+              <div class="lg-tube-body"></div>
+            </div>
+          </div>
+          <div class="lg-tag">$12 · in stock everywhere</div>
+          <div class="lg-caption">Just a normal lip gloss. Nobody's thinking about it.</div>
+        </div>
+
+        <div class="lg-scene" id="lg-scene-1">
+          <div class="lg-tube-wrap">
+            <div class="lg-tube lg-tube-hot">
+              <div class="lg-tube-cap"></div>
+              <div class="lg-tube-body"></div>
+            </div>
+            <span class="lg-fire">🔥</span>
+          </div>
+          <div class="lg-tag lg-tag-up">SOLD OUT → reselling for $45</div>
+          <div class="lg-zone-label lg-zone-demand">📈 THIS IS A DEMAND ZONE</div>
+          <div class="lg-caption">Everyone wants in. Price can't drop — there's nothing left to sell.</div>
+        </div>
+
+        <div class="lg-scene" id="lg-scene-2">
+          <div class="lg-tube-wrap">
+            <div class="lg-tube lg-tube-dead">
+              <div class="lg-tube-cap"></div>
+              <div class="lg-tube-body"></div>
+            </div>
+            <span class="lg-dust">💤</span>
+          </div>
+          <div class="lg-tag lg-tag-down">6 months later → clearance, $4</div>
+          <div class="lg-zone-label lg-zone-supply">📉 THIS IS A SUPPLY ZONE</div>
+          <div class="lg-caption">Nobody wants out. Price can't hold — everyone's trying to sell.</div>
+        </div>
+
+        <div class="lg-scene" id="lg-scene-3">
+          <div class="lg-tieback">Stocks work exactly the same way.<br>Zones just show you where the crowd is stuck.</div>
+        </div>
+
+        <div class="lg-dots">
+          <span class="lg-dot active" data-scene="0"></span>
+          <span class="lg-dot" data-scene="1"></span>
+          <span class="lg-dot" data-scene="2"></span>
+          <span class="lg-dot" data-scene="3"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-bottom:22px">
+    <a href="#join" class="glossy-btn" style="display:inline-block;width:auto;padding:14px 32px;text-decoration:none">teach me how to trade →</a>
+  </div>
+
+  <!-- ============ TESTIMONIAL ============ -->
+  <div class="win95-window proof-window">
+    <div class="win-titlebar">
+      <div class="win-title-left"><div class="win-icon"></div> testimonial.txt</div>
+      <div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div>
+    </div>
+    <div class="win-body">
+      <div class="section-title">💬 real student, real results</div>
+      <div class="testimonial-quote">
+        "I'm just grateful that you were willing to teach strangers everything you know, even with your reservations. Maybe I'm the confirmation you needed... proof that you really know your stuff. I'm living evidence that it works. So thank you."
+      </div>
+      <div class="testimonial-attribution">— Tishell B., after her 1:1 session</div>
+
+      <div class="proof-gallery">
+        <div class="proof-screenshot-frame">
+          <img src="testimonial-1.jpeg" alt="Tishell's trading results screenshot 1">
+        </div>
+        <div class="proof-screenshot-frame">
+          <img src="testimonial-2.jpeg" alt="Tishell's trading results screenshot 2">
+        </div>
+        <div class="proof-screenshot-frame">
+          <img src="testimonial-3.jpeg" alt="Tishell's trading results screenshot 3">
+        </div>
+      </div>
+      <p class="proof-caption">Shared with her permission — these are her real results, not mine.</p>
+    </div>
+  </div>
+
+  <!-- ============ THE REAL JOURNEY ============ -->
+  <div class="win95-window">
+    <div class="win-titlebar">
+      <div class="win-title-left"><div class="win-icon"></div> the_real_journey.txt</div>
+      <div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div>
+    </div>
+    <div class="win-body" style="background:#0d0d0d">
+      <div class="section-title">🕯️ wins and losses. both.</div>
+      <p class="journey-text">Most people lose money learning to trade. That's the truth nobody selling a dream will tell you. The goal was never instant profit — it's learning risk management, patience, and the psychology of not getting greedy. I'm not promising you'll make money. I'm showing you what the real process actually looks like.</p>
+
+      <div class="journey-stats">
+        <div class="journey-stat"><div class="js-num" style="color:#39FF14">+$216</div><div class="js-label">net, 3 months</div></div>
+        <div class="journey-stat"><div class="js-num" style="color:#39FF14">4</div><div class="js-label">wins</div></div>
+        <div class="journey-stat"><div class="js-num" style="color:#C4506A">3</div><div class="js-label">losses</div></div>
+      </div>
+
+      <div class="journey-grid">
+        <div class="journey-col">
+          <div class="journey-col-title" style="color:#39FF14">WINS</div>
+          <div class="journey-row"><span>WFC $78 Call</span><span class="jr-win">+$109.00</span></div>
+          <div class="journey-row"><span>C $135 Call</span><span class="jr-win">+$73.00</span></div>
+          <div class="journey-row"><span>WFC $86 Call (7/10)</span><span class="jr-win">+$60.00</span></div>
+          <div class="journey-row"><span>WFC $86 Call (7/24)</span><span class="jr-win">+$47.00</span></div>
+        </div>
+        <div class="journey-col">
+          <div class="journey-col-title" style="color:#C4506A">LOSSES</div>
+          <div class="journey-row"><span>WFC $81 Put</span><span class="jr-loss">-$98.00</span></div>
+          <div class="journey-row"><span>WFC $80 Put</span><span class="jr-loss">-$33.00</span></div>
+          <div class="journey-row"><span>WFC $86 Put</span><span class="jr-loss">-$5.00</span></div>
+        </div>
+      </div>
+
+      <div class="proof-gallery">
+        <div class="proof-screenshot-frame">
+          <img src="journey-1.jpg" alt="Robinhood options overview showing 3-month realized profit and loss chart">
+        </div>
+        <div class="proof-screenshot-frame">
+          <img src="journey-2.jpg" alt="Robinhood realized profit and loss list showing individual win trades">
+        </div>
+        <div class="proof-screenshot-frame">
+          <img src="journey-3.jpg" alt="Robinhood realized profit and loss list showing individual loss trades">
+        </div>
+      </div>
+
+      <p class="proof-caption">Real screenshots from my Robinhood account. Every win, every loss — not cherry-picked.</p>
+    </div>
+  </div>
+
+  <!-- ============ TRADING CALCULATOR ============ -->
+  <div class="win95-window">
+    <div class="win-titlebar">
+      <div class="win-title-left"><div class="win-icon"></div> calculator.exe</div>
+      <div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div>
+    </div>
+    <div class="win-body" style="background:#0d0d0d">
+      <div class="section-title cyan">🖩 how much can you start with?</div>
+      <p class="journey-text">People ask this constantly — so figure it out for yourself. Pick a direction below.</p>
+
+      <div class="calc-body">
+        <div class="calc-mode-toggle">
+          <button class="calc-mode-btn active" id="mode-forward-btn" onclick="setCalcMode('forward')">I have money to start</button>
+          <button class="calc-mode-btn" id="mode-reverse-btn" onclick="setCalcMode('reverse')">I have a goal amount</button>
+        </div>
+
+        <div class="calc-screen">
+          <div class="calc-screen-label" id="calc-label-line">STARTING AMOUNT</div>
+          <div class="calc-screen-main" id="calc-display">$0.00</div>
+          <div class="calc-screen-sub" id="calc-sub-display">at 0% gain</div>
+        </div>
+
+        <div class="calc-inputs">
+          <div class="calc-input-group">
+            <label id="calc-amount-label">Starting amount ($)</label>
+            <input type="number" id="calc-amount" class="calc-field" placeholder="100" value="100" oninput="runCalc()">
+          </div>
+          <div class="calc-input-group">
+            <label>Gain (%)</label>
+            <input type="number" id="calc-gain" class="calc-field" placeholder="25" value="25" oninput="runCalc()">
+          </div>
+        </div>
+
+        <div class="calc-keypad">
+          <button class="calc-key" onclick="calcKeyPress('7')">7</button>
+          <button class="calc-key" onclick="calcKeyPress('8')">8</button>
+          <button class="calc-key" onclick="calcKeyPress('9')">9</button>
+          <button class="calc-key" onclick="calcKeyPress('4')">4</button>
+          <button class="calc-key" onclick="calcKeyPress('5')">5</button>
+          <button class="calc-key" onclick="calcKeyPress('6')">6</button>
+          <button class="calc-key" onclick="calcKeyPress('1')">1</button>
+          <button class="calc-key" onclick="calcKeyPress('2')">2</button>
+          <button class="calc-key" onclick="calcKeyPress('3')">3</button>
+          <button class="calc-key" onclick="calcKeyPress('0')">0</button>
+          <button class="calc-key" onclick="calcKeyPress('.')">.</button>
+          <button class="calc-key calc-key-clear" onclick="calcClear()">C</button>
+        </div>
+      </div>
+
+      <p class="proof-caption">⚠ Illustrative math only. Real trading has real risk — gains are never guaranteed, and losses are possible. This is a calculator, not a promise.</p>
+    </div>
+  </div>
+
+  <!-- ============ FREEBIE ============ -->
+  <div class="win95-window">
+    <div class="win-titlebar">
+      <div class="win-title-left"><div class="win-icon"></div> a:\ save_to_floppy.exe</div>
+      <div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div>
+    </div>
+    <div class="win-body" style="background:#0d0d0d">
+      <div class="section-title green">💾 101 money-making ai prompts — free</div>
+      <p class="journey-text">Copy, paste, go. The exact prompts to start trading smarter and building your own tools today. Instant download, no card required.</p>
+      <div id="freebie-form-area">
+        <form class="freebie-form" onsubmit="handleFreebieDownload(event)">
+          <input type="email" id="freebie-email" class="freebie-input" placeholder="your best email" required>
+          <button type="submit" class="glossy-btn green">💾 unlock instant download →</button>
+        </form>
+      </div>
+      <div id="freebie-success" style="display:none;text-align:center;padding:1rem 0">
+        <div style="font-size:32px;margin-bottom:8px">✅</div>
+        <div style="color:#39FF14;font-weight:700;margin-bottom:10px">Your download is ready</div>
+        <a id="freebie-download-link" href="101-money-making-ai-prompts.pdf" download class="glossy-btn green" style="display:inline-block;width:auto;padding:12px 28px">⬇ download now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ JOIN / PAYMENT ============ -->
+  <div class="win95-window membership-window" id="join">
+    <div class="win-titlebar">
+      <div class="win-title-left"><div class="win-icon"></div> checkout.exe</div>
+      <div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div>
+    </div>
+    <div class="win-body">
+
+      <div class="disclaimer-gate">
+        <label>
+          <input type="checkbox" id="disclaimer-check" onchange="toggleJoinButton()">
+          <span>I understand this is educational content, not personalized financial advice. Trading involves risk of loss. All decisions and results are my own responsibility. <a href="#disclaimer-full">Read full disclaimer</a>.</span>
+        </label>
+      </div>
+
+      <!-- FLAGSHIP: COHORT CLASS — one simple price -->
+      <div class="section-title">💾 join the next cohort</div>
+      <div class="cohort-meta">10 nights · 2 hours/night · live + recorded</div>
+      <div class="price-card" style="max-width:340px;margin:0 auto">
+        <div class="price-tag">cohort</div>
+        <div class="price-amount">$100</div>
+        <div class="price-sub">one-time · full 2-week cohort</div>
+        <ul class="price-features">
+          <li>All 10 live class nights + recordings</li>
+          <li>Full Zone &amp; Trade suite access</li>
+          <li>Class Q&amp;A included</li>
+        </ul>
+        <button class="glossy-btn" id="cohort-btn" disabled onclick="alert('PLACEHOLDER — connect a Stripe Payment Link for the cohort.')">join the cohort — $100 →</button>
+      </div>
+
+      <!-- SECONDARY: 1:1 ONLY -->
+      <div class="section-title cyan" style="margin-top:1.5rem">🧰 not ready for a cohort?</div>
+      <div class="price-card" style="padding:1.1rem;border-color:#00F0FF;max-width:300px;margin:0 auto">
+        <div class="price-tag" style="color:#00F0FF">1:1 session</div>
+        <div class="price-amount" style="font-size:28px">$150<span>/session</span></div>
+        <div class="price-sub">2 slots/week · outside a cohort</div>
+        <button class="glossy-btn cyan" id="oneonone-btn" disabled onclick="alert('PLACEHOLDER — connect a Stripe Payment Link for standalone 1:1 sessions.')" style="margin-top:8px">book a session →</button>
+      </div>
+
+      <div class="proof-caption" style="text-align:center;margin-top:8px">💳 secure checkout via Stripe <span class="placeholder-flag">TODO: 2 separate Stripe links needed — Cohort, 1:1</span></div>
+    </div>
+  </div>
+
+
+  <div class="foot-disclaimer" id="disclaimer-full">
+    C:\&gt; DISCLAIMER — Dotcom Trading is educational content shared for informational purposes only. Nothing on this page or shared with members is personalized financial advice, a recommendation to buy or sell any security, or a guarantee of any outcome. Trading options involves substantial risk, including the potential loss of your entire investment. Past results (including the $216 shown above) are real but not typical and do not guarantee future performance. Always do your own research and consult a licensed financial advisor before making investment decisions. Payment and video are placeholders pending account setup.
+  </div>
+
+</div>
+
+<div class="taskbar">
+  <div class="start-btn"><span class="start-flag"></span> Start</div>
+  <div class="taskbar-divider"></div>
+  <div class="taskbar-item">💰 dotcomtrading.exe</div>
+  <div class="clock-box" id="clock">12:00 PM</div>
+</div>
+
+<script>
+function handleFreebieDownload(event){
+  event.preventDefault();
+  const email=document.getElementById('freebie-email').value;
+  if(!email)return;
+
+  // TODO: send `email` to your Brevo list here in the background (fire-and-forget),
+  // e.g. fetch('/.netlify/functions/brevo-subscribe', {method:'POST', body: JSON.stringify({email})})
+  // This does NOT block the download — the file unlocks instantly either way.
+
+  document.getElementById('freebie-form-area').style.display='none';
+  document.getElementById('freebie-success').style.display='block';
+
+  // Auto-trigger the actual download immediately
+  document.getElementById('freebie-download-link').click();
+}
+
+let calcMode='forward';
+let calcActiveField='calc-amount';
+
+function setCalcMode(mode){
+  calcMode=mode;
+  document.getElementById('mode-forward-btn').classList.toggle('active', mode==='forward');
+  document.getElementById('mode-reverse-btn').classList.toggle('active', mode==='reverse');
+  document.getElementById('calc-amount-label').textContent = mode==='forward' ? 'Starting amount ($)' : 'Goal amount ($)';
+  document.getElementById('calc-label-line').textContent = mode==='forward' ? 'ENDING AMOUNT' : "YOU'D NEED TO START WITH";
+  runCalc();
+}
+
+function runCalc(){
+  const amount=parseFloat(document.getElementById('calc-amount').value)||0;
+  const gain=parseFloat(document.getElementById('calc-gain').value)||0;
+  const display=document.getElementById('calc-display');
+  const sub=document.getElementById('calc-sub-display');
+
+  if(calcMode==='forward'){
+    const result=amount*(1+gain/100);
+    display.textContent='$'+result.toFixed(2);
+    sub.textContent=`$${amount.toFixed(2)} + ${gain}% gain`;
+  } else {
+    if(1+gain/100<=0){
+      display.textContent='—';
+      sub.textContent='gain % must be greater than -100';
+      return;
+    }
+    const required=amount/(1+gain/100);
+    display.textContent='$'+required.toFixed(2);
+    sub.textContent=`to reach $${amount.toFixed(2)} at ${gain}% gain`;
+  }
+}
+
+function calcKeyPress(digit){
+  const field=document.getElementById(calcActiveField);
+  if(digit==='.' && field.value.includes('.'))return;
+  field.value=(field.value||'')+digit;
+  runCalc();
+}
+
+function calcClear(){
+  document.getElementById(calcActiveField).value='';
+  runCalc();
+}
+
+document.getElementById('calc-amount').addEventListener('focus', ()=>calcActiveField='calc-amount');
+document.getElementById('calc-gain').addEventListener('focus', ()=>calcActiveField='calc-gain');
+runCalc();
+
+// ── LIP GLOSS ANALOGY — auto-cycling scenes ──
+let lgCurrentScene=0;
+const LG_TOTAL_SCENES=4;
+let lgInterval=null;
+
+function lgShowScene(idx){
+  lgCurrentScene=idx;
+  document.querySelectorAll('.lg-scene').forEach((el,i)=>el.classList.toggle('active', i===idx));
+  document.querySelectorAll('.lg-dot').forEach((el,i)=>el.classList.toggle('active', i===idx));
+}
+
+function lgStartAutoCycle(){
+  clearInterval(lgInterval);
+  lgInterval=setInterval(()=>{
+    lgShowScene((lgCurrentScene+1)%LG_TOTAL_SCENES);
+  }, 3200);
+}
+
+document.querySelectorAll('.lg-dot').forEach(dot=>{
+  dot.addEventListener('click', ()=>{
+    lgShowScene(parseInt(dot.dataset.scene));
+    lgStartAutoCycle();
+  });
+});
+
+lgShowScene(0);
+lgStartAutoCycle();
+
+function toggleJoinButton(){
+  const checked=document.getElementById('disclaimer-check').checked;
+  document.getElementById('oneonone-btn').disabled = !checked;
+  document.getElementById('cohort-btn').disabled = !checked;
+}
+
+function updateClock(){
+  const now = new Date();
+  let h = now.getHours();
+  const m = now.getMinutes().toString().padStart(2,'0');
+  const ampm = h >= 12 ? 'PM' : 'AM';
+  h = h % 12; h = h ? h : 12;
+  document.getElementById('clock').textContent = `${h}:${m} ${ampm}`;
+}
+updateClock();
+setInterval(updateClock, 1000*30);
+
+// ── YOUTUBE HERO PLAYER — autoplay, muted (required for autoplay), looping, 2x speed ──
+const HERO_VIDEO_ID = 'rzv3deQ9cPI';
+const HERO_PLAYBACK_RATE = 2; // change to 1.5, 1.75, etc. if 2x feels too fast
+
+const ytApiTag = document.createElement('script');
+ytApiTag.src = 'https://www.youtube.com/iframe_api';
+document.head.appendChild(ytApiTag);
+
+function onYouTubeIframeAPIReady(){
+  new YT.Player('hero-yt-player', {
+    videoId: HERO_VIDEO_ID,
+    playerVars: {
+      autoplay: 1,
+      mute: 1,          // required by browsers for autoplay to actually work
+      loop: 1,
+      playlist: HERO_VIDEO_ID, // required by YouTube for single-video looping
+      controls: 1,
+      playsinline: 1,
+      modestbranding: 1,
+      rel: 0
+    },
+    events: {
+      onReady: (e) => { e.target.setPlaybackRate(HERO_PLAYBACK_RATE); e.target.playVideo(); },
+      onStateChange: (e) => {
+        // YouTube can silently reset speed on loop/buffer — re-apply it every time playback (re)starts
+        if(e.data === YT.PlayerState.PLAYING){ e.target.setPlaybackRate(HERO_PLAYBACK_RATE); }
+      }
+    }
+  });
+}
+</script>
+
+</body>
+</html>
