@@ -1,0 +1,10 @@
+{
+  "name": "dotcomtrading-functions",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Netlify Functions dependencies for the Dotcom Trading vault (Stripe checkout, Supabase pricing engine, Brevo capture)",
+  "dependencies": {
+    "stripe": "^16.12.0",
+    "@supabase/supabase-js": "^2.45.4"
+  }
+}
