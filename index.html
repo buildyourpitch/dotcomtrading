@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robinhood Legend Tour & Supply and Demand Trading for Beginners | Dotcom Trading</title>
+<meta name="google-site-verification" content="SV6JQjpDsXi6raucXo-iyTjB0g3RsuyrL9-asZLbxx4">
+<meta name="description" content="Learn how to trade on Robinhood Legend with real supply and demand strategy — taught by a girl who actually trades. Free roadmap covers how to trade, chart reading, and day trading basics for beginners.">
+<meta name="keywords" content="robinhood legend, supply and demand, girl trader, trading, how to trade, day trading, options trading for beginners, robinhood desktop">
+<link rel="canonical" href="https://dotcomtrading.netlify.app/">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Robinhood Legend Tour & Supply and Demand Trading | Dotcom Trading">
+<meta property="og:description" content="Real supply and demand trading strategy on Robinhood Legend — taught by a girl who actually trades. Free roadmap, no fluff.">
+<meta property="og:url" content="https://dotcomtrading.netlify.app/">
+<meta property="og:site_name" content="Dotcom Trading">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Robinhood Legend Tour & Supply and Demand Trading | Dotcom Trading">
+<meta name="twitter:description" content="Real supply and demand trading strategy on Robinhood Legend — taught by a girl who actually trades. Free roadmap, no fluff.">
+
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Comic+Neue:wght@700;800&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) — GA4 property: Dotcom Trading -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGSJG1DVXZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RGSJG1DVXZ');
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:#008080;
+  font-family:'Comic Neue',cursive;
+  min-height:100vh;
+  position:relative;
+  overflow-x:hidden;
+  padding-bottom:60px;
+}
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size:16px 16px;
+  pointer-events:none;z-index:0;
+}
+
+/* TASKBAR */
+.taskbar{
+  position:fixed;bottom:0;left:0;right:0;height:36px;
+  background:#c3c3c3;border-top:2px solid #fff;
+  display:flex;align-items:center;gap:8px;padding:0 6px;
+  z-index:500;box-shadow:0 -2px 0 #808080 inset;
+}
+.start-btn{background:#c3c3c3;border:2px outset #fff;padding:4px 12px;font-weight:800;font-size:14px;display:flex;align-items:center;gap:6px;cursor:default}
+.start-flag{width:14px;height:14px;background:conic-gradient(#f25022 0 90deg,#7fba00 90deg 180deg,#00a4ef 180deg 270deg,#ffb900 270deg 360deg);border-radius:1px}
+.taskbar-divider{width:2px;height:24px;background:#808080;box-shadow:1px 0 0 #fff}
+.taskbar-item{background:#c3c3c3;border:2px inset #fff;padding:4px 12px;font-size:13px;font-weight:700}
+.clock-box{margin-left:auto;background:#c3c3c3;border:2px inset #fff;padding:4px 10px;font-size:13px;font-weight:700}
+
+/* DESKTOP ICONS */
+.desktop-icons{position:fixed;top:20px;left:20px;z-index:10;display:flex;flex-direction:column;gap:22px;width:90px}
+.d-icon{display:flex;flex-direction:column;align-items:center;gap:4px;color:#fff;font-size:11px;text-align:center;text-shadow:1px 1px 1px #000;cursor:pointer;background:none;border:none;padding:0}
+.d-icon-emoji{width:38px;height:34px;display:flex;align-items:center;justify-content:center;font-size:24px}
+
+.content{max-width:720px;margin:0 auto;padding:24px 16px 40px;position:relative;z-index:1}
+
+/* WINDOW CHROME */
+.win95-window{background:#c3c3c3;border:2px solid #fff;box-shadow:2px 2px 0 #000, inset -1px -1px 0 #808080, inset 1px 1px 0 #dfdfdf;margin-bottom:22px}
+.win-titlebar{background:linear-gradient(90deg,#000080,#1084d0);color:#fff;font-weight:800;font-size:14px;padding:4px 6px;display:flex;align-items:center;justify-content:space-between;gap:6px}
+.win-title-left{display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.win-icon{width:14px;height:14px;background:#fff;border-radius:1px}
+.win-controls{display:flex;gap:3px;flex-shrink:0}
+.win-btn{width:16px;height:14px;background:#c3c3c3;border:1px outset #fff;font-size:10px;line-height:14px;text-align:center;color:#000;font-weight:900}
+.win-body{padding:16px}
+
+/* HERO / WORDMARK */
+.myspace-hero{
+  background:#000;
+  background-image:radial-gradient(circle at 10% 20%, rgba(255,20,147,0.13) 0, transparent 22%),
+                    radial-gradient(circle at 85% 15%, rgba(0,240,255,0.13) 0, transparent 22%);
+  padding:2rem 1.5rem;position:relative;text-align:center;
+}
+.dc-wordmark{font-weight:800;font-size:clamp(24px,5.5vw,34px);letter-spacing:0.02em;margin-bottom:2px}
+
+/* TICKER TAPE */
+.ticker-tape{
+  background:#FF1493;border-top:2px solid #fff;border-bottom:2px solid #000;
+  overflow:hidden;white-space:nowrap;margin-bottom:16px;
+}
+.ticker-track{display:inline-flex;animation:tickerScroll 22s linear infinite}
+.ticker-item{display:inline-flex;align-items:center;gap:6px;padding:6px 20px;font-family:'VT323',monospace;font-size:16px;border-right:1px dashed rgba(255,255,255,0.4)}
+.ticker-sym{color:#fff;font-weight:700}
+.ticker-up{color:#39FF14}
+.ticker-down{color:#1a1a1a}
+@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+.dc-byline{font-family:'Dancing Script',cursive;font-size:clamp(14px,3vw,18px);color:#00F0FF;margin-bottom:10px;font-weight:600}
+.bling{position:relative;color:#fff;text-shadow:0 0 8px rgba(255,20,147,0.6), 0 0 16px rgba(0,240,255,0.3)}
+.bling::after{content:'✦';position:absolute;top:-10px;right:-14px;font-size:14px;color:#00F0FF;animation:sparkleTwinkle 2s ease-in-out infinite}
+@keyframes sparkleTwinkle{0%,100%{opacity:0.3;transform:scale(0.8) rotate(0deg)}50%{opacity:1;transform:scale(1.2) rotate(20deg)}}
+.hero-eyebrow{font-family:'VT323',monospace;color:#39FF14;font-size:16px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;text-shadow:0 0 5px rgba(57,255,20,0.4)}
+.hero-h1{font-weight:800;font-size:clamp(22px,5vw,30px);line-height:1.25;color:#fff;margin-bottom:12px}
+.tiktok-hook{margin-top:12px;text-align:center;font-family:'Comic Neue',cursive;font-weight:700;font-size:clamp(15px,4.2vw,18px);color:#eee}
+.tiktok-hook a{color:#00F0FF;font-weight:800;text-decoration:none;border-bottom:2px dashed #00F0FF}
+.tiktok-hook a:hover{color:#39FF14;border-color:#39FF14}
+
+/* VIDEO EMBED */
+.video-frame{position:relative;width:100%;padding-top:56.25%;background:#000;border:3px solid #00F0FF;border-radius:8px;overflow:hidden;margin-top:1.25rem}
+.new-video-label{font-family:'VT323',monospace;font-size:16px;color:#39FF14;text-align:center;margin-top:1.25rem;letter-spacing:0.05em}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+.glossy-btn{display:inline-block;background:linear-gradient(180deg,#ff69c4 0%,#FF1493 45%,#c40068 100%);color:#fff;font-weight:800;font-size:16px;padding:12px 22px;border-radius:22px;border:2px solid #fff;box-shadow:0 4px 0 #8a0047, 0 6px 14px rgba(0,0,0,0.4), inset 0 8px 10px rgba(255,255,255,0.35);text-decoration:none;text-align:center;text-shadow:1px 1px 1px rgba(0,0,0,0.3);transition:all 0.15s;cursor:pointer;width:100%}
+.glossy-btn:active:not(:disabled){transform:translateY(3px)}
+.glossy-btn:disabled{opacity:0.35;cursor:not-allowed;filter:grayscale(0.4)}
+.glossy-btn.cyan{background:linear-gradient(180deg,#7df9ff 0%,#00d4f0 45%,#0090a8 100%);box-shadow:0 4px 0 #005f6e, 0 6px 14px rgba(0,0,0,0.4), inset 0 8px 10px rgba(255,255,255,0.45);color:#002a30}
+.glossy-btn.green{background:linear-gradient(180deg,#8fff6b 0%,#39FF14 45%,#1a9c00 100%);box-shadow:0 4px 0 #0d5e00, 0 6px 14px rgba(0,0,0,0.4), inset 0 8px 10px rgba(255,255,255,0.4);color:#062b00}
+
+.section-title{font-weight:800;font-size:20px;color:#000;background:#FF1493;display:inline-block;padding:5px 16px;border-radius:8px;border:2px solid #000;box-shadow:3px 3px 0 #000;margin-bottom:14px;transform:rotate(-1deg)}
+.section-title.cyan{background:#00F0FF}
+.section-title.green{background:#39FF14}
+
+.journey-text{color:#c9c9c9;font-size:14.5px;line-height:1.8;margin-bottom:1rem}
+
+/* PRICE CARD (used for the 1:1 step) */
+.price-card{background:linear-gradient(160deg,#1a0a1a,#000);border:3px solid #FF1493;border-radius:10px;padding:1.5rem;text-align:center;box-shadow:0 0 24px rgba(255,20,147,0.35)}
+.price-tag{font-family:'VT323',monospace;color:#39FF14;font-size:15px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px}
+.price-amount{font-weight:800;font-size:40px;color:#fff}
+.price-amount span{font-size:16px;color:#999;font-weight:400}
+.price-sub{color:#aaa;font-size:12.5px;margin:4px 0 1.25rem}
+.price-features{text-align:left;color:#ccc;font-size:13.5px;line-height:2.1;max-width:320px;margin:0 auto 1.25rem}
+.price-features li{list-style:none;padding-left:22px;position:relative}
+.price-features li::before{content:'✓';position:absolute;left:0;color:#39FF14;font-weight:900}
+
+/* ROADMAP UNLOCK CTA */
+.bundle-cta{margin-top:14px;background:linear-gradient(160deg,#0d1f0d,#000);border:2px solid #39FF14;border-radius:12px;padding:1rem;text-align:center}
+.bundle-title{color:#39FF14;font-family:'VT323',monospace;font-size:15px;margin-bottom:4px}
+.bundle-price{font-size:26px;font-weight:800;color:#fff;margin-bottom:8px}
+.bundle-price span{display:block;font-size:11px;color:#999;font-weight:400}
+
+/* ROADMAP PROGRESS + STEP LIST */
+.roadmap-progress{margin-bottom:1rem}
+.roadmap-progress-bar{background:#000;border:2px solid #333;border-radius:20px;height:16px;overflow:hidden}
+.roadmap-progress-fill{height:100%;background:linear-gradient(90deg,#39FF14,#00F0FF);width:0%;transition:width 0.4s ease}
+.roadmap-progress-label{text-align:center;font-family:'VT323',monospace;color:#999;font-size:13px;margin-top:4px}
+
+.roadmap-list{display:flex;flex-direction:column;gap:8px;margin-bottom:1rem}
+.roadmap-step{background:#111;border:2px solid #333;border-radius:8px;overflow:hidden}
+.roadmap-step.unlocked{border-color:#39FF14}
+.roadmap-step-header{width:100%;display:flex;align-items:center;gap:10px;padding:10px 12px;background:none;border:none;cursor:pointer;text-align:left}
+.roadmap-step-num{font-family:'VT323',monospace;font-size:18px;color:#00F0FF;width:22px;flex-shrink:0}
+.roadmap-step-title{flex:1;color:#eee;font-size:13.5px;font-weight:700}
+.roadmap-step-status{font-size:16px;flex-shrink:0}
+.roadmap-step-body{padding:0 12px 14px;display:none}
+.roadmap-step-body.open{display:block}
+.roadmap-step-complete-btn{font-size:11px;padding:6px 10px;width:auto;margin-top:8px}
+.roadmap-locked-note{font-size:12.5px;color:#999;line-height:1.6}
+.roadmap-locked-note a{color:#00F0FF}
+
+/* TRADING PHILOSOPHY — freebie list + email-gated reveal */
+.philosophy-list{list-style:none;padding:0;margin:1rem 0;display:flex;flex-direction:column;gap:8px}
+
+/* ABOUT ME */
+.about-wrap{display:flex;align-items:center;gap:1.25rem;margin-top:1rem;flex-wrap:wrap;justify-content:center}
+
+/* ZONE & TRADE PRICING CARD */
+.bot-pricing{margin-top:1rem;text-align:center}
+.bot-price-loading{font-family:'VT323',monospace;color:#888;font-size:14px}
+.bot-price-card{background:linear-gradient(160deg,#0d1f0d,#000);border:2px solid #39FF14;border-radius:12px;padding:1.25rem;max-width:340px;margin:0 auto}
+.bot-price-card.founding{border-color:#FFB000;background:linear-gradient(160deg,#1a1400,#000)}
+.bot-price-badge{font-family:'VT323',monospace;font-size:13px;color:#FFB000;margin-bottom:6px;letter-spacing:0.05em}
+.bot-price-amount{font-size:32px;font-weight:800;color:#fff}
+.bot-price-amount span{font-size:14px;color:#999;font-weight:400}
+.bot-price-spots{font-family:'VT323',monospace;font-size:13px;color:#39FF14;margin-top:6px}
+.about-photo{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid #00F0FF;box-shadow:0 0 16px rgba(0,240,255,0.35);flex-shrink:0}
+.about-facts{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.about-facts li{font-family:'VT323',monospace;font-size:16px;color:#eee}
+@media(max-width:480px){.about-wrap{flex-direction:column;text-align:center}.about-facts{align-items:center}}
+
+/* WHO THIS IS FOR — fit filter section */
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:1rem}
+@media(max-width:640px){.fit-grid{grid-template-columns:1fr}}
+.fit-col{border-radius:10px;padding:1rem;background:#111111}
+.fit-col.fit-yes{border:2px solid #39FF14}
+.fit-col.fit-no{border:2px solid #FF4D6D}
+.fit-col-title{font-family:'VT323',monospace;font-size:17px;font-weight:700;margin-bottom:10px}
+.fit-yes .fit-col-title{color:#39FF14}
+.fit-no .fit-col-title{color:#FF4D6D}
+.fit-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
+.fit-list li{font-size:12.5px;color:#ddd;line-height:1.5;padding-left:16px;position:relative}
+.fit-yes .fit-list li::before{content:'+';color:#39FF14;font-weight:800;position:absolute;left:0}
+.fit-no .fit-list li::before{content:'–';color:#FF4D6D;font-weight:800;position:absolute;left:0}
+.my-system-note{background:#1a1400;border:2px solid #FFB000;border-radius:8px;padding:12px 14px;margin:0.75rem 0;font-size:12.5px;color:#e8d8b0;line-height:1.6}
+.my-system-note strong{color:#FFB000}
+.philosophy-list li{font-family:'VT323',monospace;font-size:15px;color:#eee;line-height:1.5;padding:8px 12px;background:#161616;border-left:3px solid #39FF14;border-radius:4px}
+.philosophy-list li::before{content:'▸ ';color:#39FF14;font-weight:700}
+
+.freebie-form{display:flex;flex-direction:column;gap:8px;max-width:340px;margin:0 auto}
+.freebie-input{width:100%;padding:10px 14px;border-radius:6px;border:2px solid #333;background:#161616;color:#eee;font-family:'Comic Neue',cursive;font-size:16px}
+
+.philosophy-expanded h4{color:#00F0FF;font-size:14px;margin:14px 0 4px;font-family:'Comic Neue',cursive}
+.philosophy-expanded p{color:#ccc;font-size:13px;line-height:1.6;margin:0 0 6px}
+
+/* REQUIRED DISCLAIMER GATE */
+.disclaimer-gate{background:#1a1a1a;border:2px solid #FFB000;border-radius:8px;padding:12px 14px;margin-bottom:1rem;text-align:left}
+@keyframes disclaimer-pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(255,176,0,0.7);border-color:#FFB000}
+  50%{box-shadow:0 0 0 10px rgba(255,176,0,0);border-color:#fff}
+}
+.disclaimer-gate.disclaimer-flash{animation:disclaimer-pulse 0.6s ease-in-out 2}
+.disclaimer-gate label{display:flex;gap:10px;align-items:flex-start;cursor:pointer;font-size:12px;color:#ddd;line-height:1.6}
+.disclaimer-gate input[type=checkbox]{width:18px;height:18px;flex-shrink:0;margin-top:1px;accent-color:#FFB000;cursor:pointer}
+.disclaimer-gate a{color:#00F0FF}
+
+/* FOOTER DISCLAIMER */
+.foot-disclaimer{background:#c3c3c3;border:2px inset #fff;margin:1.5rem auto 0;padding:12px 16px;font-family:'VT323',monospace;font-size:12.5px;color:#333;line-height:1.6}
+
+.proof-caption{color:#bbb;font-size:13px;margin-top:12px;font-style:italic;line-height:1.6}
+
+/* LIP GLOSS ANALOGY MOTION GRAPHIC */
+.lg-stage{position:relative;max-width:360px;margin:0 auto;min-height:260px}
+.lg-scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.6s ease;text-align:center}
+.lg-scene.active{opacity:1;pointer-events:auto}
+.lg-tube-wrap{position:relative;height:110px;display:flex;align-items:flex-end;justify-content:center;margin-bottom:12px}
+.lg-tube{display:flex;flex-direction:column;align-items:center;transition:transform 0.4s ease}
+.lg-tube-cap{width:34px;height:20px;border-radius:6px 6px 3px 3px;background:#D4AC5C}
+.lg-tube-body{width:26px;height:70px;border-radius:4px 4px 10px 10px;background:var(--lg-color,#C4727A);margin-top:-2px;box-shadow:inset -4px 0 6px rgba(0,0,0,0.15)}
+.lg-tube-normal{--lg-color:#C4727A}
+.lg-tube-hot{--lg-color:#FF1493;transform:scale(1.08)}
+.lg-tube-dead{--lg-color:#5a4a52;opacity:0.55}
+.lg-fire{position:absolute;top:-8px;right:38%;font-size:22px;animation:lgBounce 1s ease-in-out infinite}
+.lg-dust{position:absolute;top:-4px;right:36%;font-size:20px;opacity:0.7}
+@keyframes lgBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.lg-tag{font-family:'VT323',monospace;font-size:15px;color:#ccc;margin-bottom:8px}
+.lg-tag-up{color:#39FF14}
+.lg-tag-down{color:#ff6a6a}
+.lg-zone-label{font-weight:800;font-size:14px;padding:4px 12px;border-radius:6px;margin-bottom:8px}
+.lg-zone-demand{background:#39FF14;color:#062b00}
+.lg-zone-supply{background:#ff6a6a;color:#3a0505}
+.lg-caption{color:#aaa;font-size:12.5px;max-width:280px;line-height:1.6}
+.lg-tieback{color:#fff;font-size:18px;font-weight:700;line-height:1.6;padding:0 1rem}
+.lg-dots{position:absolute;bottom:-28px;left:0;right:0;display:flex;justify-content:center;gap:8px}
+.lg-dot{width:8px;height:8px;border-radius:50%;background:#444;cursor:pointer;transition:background 0.3s}
+.lg-dot.active{background:#00F0FF}
+
+/* WAITLIST MODAL — fallback if checkout has an issue */
+.waitlist-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1000;align-items:center;justify-content:center;padding:16px}
+.waitlist-overlay.open{display:flex}
+.waitlist-modal{background:#c3c3c3;border:2px solid #fff;box-shadow:2px 2px 0 #000, inset -1px -1px 0 #808080, inset 1px 1px 0 #dfdfdf;max-width:340px;width:100%}
+.waitlist-body{padding:16px;background:#111}
+.waitlist-copy{color:#ddd;font-size:13px;line-height:1.6;margin-bottom:12px}
+.waitlist-input{width:100%;padding:10px 12px;border-radius:5px;border:2px inset #8a8372;font-family:'Comic Neue',cursive;font-size:16px;margin-bottom:10px}
+.waitlist-success{display:none;text-align:center;color:#39FF14;font-weight:700;padding:6px 0}
+
+/* FLOATING CALCULATOR ICON */
+.calc-fab{position:fixed;bottom:52px;right:16px;z-index:50;width:50px;height:50px;border-radius:50%;background:linear-gradient(180deg,#e8e2d4,#c4bdac);border:2px outset #f0eade;font-size:22px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.4)}
+.calc-fab:active{border-style:inset}
+.calc-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1000;align-items:center;justify-content:center;padding:16px}
+.calc-overlay.open{display:flex}
+
+.freebie-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:1100;align-items:center;justify-content:center;padding:16px}
+.freebie-overlay.open{display:flex}
+.freebie-modal{background:linear-gradient(160deg,#0d1f0d,#000);border:3px solid #39FF14;border-radius:14px;padding:1.75rem;max-width:420px;width:100%;text-align:center;position:relative}
+.freebie-modal-close{position:absolute;top:10px;right:14px;background:none;border:none;color:#888;font-size:20px;cursor:pointer}
+.freebie-modal h3{font-family:'VT323',monospace;font-size:26px;color:#39FF14;margin-bottom:6px}
+.freebie-modal p{color:#eee;font-size:14px;line-height:1.6;margin-bottom:1rem}
+.calc-modal{background:#c3c3c3;border:2px solid #fff;box-shadow:2px 2px 0 #000, inset -1px -1px 0 #808080, inset 1px 1px 0 #dfdfdf;max-width:280px;width:100%}
+.calc-modal .win-body{padding:12px;background:#111}
+.calc-body{background:linear-gradient(160deg,#d8d2c4,#c4bdac);border:2px solid #8a8372;border-radius:8px;padding:0.6rem;box-shadow:inset 0 1px 2px rgba(255,255,255,0.4), inset 0 -2px 3px rgba(0,0,0,0.15), 0 2px 6px rgba(0,0,0,0.3);max-width:190px;margin:0 auto}
+.calc-mode-toggle{display:flex;gap:3px;margin-bottom:6px}
+.calc-mode-btn{flex:1;background:#b8b0a0;border:1px outset #e8e2d4;border-radius:4px;padding:4px 3px;font-size:7px;font-weight:700;color:#3a3428;cursor:pointer;font-family:'Comic Neue',cursive;line-height:1.2}
+.calc-mode-btn.active{background:#39FF14;border-color:#8fff6b;box-shadow:inset 0 0 4px rgba(0,0,0,0.2)}
+.calc-screen{background:#0a1a0a;border:2px inset #6a6458;border-radius:4px;padding:5px 7px;margin-bottom:7px;text-align:right}
+.calc-screen-label{font-family:'VT323',monospace;font-size:8px;color:#4a9a4a;letter-spacing:0.08em;text-align:left}
+.calc-screen-main{font-family:'VT323',monospace;font-size:17px;color:#39FF14;text-shadow:0 0 4px rgba(57,255,20,0.6);line-height:1.15;overflow-wrap:break-word}
+.calc-screen-sub{font-family:'VT323',monospace;font-size:8px;color:#3a8a3a}
+.calc-inputs{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:7px}
+.calc-input-group label{display:block;font-size:6.5px;color:#4a4436;font-weight:700;margin-bottom:2px;font-family:'Comic Neue',cursive}
+.calc-field{width:100%;padding:4px 5px;border-radius:3px;border:1px inset #8a8372;background:#f4f0e6;font-family:'VT323',monospace;font-size:10px;color:#2a2418}
+.calc-keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.calc-key{background:linear-gradient(180deg,#e8e2d4,#c4bdac);border:1px outset #f0eade;border-radius:4px;padding:6px 0;font-family:'VT323',monospace;font-size:11px;font-weight:700;color:#2a2418;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,0.2)}
+.calc-key:active{border-style:inset;transform:translateY(1px)}
+.calc-key-clear{background:linear-gradient(180deg,#ff8a7a,#e05a4a);color:#fff}
+
+@media(max-width:640px){
+  .desktop-icons{display:none}
+  .win-titlebar{font-size:12px}
+  .taskbar-item{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="desktop-icons">
+  <button class="d-icon" onclick="document.getElementById('section-roadmap').scrollIntoView({behavior:'smooth'})">
+    <div class="d-icon-emoji">🗺️</div>Roadmap
+  </button>
+  <button class="d-icon" onclick="document.getElementById('section-community').scrollIntoView({behavior:'smooth'})">
+    <div class="d-icon-emoji">💬</div>Community
+  </button>
+  <a class="d-icon" href="blog/index.html" style="text-decoration:none">
+    <div class="d-icon-emoji">📝</div>Blog
+  </a>
+  <button class="d-icon" onclick="document.querySelector('.foot-disclaimer').scrollIntoView({behavior:'smooth'})">
+    <div class="d-icon-emoji">🗑️</div>Disclaimer
+  </button>
+</div>
+
+<button class="calc-fab" onclick="openCalcModal()" aria-label="Open calculator">🖩</button>
+
+<div class="content">
+
+  <!-- ============ TICKER TAPE ============ -->
+  <div class="ticker-tape">
+    <div class="ticker-track">
+      <span class="ticker-item"><span class="ticker-sym">$WFC</span> <span class="ticker-up">▲ +2.4%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">$SPY</span> <span class="ticker-up">▲ +0.8%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">$AAPL</span> <span class="ticker-down">▼ -1.2%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">$C</span> <span class="ticker-up">▲ +3.1%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">$IWM</span> <span class="ticker-down">▼ -0.5%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">$QQQ</span> <span class="ticker-up">▲ +1.7%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">$WFC</span> <span class="ticker-up">▲ +2.4%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">$SPY</span> <span class="ticker-up">▲ +0.8%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">$AAPL</span> <span class="ticker-down">▼ -1.2%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">$C</span> <span class="ticker-up">▲ +3.1%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">$IWM</span> <span class="ticker-down">▼ -0.5%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">$QQQ</span> <span class="ticker-up">▲ +1.7%</span></span>
+    </div>
+  </div>
+
+  <!-- ============ HERO — VIDEO ============ -->
+  <div class="win95-window" id="section-hero">
+    <div class="win-titlebar">
+      <div class="win-title-left"><div class="win-icon"></div> DotComTrading.exe — [Running]</div>
+      <div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div>
+    </div>
+    <div class="win-body" style="padding:0">
+      <div class="myspace-hero">
+        <div class="dc-wordmark"><span class="bling">DOTCOM</span> <span style="color:#00F0FF">TRADING</span></div>
+        <div class="dc-byline">by remoteblackgirl</div>
+        <div class="hero-eyebrow">&gt; i didn't know you could make money online trading stock options</div>
+        <div class="hero-eyebrow" style="color:#00F0FF;text-shadow:0 0 5px rgba(0,240,255,0.4)">and then i found supply and demand zones</div>
+        <h1 class="hero-h1">Watch me set up my charts</h1>
+
+        <div class="new-video-label">🎥 NEW — Robinhood Legend Desktop Tour</div>
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/24GwczpkzPo" title="Robinhood Legend Desktop Tour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="new-video-label" style="margin-top:1.25rem">📌 how i set up my charts</div>
+        <div class="video-frame">
+          <div id="hero-yt-player"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ WHO THIS IS FOR ============ -->
+  <div class="win95-window" id="section-fit">
+    <div class="win-titlebar">
+      <div class="win-title-left"><div class="win-icon"></div> is_this_for_you.exe</div>
+      <div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div>
+    </div>
+    <div class="win-body" style="background:#0d0d0d">
+      <div class="section-title">🧭 read this before you go any further</div>
+
+      <div class="fit-grid">
+        <div class="fit-col fit-yes">
+          <div class="fit-col-title">✅ this is for you if</div>
+          <ul class="fit-list">
+            <li>You're starting from zero and tired of feeling behind</li>
+            <li>You want real financial confidence, not just hype</li>
+            <li>You're willing to actually put in the work — practice, repetition, real reps</li>
+            <li>Nobody ever explained money to you in plain language, and you're done waiting for that</li>
+            <li>You want a real skill, not a lucky flip</li>
+          </ul>
+        </div>
+        <div class="fit-col fit-no">
+          <div class="fit-col-title">❌ this is NOT for you if</div>
+          <ul class="fit-list">
+            <li>You want a guaranteed win or a "get rich quick" system</li>
+            <li>You're not willing to lose money while you learn</li>
+            <li>You want someone else to trade for you</li>
+            <li>You're chasing hype, signals, or a guru to blindly follow</li>
+            <li>You expect results without doing the actual work</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="journey-text" style="text-align:center;font-size:12.5px;margin-top:1rem">If that first column is you — keep scrolling. This was built for you.</p>
+    </div>
+  </div>
+
+  <!-- ============ POST-CHECKOUT UNLOCK VERIFICATION BANNER ============ -->
+  <div class="win95-window" id="unlock-verify-banner" style="display:none;border:3px solid #39FF14">
+    <div class="win-titlebar" style="background:linear-gradient(90deg,#0a3d0a,#1a7a1a)">
+      <div class="win-title-left"><div class="win-icon"></div> payment_received.exe</div>
+    </div>
+    <div class="win-body" style="background:#0d0d0d;text-align:center">
+      <p class="journey-text" id="unlock-verify-message">🎉 Payment received! Enter the email you used at checkout to unlock your roadmap.</p>
+      <div id="unlock-verify-form-area">
+        <form class="freebie-form" onsubmit="verifyRoadmapEmail(event)">
+          <input type="email" id="unlock-verify-email" class="freebie-input" placeholder="your best email" required>
+          <button type="submit" class="glossy-btn green">unlock my roadmap →</button>
+        </form>
+      </div>
+      <p class="proof-caption" id="unlock-verify-error" style="display:none;color:#ff6a6a">No access found for that email yet — payments can take a few seconds to process. Try again shortly, or refresh this page.</p>
+    </div>
+  </div>
+
+  <!-- ============ THE ROADMAP ============ -->
+  <div class="win95-window" id="section-roadmap">
+    <div class="win-titlebar">
+      <div class="win-title-left"><div class="win-icon"></div> roadmap.exe</div>
+      <div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div>
+    </div>
+    <div class="win-body" style="background:#0d0d0d">
+      <div class="section-title cyan">🗺️ the options trading roadmap</div>
+      <p class="journey-text">Everything you need to know, in order. Click a step to open it, check it off as you go.</p>
+
+      <div class="roadmap-progress">
+        <div class="roadmap-progress-bar"><div class="roadmap-progress-fill" id="roadmap-progress-fill"></div></div>
+        <div class="roadmap-progress-label" id="roadmap-progress-label">0 of 10 steps complete</div>
+      </div>
+
+      <div class="disclaimer-gate">
+        <label>
+          <input type="checkbox" id="disclaimer-check">
+          <span>I understand this is educational content, not personalized financial advice. Trading involves risk of loss. All decisions and results are my own responsibility. <a href="#disclaimer-full">Read full disclaimer</a>.</span>
+        </label>
+      </div>
+
+      <div class="roadmap-list">
+
+        <!-- STEP 1 — FREE: Trading Philosophy -->
+        <div class="roadmap-step unlocked">
+          <button class="roadmap-step-header" onclick="toggleStepBody('step-body-1')">
+            <span class="roadmap-step-num">1</span>
+            <span class="roadmap-step-title">Start Here — My Trading Philosophy</span>
+            <span class="roadmap-step-status">🆓</span>
+          </button>
+          <div class="roadmap-step-body" id="step-body-1">
+            <p class="journey-text" style="font-size:13px;font-weight:700;color:#fff">"I gotta learn to read the charts. Do you have any beginner tips?"</p>
+            <p class="journey-text" style="font-size:12.5px">Yes — and it starts here. It took me a year of studying, testing, wins and losses to get where I am. Here's the framework I built along the way.</p>
+
+            <div class="my-system-note">
+              <strong>⚠ Quick heads up:</strong> this is <em>my</em> system — what worked for me, on my own journey. It's not guaranteed, it's not the only way to trade, and it's not personalized advice for you specifically. I'm one trader sharing what I've learned, peer to peer — not promising you'll get my results.
+            </div>
+
+            <ul class="philosophy-list">
+              <li>Supply and demand is more stable and logical</li>
+              <li>Learning how to chart is step 1 of good trading</li>
+              <li>There are no shortcuts</li>
+              <li>You will lose money — and then you will slowly make it back</li>
+              <li>Being grateful for the small wins allows space to be grateful for the big ones</li>
+              <li>Follow the banks — they're the ones with the money</li>
+            </ul>
+
+            <div id="philosophy-teaser">
+              <p class="journey-text" style="text-align:center;font-size:12.5px">Read my full trading philosophy — free, just drop your email.</p>
+              <form class="freebie-form" onsubmit="handlePhilosophyUnlock(event)">
+                <input type="email" id="philosophy-email" class="freebie-input" placeholder="your best email" required>
+                <button type="submit" class="glossy-btn green">🔓 unlock the full philosophy →</button>
+              </form>
+            </div>
+
+            <div id="philosophy-full" style="display:none">
+              <div class="philosophy-expanded">
+                <h4>1. Supply and demand is more stable and logical</h4>
+                <p>Price patterns built on real buying and selling behavior hold up better than chasing hype or headlines. Zones give you a reason for every trade, not just a feeling.</p>
+                <h4>2. Learning how to chart is step 1 of good trading</h4>
+                <p>Before strategy, before options, before any of it — you have to be able to read a chart. Everything else builds on that one skill.</p>
+                <h4>3. There are no shortcuts</h4>
+                <p>No signal group, no bot, no "secret" replaces actually understanding what you're looking at. The people who last are the ones who put in the reps.</p>
+                <h4>4. You will lose money — and then you will slowly make it back</h4>
+                <p>Losses are part of the process, not a sign you're doing it wrong. What matters is what you do after — adjust, keep records, keep showing up.</p>
+                <h4>5. Being grateful for the small wins allows space to be grateful for the big ones</h4>
+                <p>If a $47 win doesn't feel like a win, a $470 one won't either. Gratitude at every size keeps you consistent instead of chasing.</p>
+                <h4>6. Follow the banks — they're the ones with the money</h4>
+                <p>Retail traders move on emotion. Institutions move on liquidity and price levels. Reading zones is really just reading where the big money already is.</p>
+              </div>
+              <button class="glossy-btn cyan roadmap-step-complete-btn" onclick="setStepComplete(1, true); this.textContent='✓ marked complete'">mark complete</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2 — FREE: How Zones Work -->
+        <div class="roadmap-step unlocked">
+          <button class="roadmap-step-header" onclick="toggleStepBody('step-body-2')">
+            <span class="roadmap-step-num">2</span>
+            <span class="roadmap-step-title">How Zones Work — Supply &amp; Demand, Explained</span>
+            <span class="roadmap-step-status">🆓</span>
+          </button>
+          <div class="roadmap-step-body" id="step-body-2">
+            <div class="lg-stage">
+              <div class="lg-scene active" id="lg-scene-0">
+                <div class="lg-tube-wrap">
+                  <div class="lg-tube lg-tube-normal">
+                    <div class="lg-tube-cap"></div>
+                    <div class="lg-tube-body"></div>
+                  </div>
+                </div>
+                <div class="lg-tag">$12 · in stock everywhere</div>
+                <div class="lg-caption">Just a normal lip gloss. Nobody's thinking about it.</div>
+              </div>
+
+              <div class="lg-scene" id="lg-scene-1">
+                <div class="lg-tube-wrap">
+                  <div class="lg-tube lg-tube-hot">
+                    <div class="lg-tube-cap"></div>
+                    <div class="lg-tube-body"></div>
+                  </div>
+                  <span class="lg-fire">🔥</span>
+                </div>
+                <div class="lg-tag lg-tag-up">SOLD OUT → reselling for $45</div>
+                <div class="lg-zone-label lg-zone-demand">📈 THIS IS A DEMAND ZONE</div>
+                <div class="lg-caption">Everyone wants in. Price can't drop — there's nothing left to sell.</div>
+              </div>
+
+              <div class="lg-scene" id="lg-scene-2">
+                <div class="lg-tube-wrap">
+                  <div class="lg-tube lg-tube-dead">
+                    <div class="lg-tube-cap"></div>
+                    <div class="lg-tube-body"></div>
+                  </div>
+                  <span class="lg-dust">💤</span>
+                </div>
+                <div class="lg-tag lg-tag-down">6 months later → clearance, $4</div>
+                <div class="lg-zone-label lg-zone-supply">📉 THIS IS A SUPPLY ZONE</div>
+                <div class="lg-caption">Nobody wants out. Price can't hold — everyone's trying to sell.</div>
+              </div>
+
+              <div class="lg-scene" id="lg-scene-3">
+                <div class="lg-tieback">Stocks work exactly the same way.<br>Zones just show you where the crowd is stuck.</div>
+              </div>
+
+              <div class="lg-dots">
+                <span class="lg-dot active" data-scene="0"></span>
+                <span class="lg-dot" data-scene="1"></span>
+                <span class="lg-dot" data-scene="2"></span>
+                <span class="lg-dot" data-scene="3"></span>
+              </div>
+            </div>
+
+            <img src="zone-steps.png" alt="How to draw supply and demand zones — step by step" style="width:100%;border-radius:8px;border:2px solid #333;margin-top:1rem">
+
+            <button class="glossy-btn cyan roadmap-step-complete-btn" onclick="setStepComplete(2, true); this.textContent='✓ marked complete'">mark complete</button>
+          </div>
+        </div>
+
+        <!-- STEPS 3-9 — LOCKED VIDEO STEPS, rendered by JS -->
+        <div id="roadmap-video-steps"></div>
+
+        <!-- STEP 10 — 1:1 SESSION -->
+        <div class="roadmap-step" id="step-oneonone">
+          <button class="roadmap-step-header" onclick="toggleStepBody('step-body-10')">
+            <span class="roadmap-step-num">10</span>
+            <span class="roadmap-step-title">Graduate — Book Your 1:1</span>
+            <span class="roadmap-step-status">🎓</span>
+          </button>
+          <div class="roadmap-step-body" id="step-body-10">
+            <div class="price-card" style="padding:1.1rem;border-color:#00F0FF;max-width:340px;margin:0 auto">
+              <div class="price-tag" style="color:#00F0FF">1:1 session</div>
+              <div class="price-amount" style="font-size:28px">$150<span>/session</span></div>
+              <div class="price-sub">the price of your first trade</div>
+              <ul class="price-features">
+                <li>MY strategy</li>
+                <li>MY why</li>
+                <li>MY philosophy</li>
+                <li>MY bot — the tool behind 30 straight days of green trades, and how it works</li>
+              </ul>
+              <button class="glossy-btn cyan" id="oneonone-btn" onclick="bookOneOnOne()" style="margin-top:8px">book a session →</button>
+            </div>
+            <p class="proof-caption" style="text-align:center;margin-top:8px">💳 secure checkout via Stripe</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- GLOBAL ROADMAP UNLOCK CTA -->
+      <div class="bundle-cta" id="roadmap-unlock-cta">
+        <div class="bundle-title">🔓 unlock the full roadmap — 🎂 birthday sale</div>
+        <div class="bundle-price">$8.18<span>one-time — steps 3–9 instantly</span></div>
+        <button class="glossy-btn green" id="unlock-cta-btn" onclick="unlockRoadmap()">unlock now →</button>
+      </div>
+
+      <p class="proof-caption" style="text-align:center;margin-top:10px">Already unlocked on another device? <a href="access.html?video_id=all-access" style="color:#00F0FF">verify your access →</a></p>
+    </div>
+  </div>
+
+  <!-- ============ ZONE & TRADE — MONTHLY BOT SUBSCRIPTION (hidden until set up) ============ -->
+  <div class="win95-window" id="section-bot" style="display:none">
+    <div class="win-titlebar">
+      <div class="win-title-left"><div class="win-icon"></div> zone_and_trade.exe</div>
+      <div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div>
+    </div>
+    <div class="win-body" style="background:#0d0d0d">
+      <div class="section-title cyan">🤖 zone &amp; trade — the bot I actually built and use</div>
+      <p class="journey-text">Live zone detection, an options pricing model, and watchlist alerts — the tool version of everything you just learned. It's not a signals group. It's the analysis running in the background so you don't have to do it by hand every time.</p>
+
+      <div class="bot-pricing" id="bot-pricing">
+        <div class="bot-price-loading" id="bot-price-loading">checking founding member spots...</div>
+      </div>
+
+      <div id="bot-subscribe-form" style="display:none;text-align:center;margin-top:1rem">
+        <input type="email" id="bot-checkout-email" class="freebie-input" placeholder="your best email" style="max-width:320px">
+        <div style="margin-top:10px">
+          <button class="glossy-btn green" onclick="subscribeToBot()">subscribe →</button>
+        </div>
+      </div>
+
+      <p class="proof-caption" style="text-align:center;margin-top:10px">Already subscribed? <a href="#" onclick="manageBotSubscription(event)" style="color:#00F0FF">manage your subscription →</a></p>
+    </div>
+  </div>
+
+  <!-- ============ COMMUNITY — ASYNC, NO LIVE TRADING ============ -->
+  <div class="win95-window" id="section-community">
+    <div class="win-titlebar">
+      <div class="win-title-left"><div class="win-icon"></div> community.exe</div>
+      <div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div>
+    </div>
+    <div class="win-body" style="background:#0d0d0d">
+      <div class="section-title">💬 come talk trading with us</div>
+      <p class="journey-text">No live trading, no pressure, no getting picked apart in real time. Just a space to ask questions, share wins and losses, and learn alongside people doing the same thing you are.</p>
+      <div style="text-align:center;margin-top:1rem">
+        <a href="https://discord.gg/Nz4MvKHGE" id="discord-join-link" class="glossy-btn cyan" style="display:inline-block;width:auto;padding:12px 28px;text-decoration:none" target="_blank" rel="noopener" onclick="if(typeof gtag==='function') gtag('event','discord_click')">💬 join the Discord →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TRADING CALCULATOR — modal, opened via the floating icon ============ -->
+  <div class="calc-overlay" id="calc-overlay">
+    <div class="calc-modal">
+      <div class="win-titlebar">
+        <div class="win-title-left"><div class="win-icon"></div> calculator.exe</div>
+        <div class="win-controls"><span class="win-btn" onclick="closeCalcModal()">✕</span></div>
+      </div>
+      <div class="win-body" style="background:#0d0d0d">
+        <div class="section-title cyan" style="font-size:14px;padding:3px 10px">🖩 quick calculator</div>
+        <p class="journey-text" style="font-size:12px">Just a fun little tool — pick a direction below.</p>
+
+        <div class="calc-body">
+          <div class="calc-mode-toggle">
+            <button class="calc-mode-btn active" id="mode-forward-btn" onclick="setCalcMode('forward')">I have money to start</button>
+            <button class="calc-mode-btn" id="mode-reverse-btn" onclick="setCalcMode('reverse')">I have a goal amount</button>
+          </div>
+
+          <div class="calc-screen">
+            <div class="calc-screen-label" id="calc-label-line">STARTING AMOUNT</div>
+            <div class="calc-screen-main" id="calc-display">$0.00</div>
+            <div class="calc-screen-sub" id="calc-sub-display">at 0% gain</div>
+          </div>
+
+          <div class="calc-inputs">
+            <div class="calc-input-group">
+              <label id="calc-amount-label">Starting amount ($)</label>
+              <input type="number" id="calc-amount" class="calc-field" placeholder="100" value="100" oninput="runCalc()">
+            </div>
+            <div class="calc-input-group">
+              <label>Gain (%)</label>
+              <input type="number" id="calc-gain" class="calc-field" placeholder="25" value="25" oninput="runCalc()">
+            </div>
+          </div>
+
+          <div class="calc-keypad">
+            <button class="calc-key" onclick="calcKeyPress('7')">7</button>
+            <button class="calc-key" onclick="calcKeyPress('8')">8</button>
+            <button class="calc-key" onclick="calcKeyPress('9')">9</button>
+            <button class="calc-key" onclick="calcKeyPress('4')">4</button>
+            <button class="calc-key" onclick="calcKeyPress('5')">5</button>
+            <button class="calc-key" onclick="calcKeyPress('6')">6</button>
+            <button class="calc-key" onclick="calcKeyPress('1')">1</button>
+            <button class="calc-key" onclick="calcKeyPress('2')">2</button>
+            <button class="calc-key" onclick="calcKeyPress('3')">3</button>
+            <button class="calc-key" onclick="calcKeyPress('0')">0</button>
+            <button class="calc-key" onclick="calcKeyPress('.')">.</button>
+            <button class="calc-key calc-key-clear" onclick="calcClear()">C</button>
+          </div>
+        </div>
+
+        <p class="proof-caption">⚠ Illustrative math only. Real trading has real risk — gains are never guaranteed, and losses are possible. This is a calculator, not a promise.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FREEBIE POPUP — "Broke to Bullish" PDF ============ -->
+  <div class="freebie-overlay" id="freebie-overlay">
+    <div class="freebie-modal">
+      <button class="freebie-modal-close" onclick="closeFreebieModal()">✕</button>
+      <h3>hey sis! 👋</h3>
+      <p>welcome to the stock market. everything you need to know to go from broke to bullish — free.</p>
+
+      <div id="freebie-form-area">
+        <input type="email" id="freebie-popup-email" class="freebie-input" placeholder="your best email">
+        <div style="margin-top:10px">
+          <button class="glossy-btn green" id="freebie-claim-btn" onclick="claimFreebie()">get the free guide →</button>
+        </div>
+        <p class="proof-caption" id="freebie-error" style="display:none;color:#ff6a6a;margin-top:8px"></p>
+      </div>
+      <div id="freebie-success" style="display:none">
+        <p style="color:#39FF14;font-weight:700">✅ Check your downloads — grab it below.</p>
+        <a href="broke-to-bullish.pdf" download class="glossy-btn cyan" style="display:inline-block;width:auto;padding:10px 24px;text-decoration:none;margin-top:8px">⬇ download the guide</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ WAITLIST MODAL (fallback if checkout has an issue) ============ -->
+  <div class="waitlist-overlay" id="waitlist-overlay">
+    <div class="waitlist-modal">
+      <div class="win-titlebar">
+        <div class="win-title-left"><div class="win-icon"></div> notify_me.exe</div>
+        <div class="win-controls"><span class="win-btn" onclick="closeWaitlistModal()">✕</span></div>
+      </div>
+      <div class="waitlist-body">
+        <div id="waitlist-form-area">
+          <p class="waitlist-copy" id="waitlist-copy-text">This isn't hooked up to checkout yet — drop your email and I'll notify you the second it's live.</p>
+          <input type="email" id="waitlist-email" class="waitlist-input" placeholder="your best email">
+          <button class="glossy-btn cyan" onclick="submitWaitlist()">notify me →</button>
+        </div>
+        <div id="waitlist-success" class="waitlist-success">
+          ✅ You're on the list — I'll email you the second this opens.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ ABOUT ME ============ -->
+  <div class="win95-window" id="section-about">
+    <div class="win-titlebar">
+      <div class="win-title-left"><div class="win-icon"></div> whoami.exe</div>
+      <div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div>
+    </div>
+    <div class="win-body" style="background:#0d0d0d">
+      <div class="section-title">👋 who's actually behind this</div>
+
+      <div class="about-wrap">
+        <ul class="about-facts">
+          <li>🎖️ Navy veteran</li>
+          <li>💼 Marketing account manager</li>
+          <li>🤖 AI enthusiast</li>
+          <li>🏙️ Born and raised on the South Side of Chicago</li>
+          <li>👶 Mother of 1</li>
+        </ul>
+      </div>
+
+      <div style="text-align:center;margin-top:1.25rem">
+        <a href="mailto:pickens.g2012@gmail.com" class="glossy-btn cyan" style="display:inline-block;width:auto;padding:12px 28px;text-decoration:none">✉ email me</a>
+        <p class="proof-caption" style="margin-top:8px">or copy: <span style="color:#00F0FF;font-family:'VT323',monospace;font-size:14px;user-select:all">pickens.g2012@gmail.com</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot-disclaimer" id="disclaimer-full">
+    C:\&gt; DISCLAIMER — Dotcom Trading is educational content shared for informational purposes only. Nothing on this page or shared with members is personalized financial advice, a recommendation to buy or sell any security, or a guarantee of any outcome. Trading options involves substantial risk, including the potential loss of your entire investment. Always do your own research and consult a licensed financial advisor before making investment decisions.
+  </div>
+
+</div>
+
+<div class="taskbar">
+  <div class="start-btn"><span class="start-flag"></span> Start</div>
+  <div class="taskbar-divider"></div>
+  <div class="taskbar-item">💰 dotcomtrading.exe</div>
+  <div class="clock-box" id="clock">12:00 PM</div>
+</div>
+
+<script>
+// ── ROADMAP STEP DATA (steps 3-9, dynamic pricing retired — flat $8.18 unlock only) ──
+const ROADMAP_VIDEO_STEPS=[
+  {id:'wfc-zones', num:3, title:'Marking Supply and Demand Zones on WFC'},
+  {id:'wfc-live', num:4, title:'Watching Wells Fargo Price Action Live'},
+  {id:'candle-formation', num:5, title:'Understanding 10-Minute Candle Formation and Trends'},
+  {id:'options-chains', num:6, title:'How to Read Options Chains for Calls and Puts'},
+  {id:'options-pnl', num:7, title:'Understanding Options Positions and P&L'},
+  {id:'wfc-zones-2', num:8, title:'Marking Wells Fargo Trading Zones'},
+  {id:'bull-pennant', num:9, title:'Protect Profits After Bull Pennant Breakout'}
+];
+
+function getRoadmapAccess(){
+  try{ return JSON.parse(localStorage.getItem('dcRoadmapAccess')||'{}'); }catch(e){ return {}; }
+}
+function getCompletedSteps(){
+  try{ return JSON.parse(localStorage.getItem('dcRoadmapCompleted')||'[]'); }catch(e){ return []; }
+}
+function setStepComplete(num, complete){
+  const done=new Set(getCompletedSteps());
+  if(complete) done.add(num); else done.delete(num);
+  localStorage.setItem('dcRoadmapCompleted', JSON.stringify([...done]));
+  updateProgressBar();
+}
+function updateProgressBar(){
+  const done=getCompletedSteps().length;
+  const pct=Math.round((done/10)*100);
+  document.getElementById('roadmap-progress-fill').style.width=pct+'%';
+  document.getElementById('roadmap-progress-label').textContent=`${done} of 10 steps complete`;
+}
+
+function toggleStepBody(id){
+  document.getElementById(id).classList.toggle('open');
+}
+
+function renderVideoSteps(){
+  const listEl=document.getElementById('roadmap-video-steps');
+  const access=getRoadmapAccess();
+  listEl.innerHTML='';
+
+  ROADMAP_VIDEO_STEPS.forEach(step=>{
+    const unlocked=!!access[step.id];
+    const wrap=document.createElement('div');
+    wrap.className='roadmap-step'+(unlocked ? ' unlocked' : '');
+    wrap.innerHTML=`
+      <button class="roadmap-step-header" onclick="toggleStepBody('step-body-${step.id}')">
+        <span class="roadmap-step-num">${step.num}</span>
+        <span class="roadmap-step-title">${step.title}</span>
+        <span class="roadmap-step-status">${unlocked ? '🔓' : '🔒'}</span>
+      </button>
+      <div class="roadmap-step-body" id="step-body-${step.id}">
+        ${unlocked
+          ? `<div class="video-frame" style="margin-top:0"><iframe src="${access[step.id].loom_url}" allowfullscreen></iframe></div>
+             <button class="glossy-btn cyan roadmap-step-complete-btn" onclick="setStepComplete(${step.num}, true); this.textContent='✓ marked complete'">mark complete</button>`
+          : `<p class="roadmap-locked-note">🔒 Unlocks with the full roadmap — <a href="#roadmap-unlock-cta">see below ↓</a></p>`
+        }
+      </div>`;
+    listEl.appendChild(wrap);
+  });
+
+  const allUnlocked = ROADMAP_VIDEO_STEPS.every(s => !!access[s.id]);
+  const ctaEl = document.getElementById('roadmap-unlock-cta');
+  if(ctaEl) ctaEl.style.display = allUnlocked ? 'none' : 'block';
+}
+
+function requireDisclaimerAccepted(){
+  const checked=document.getElementById('disclaimer-check').checked;
+  if(!checked){
+    const gate=document.querySelector('.disclaimer-gate');
+    gate.scrollIntoView({behavior:'smooth', block:'center'});
+    gate.classList.remove('disclaimer-flash'); // restart animation if clicked twice
+    void gate.offsetWidth; // force reflow so the animation can replay
+    gate.classList.add('disclaimer-flash');
+  }
+  return checked;
+}
+
+async function unlockRoadmap(){
+  if(!requireDisclaimerAccepted()) return;
+  if(typeof gtag==='function') gtag('event','buy_intent', {product_id:'all-access', product_label:'Full Roadmap Unlock'});
+  try{
+    const res=await fetch('/.netlify/functions/create-checkout', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({video_id:'all-access'})
+    });
+    if(!res.ok) throw new Error('checkout endpoint returned an error');
+    const data=await res.json();
+    window.location.href=data.url;
+  } catch(e){
+    openWaitlistModal('all-access', 'Full Roadmap Unlock');
+  }
+}
+
+async function bookOneOnOne(){
+  if(!requireDisclaimerAccepted()) return;
+  if(typeof gtag==='function') gtag('event','buy_intent', {product_id:'oneonone', product_label:'1:1 session'});
+  setStepComplete(10, true);
+  try{
+    const res=await fetch('/.netlify/functions/create-oneonone-checkout', { method:'POST' });
+    if(!res.ok) throw new Error('checkout endpoint returned an error');
+    const data=await res.json();
+    window.location.href=data.url;
+  } catch(e){
+    openWaitlistModal('oneonone','a 1:1 session');
+  }
+}
+
+async function verifyEmailAndUnlock(email){
+  localStorage.setItem('dcRoadmapEmail', email);
+
+  const results={};
+  for(const step of ROADMAP_VIDEO_STEPS){
+    try{
+      const res=await fetch(`/.netlify/functions/get-access?video_id=${step.id}&email=${encodeURIComponent(email)}`);
+      if(res.ok){
+        const data=await res.json();
+        results[step.id]={title:data.title, loom_url:data.loom_url};
+      }
+    } catch(e){ /* skip this one, try the rest */ }
+  }
+
+  if(Object.keys(results).length===0){
+    return false;
+  }
+
+  localStorage.setItem('dcRoadmapAccess', JSON.stringify(results));
+  document.getElementById('unlock-verify-banner').style.display='none';
+  renderVideoSteps();
+  if(typeof gtag==='function') gtag('event','roadmap_unlocked_verified');
+  return true;
+}
+
+async function verifyRoadmapEmail(event){
+  event.preventDefault();
+  const email=document.getElementById('unlock-verify-email').value.trim().toLowerCase();
+  if(!email) return;
+  const success=await verifyEmailAndUnlock(email);
+  if(!success) document.getElementById('unlock-verify-error').style.display='block';
+}
+
+async function checkUrlForUnlock(){
+  const params=new URLSearchParams(window.location.search);
+  if(params.get('unlocked')!=='1') return;
+
+  const banner=document.getElementById('unlock-verify-banner');
+  const sessionId=params.get('session_id');
+
+  // If we have a session_id, try to auto-detect the email so the person never has to
+  // type anything right after paying. Only fall back to the manual form if that fails.
+  if(sessionId){
+    banner.style.display='block';
+    banner.scrollIntoView({behavior:'smooth'});
+    const msg=document.getElementById('unlock-verify-message');
+    if(msg) msg.textContent='🎉 Payment received! Unlocking your roadmap automatically...';
+    const formArea=document.getElementById('unlock-verify-form-area');
+    if(formArea) formArea.innerHTML='<p style="font-size:12.5px;color:#999">Confirming your purchase...</p>';
+
+    try{
+      const res=await fetch(`/.netlify/functions/verify-session?session_id=${encodeURIComponent(sessionId)}`);
+      if(res.ok){
+        const data=await res.json();
+        const success=await verifyEmailAndUnlock(data.email);
+        if(success) return; // done — banner already hidden, videos already unlocked
+      }
+    } catch(e){ /* fall through to manual form below */ }
+
+    // Auto-detect failed for some reason — restore the manual form so they can still unlock themselves.
+    if(msg) msg.textContent='🎉 Payment received! Enter the email you used at checkout to unlock your roadmap.';
+    if(formArea) formArea.innerHTML='<input type="email" id="unlock-verify-email" class="freebie-input" placeholder="the email you paid with" required><button class="glossy-btn cyan" onclick="verifyRoadmapEmail(event)" style="margin-top:8px">verify &amp; unlock →</button>';
+    return;
+  }
+
+  banner.style.display='block';
+  banner.scrollIntoView({behavior:'smooth'});
+}
+
+renderVideoSteps();
+updateProgressBar();
+checkUrlForUnlock();
+
+// ── ZONE & TRADE — subscription pricing + checkout ──
+async function loadBotPricing(){
+  const container=document.getElementById('bot-pricing');
+  try{
+    const res=await fetch('/.netlify/functions/get-founding-count');
+    if(!res.ok) throw new Error('pricing check failed');
+    const data=await res.json();
+
+    if(data.foundingAvailable){
+      container.innerHTML=`
+        <div class="bot-price-card founding">
+          <div class="bot-price-badge">🎂 FOUNDING MEMBER PRICING</div>
+          <div class="bot-price-amount">$9<span>/mo, locked in for life</span></div>
+          <div class="bot-price-spots">${data.remaining} of ${data.cap} spots left</div>
+        </div>`;
+    } else {
+      container.innerHTML=`
+        <div class="bot-price-card">
+          <div class="bot-price-amount">$19<span>/mo</span></div>
+          <div class="bot-price-spots" style="color:#999">founding member pricing is sold out</div>
+        </div>`;
+    }
+    document.getElementById('bot-subscribe-form').style.display='block';
+  } catch(e){
+    container.innerHTML='<p class="proof-caption" style="color:#ff6a6a">Could not load pricing — refresh to try again.</p>';
+  }
+}
+loadBotPricing();
+
+async function subscribeToBot(){
+  const email=document.getElementById('bot-checkout-email').value.trim().toLowerCase();
+  if(!email) return;
+  if(typeof gtag==='function') gtag('event','buy_intent', {product_id:'bot-subscription', product_label:'Zone & Trade'});
+  try{
+    const res=await fetch('/.netlify/functions/create-bot-checkout', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({email})
+    });
+    if(!res.ok) throw new Error('checkout endpoint returned an error');
+    const data=await res.json();
+    window.location.href=data.url;
+  } catch(e){
+    openWaitlistModal('bot-subscription', 'Zone & Trade');
+  }
+}
+
+async function manageBotSubscription(event){
+  event.preventDefault();
+  const email=prompt("Enter the email you subscribed with:");
+  if(!email) return;
+  try{
+    const res=await fetch('/.netlify/functions/create-portal-session', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({email: email.trim().toLowerCase()})
+    });
+    if(!res.ok) throw new Error('portal session failed');
+    const data=await res.json();
+    window.location.href=data.url;
+  } catch(e){
+    alert("Couldn't find a subscription for that email. Double check it, or email pickens.g2012@gmail.com.");
+  }
+}
+
+// ── WAITLIST MODAL — fallback capture if checkout fails ──
+let waitlistProductId=null;
+let waitlistProductLabel=null;
+
+function openWaitlistModal(productId, productLabel){
+  waitlistProductId=productId;
+  waitlistProductLabel=productLabel;
+  document.getElementById('waitlist-copy-text').textContent =
+    `"${productLabel}" isn't hooked up to checkout yet — drop your email and I'll notify you the second it's live.`;
+  document.getElementById('waitlist-form-area').style.display='block';
+  document.getElementById('waitlist-success').style.display='none';
+  document.getElementById('waitlist-email').value='';
+  document.getElementById('waitlist-overlay').classList.add('open');
+
+  if(typeof gtag==='function') gtag('event','buy_intent', {product_id: productId, product_label: productLabel});
+}
+
+function closeWaitlistModal(){
+  document.getElementById('waitlist-overlay').classList.remove('open');
+}
+
+function submitWaitlist(){
+  const email=document.getElementById('waitlist-email').value;
+  if(!email)return;
+
+  fetch('/.netlify/functions/brevo-subscribe', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({email, tag:'waitlist-'+waitlistProductId})
+  }).catch(()=>{ /* silent */ });
+
+  if(typeof gtag==='function') gtag('event','waitlist_optin', {product_id: waitlistProductId});
+
+  document.getElementById('waitlist-form-area').style.display='none';
+  document.getElementById('waitlist-success').style.display='block';
+}
+
+function handlePhilosophyUnlock(event){
+  event.preventDefault();
+  const email=document.getElementById('philosophy-email').value;
+  if(!email) return;
+
+  fetch('/.netlify/functions/brevo-subscribe', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({email, tag:'freebie-trading-philosophy'})
+  }).catch(()=>{ /* silent — reveal still proceeds even if this fails */ });
+
+  if(typeof gtag==='function') gtag('event','philosophy_unlock', {email_domain: email.split('@')[1]||''});
+
+  document.getElementById('philosophy-teaser').style.display='none';
+  document.getElementById('philosophy-full').style.display='block';
+}
+
+function openCalcModal(){
+  document.getElementById('calc-overlay').classList.add('open');
+  if(typeof gtag==='function') gtag('event','calculator_opened');
+}
+function closeCalcModal(){
+  document.getElementById('calc-overlay').classList.remove('open');
+}
+
+// ── FREEBIE POPUP — "Broke to Bullish" PDF, auto-shows once per visitor ──
+function openFreebieModal(){
+  document.getElementById('freebie-overlay').classList.add('open');
+  if(typeof gtag==='function') gtag('event','freebie_popup_shown');
+}
+function closeFreebieModal(){
+  document.getElementById('freebie-overlay').classList.remove('open');
+  localStorage.setItem('dcFreebieSeen','1');
+}
+
+async function claimFreebie(){
+  const emailInput=document.getElementById('freebie-popup-email');
+  const errorEl=document.getElementById('freebie-error');
+  const btn=document.getElementById('freebie-claim-btn');
+  const email=emailInput.value.trim().toLowerCase();
+
+  // Real format validation — not just "did they type something"
+  const emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!emailPattern.test(email)){
+    errorEl.textContent='That doesn\'t look like a valid email — double check it.';
+    errorEl.style.display='block';
+    return;
+  }
+  errorEl.style.display='none';
+  btn.disabled=true;
+  btn.textContent='checking...';
+
+  try{
+    const res=await fetch('/.netlify/functions/brevo-subscribe', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({email, tag:'freebie-broke-to-bullish'})
+    });
+
+    if(!res.ok) throw new Error('capture failed');
+
+    // Only reveal the download once we've confirmed the email was actually captured
+    if(typeof gtag==='function') gtag('event','freebie_claimed', {email_domain: email.split('@')[1]||''});
+    document.getElementById('freebie-form-area').style.display='none';
+    document.getElementById('freebie-success').style.display='block';
+    localStorage.setItem('dcFreebieSeen','1');
+  } catch(e){
+    errorEl.textContent='Something went wrong saving your email — try again in a moment.';
+    errorEl.style.display='block';
+    btn.disabled=false;
+    btn.textContent='get the free guide →';
+  }
+}
+
+// Show automatically for new visitors, once — never nag someone who's already seen it
+if(!localStorage.getItem('dcFreebieSeen')){
+  setTimeout(openFreebieModal, 1200);
+}
+
+// ── SCROLL DEPTH TRACKING ──
+const SCROLL_SECTIONS=['section-hero','section-fit','section-roadmap','section-community','section-about'];
+let deepestSectionIndex=-1;
+
+if('IntersectionObserver' in window){
+  const scrollObserver=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        const idx=SCROLL_SECTIONS.indexOf(entry.target.id);
+        if(idx>deepestSectionIndex){
+          deepestSectionIndex=idx;
+          if(typeof gtag==='function') gtag('event','scroll_depth', {section: entry.target.id, section_index: idx});
+        }
+      }
+    });
+  }, {threshold:0.4});
+
+  SCROLL_SECTIONS.forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) scrollObserver.observe(el);
+  });
+}
+
+let calcMode='forward';
+let calcActiveField='calc-amount';
+
+function setCalcMode(mode){
+  calcMode=mode;
+  document.getElementById('mode-forward-btn').classList.toggle('active', mode==='forward');
+  document.getElementById('mode-reverse-btn').classList.toggle('active', mode==='reverse');
+  document.getElementById('calc-amount-label').textContent = mode==='forward' ? 'Starting amount ($)' : 'Goal amount ($)';
+  document.getElementById('calc-label-line').textContent = mode==='forward' ? 'ENDING AMOUNT' : "YOU'D NEED TO START WITH";
+  runCalc();
+}
+
+function runCalc(){
+  const amount=parseFloat(document.getElementById('calc-amount').value)||0;
+  const gain=parseFloat(document.getElementById('calc-gain').value)||0;
+  const display=document.getElementById('calc-display');
+  const sub=document.getElementById('calc-sub-display');
+
+  if(calcMode==='forward'){
+    const result=amount*(1+gain/100);
+    display.textContent='$'+result.toFixed(2);
+    sub.textContent=`$${amount.toFixed(2)} + ${gain}% gain`;
+  } else {
+    if(1+gain/100<=0){
+      display.textContent='—';
+      sub.textContent='gain % must be greater than -100';
+      return;
+    }
+    const required=amount/(1+gain/100);
+    display.textContent='$'+required.toFixed(2);
+    sub.textContent=`to reach $${amount.toFixed(2)} at ${gain}% gain`;
+  }
+}
+
+function calcKeyPress(digit){
+  const field=document.getElementById(calcActiveField);
+  if(digit==='.' && field.value.includes('.'))return;
+  field.value=(field.value||'')+digit;
+  runCalc();
+}
+
+function calcClear(){
+  document.getElementById(calcActiveField).value='';
+  runCalc();
+}
+
+document.getElementById('calc-amount').addEventListener('focus', ()=>calcActiveField='calc-amount');
+document.getElementById('calc-gain').addEventListener('focus', ()=>calcActiveField='calc-gain');
+runCalc();
+
+// ── LIP GLOSS ANALOGY — auto-cycling scenes ──
+let lgCurrentScene=0;
+const LG_TOTAL_SCENES=4;
+let lgInterval=null;
+
+function lgShowScene(idx){
+  lgCurrentScene=idx;
+  document.querySelectorAll('.lg-scene').forEach((el,i)=>el.classList.toggle('active', i===idx));
+  document.querySelectorAll('.lg-dot').forEach((el,i)=>el.classList.toggle('active', i===idx));
+}
+
+function lgStartAutoCycle(){
+  clearInterval(lgInterval);
+  lgInterval=setInterval(()=>{
+    lgShowScene((lgCurrentScene+1)%LG_TOTAL_SCENES);
+  }, 3200);
+}
+
+document.querySelectorAll('.lg-dot').forEach(dot=>{
+  dot.addEventListener('click', ()=>{
+    lgShowScene(parseInt(dot.dataset.scene));
+    lgStartAutoCycle();
+  });
+});
+
+lgShowScene(0);
+lgStartAutoCycle();
+
+function updateClock(){
+  const now = new Date();
+  let h = now.getHours();
+  const m = now.getMinutes().toString().padStart(2,'0');
+  const ampm = h >= 12 ? 'PM' : 'AM';
+  h = h % 12; h = h ? h : 12;
+  document.getElementById('clock').textContent = `${h}:${m} ${ampm}`;
+}
+updateClock();
+setInterval(updateClock, 1000*30);
+
+// ── YOUTUBE HERO PLAYER — autoplay, muted (required for autoplay), looping, 2x speed ──
+const HERO_VIDEO_ID = 'rzv3deQ9cPI';
+const HERO_PLAYBACK_RATE = 2;
+
+const ytApiTag = document.createElement('script');
+ytApiTag.src = 'https://www.youtube.com/iframe_api';
+document.head.appendChild(ytApiTag);
+
+function onYouTubeIframeAPIReady(){
+  new YT.Player('hero-yt-player', {
+    videoId: HERO_VIDEO_ID,
+    playerVars: {
+      autoplay: 1,
+      mute: 1,
+      loop: 1,
+      playlist: HERO_VIDEO_ID,
+      controls: 1,
+      playsinline: 1,
+      modestbranding: 1,
+      rel: 0
+    },
+    events: {
+      onReady: (e) => { e.target.setPlaybackRate(HERO_PLAYBACK_RATE); e.target.playVideo(); },
+      onStateChange: (e) => {
+        if(e.data === YT.PlayerState.PLAYING){ e.target.setPlaybackRate(HERO_PLAYBACK_RATE); }
+        if(e.data === YT.PlayerState.ENDED){
+          if(typeof gtag==='function') gtag('event','hero_video_complete');
+        }
+      }
+    }
+  });
+}
+</script>
+
+</body>
+</html>
