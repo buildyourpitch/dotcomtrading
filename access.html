@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Access Your Video — Dotcom Trading</title>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Comic+Neue:wght@700;800&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGSJG1DVXZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RGSJG1DVXZ');
+</script>
+<style>
+  *{box-sizing:border-box}
+  body{background:#008080;font-family:'Comic Neue',cursive;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;padding:16px}
+  .box{background:#111;border:3px solid #00F0FF;border-radius:10px;padding:1.5rem;max-width:520px;width:100%;color:#eee;text-align:center}
+  h2{margin-top:0}
+  input{width:100%;padding:10px;border-radius:5px;border:2px solid #444;margin:10px 0;font-size:14px;font-family:'Comic Neue',cursive}
+  button{width:100%;padding:12px;border-radius:20px;border:2px solid #fff;background:linear-gradient(180deg,#7df9ff,#00d4f0 45%,#0090a8);color:#002a30;font-weight:800;cursor:pointer}
+  .video-frame{position:relative;width:100%;padding-top:56.25%;margin-top:1rem;border-radius:8px;overflow:hidden;background:#000}
+  .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .err{color:#ff6a6a;font-size:13px;margin-top:8px}
+  .vt{font-family:'VT323',monospace;color:#39FF14;font-size:13px}
+  .bundle-item{text-align:left;background:#161616;border-radius:6px;padding:10px;margin-bottom:10px}
+  .bundle-item summary{cursor:pointer;font-size:13px;color:#eee;font-weight:700}
+</style>
+</head>
+<body>
+  <div class="box">
+    <div class="vt">C:\&gt; checkout complete</div>
+    <h2>🎬 Access Your Video</h2>
+    <p id="status-text">Enter the email you used at checkout to unlock it.</p>
+    <input type="email" id="access-email" placeholder="you@email.com">
+    <button onclick="checkAccess()">unlock →</button>
+    <div id="video-result"></div>
+  </div>
+
+<script>
+const BUNDLE_VIDEO_IDS = ['wfc-zones','wfc-live','options-pnl','options-chains','candle-formation','bull-pennant','wfc-zones-2'];
+
+function getParam(name){
+  return new URLSearchParams(window.location.search).get(name);
+}
+
+async function checkAccess(){
+  const videoId = getParam('video_id');
+  const email = document.getElementById('access-email').value;
+  const resultEl = document.getElementById('video-result');
+  if(!videoId || !email) return;
+
+  if(videoId === 'all-access'){
+    await loadBundleAccess(email, resultEl);
+    return;
+  }
+
+  try{
+    const res = await fetch(`/.netlify/functions/get-access?video_id=${encodeURIComponent(videoId)}&email=${encodeURIComponent(email)}`);
+    if(!res.ok){
+      resultEl.innerHTML = '<p class="err">No access found for that email on this video. Double check the email you used at checkout.</p>';
+      return;
+    }
+    const data = await res.json();
+    document.getElementById('status-text').textContent = data.title;
+    resultEl.innerHTML = `<div class="video-frame"><iframe src="${data.loom_url}" allowfullscreen></iframe></div>`;
+    if(typeof gtag==='function') gtag('event','video_access_granted', {video_id: videoId});
+  } catch(e){
+    resultEl.innerHTML = '<p class="err">Something went wrong checking access. Try again in a moment.</p>';
+  }
+}
+
+async function loadBundleAccess(email, resultEl){
+  document.getElementById('status-text').textContent = 'Your full vault access — all 7 videos';
+  resultEl.innerHTML = '<p style="font-size:12px;color:#999">Loading your videos...</p>';
+
+  const results = await Promise.all(BUNDLE_VIDEO_IDS.map(async (id) => {
+    try{
+      const res = await fetch(`/.netlify/functions/get-access?video_id=${encodeURIComponent(id)}&email=${encodeURIComponent(email)}`);
+      if(!res.ok) return null;
+      return await res.json();
+    } catch(e){
+      return null;
+    }
+  }));
+
+  const found = results.filter(Boolean);
+  if(found.length === 0){
+    resultEl.innerHTML = '<p class="err">No access found for that email. Double check the email you used at checkout.</p>';
+    return;
+  }
+
+  resultEl.innerHTML = found.map(v => `
+    <details class="bundle-item">
+      <summary>${v.title}</summary>
+      <div class="video-frame"><iframe src="${v.loom_url}" allowfullscreen></iframe></div>
+    </details>
+  `).join('');
+
+  if(typeof gtag==='function') gtag('event','video_access_granted', {video_id: 'all-access'});
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  if(getParam('video_id') && typeof gtag==='function') gtag('event','checkout_success_landed', {video_id: getParam('video_id')});
+});
+</script>
+</body>
+</html>
