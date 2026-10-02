@@ -370,9 +370,9 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
   data-current-workshop-date="October 3"
   data-current-workshop-slug="october-3"
   data-current-workshop-prep="october-3-trading-workshop-prep-sheet.pdf"
-  data-next-workshop-date="October 17"
-  data-next-workshop-slug="october-17"
-  data-next-workshop-prep="trading-workshop-prep-sheet.pdf"
+  data-next-workshop-date="Next"
+  data-next-workshop-slug="waitlist"
+  data-next-workshop-prep=""
   data-workshop-rollover="2026-10-04T05:00:00Z">
 
 <!-- ============ CURRENT WORKSHOP EMAIL POPUP ============ -->
@@ -394,6 +394,7 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
           <button class="workshop-submit" id="workshop-submit" type="submit">Register me for the workshop</button>
         </form>
         <div class="workshop-status" id="workshop-status" aria-live="polite"></div>
+        <p class="workshop-fineprint" id="workshop-zoom-direct" style="margin-top:8px">Just want the link? <a href="https://us05web.zoom.us/meeting/register/k-Kp7MURSNawpWnNpbsG8w#/registration" target="_blank" rel="noopener" onclick="openZoomRegistration('popup_direct');return false;" style="font-weight:800;text-decoration:underline">Register directly on Zoom</a></p>
         <p class="workshop-fineprint">You’ll immediately receive the 100 AI Money Prompts gift, plus the one-page prep sheet and four-part workshop email series. Unsubscribe anytime.</p>
       </div>
     </div>
@@ -453,7 +454,7 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
         <p class="journey-text" style="font-size:13px">In one beginner-friendly workshop, I’ll show you how to zoom out, read what price is doing, protect your money, and decide whether trading is even for you.</p>
 <div class="journey-steps"><div class="journey-step"><b>01 · ZOOM OUT</b><span>Start with higher time frames.</span></div><div class="journey-step"><b>02 · READ</b><span>Understand charts and candles.</span></div><div class="journey-step"><b>03 · PROTECT</b><span>Learn practical risk rules.</span></div><div class="journey-step"><b>04 · DECIDE</b><span>Choose whether trading fits.</span></div></div>
 
-        <div class="landing-cta"><button class="workshop-submit" type="button" onclick="openWorkshopPopup(true)">Register for the free workshop</button></div>
+        <div class="landing-cta"><button class="workshop-submit" type="button" onclick="openZoomRegistration('button')">Register for the free workshop</button></div>
 
         <div class="hero-eyebrow" style="margin-top:2rem">📊 Seen a chart before, felt overwhelmed, and closed it?</div>
         <h2 style="font-weight:800;font-size:clamp(19px,4.2vw,25px);line-height:1.3;margin-bottom:10px">You do not need another random video. You need the full picture in the right order.</h2>
@@ -516,7 +517,7 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
       </div>
 
       <p class="journey-text" style="text-align:center;font-size:14px;margin-top:1rem;font-weight:700">If the first column sounds like you, the workshop is your next step.</p>
-      <div class="landing-cta"><button class="workshop-submit" type="button" onclick="openWorkshopPopup(true)">Save my workshop seat</button></div>
+      <div class="landing-cta"><button class="workshop-submit" type="button" onclick="openZoomRegistration('button')">Save my workshop seat</button></div>
     </div>
   </div>
 
@@ -550,7 +551,7 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
           <h3>Free Trading Workshop</h3>
           <p>Learn to zoom out with higher time frames, read basic charts and candlesticks, protect your capital, and decide whether trading fits your real life.</p>
         </div>
-        <button class="workshop-submit" type="button" onclick="openWorkshopPopup(true)">Register for the workshop</button>
+        <button class="workshop-submit" type="button" onclick="openZoomRegistration('button')">Register for the workshop</button>
       </div>
       <div class="offer-grid">
         <div class="offer-card primary"><div class="offer-badge">INVITE ONLY</div><h3>Dotcom Trading Club</h3><div class="offer-price">$39<span>/month</span></div><ul class="offer-list"><li>Private Discord</li><li>New + archived videos</li><li>Weekly 1-hour live roundtable</li><li>Trading + money discussions</li><li>Member discussion channels</li></ul><button class="glossy-btn invite-only-btn" type="button" disabled aria-disabled="true">Invite only 🔒</button><p>Enrollment is closed for now. Current members keep their access.</p></div>
@@ -723,7 +724,7 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
         <div style="color:#fff4cf;font-size:12.5px;margin-top:4px">You can leave ready to learn more—or confident that trading is not for you right now. Both are valid outcomes.</div>
       </div>
 
-      <div class="landing-cta"><button class="workshop-submit" type="button" onclick="openWorkshopPopup(true)">Register for the workshop</button></div>
+      <div class="landing-cta"><button class="workshop-submit" type="button" onclick="openZoomRegistration('button')">Register for the workshop</button></div>
     </div>
   </div>
 
@@ -737,7 +738,7 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
       <div class="faq"><details><summary>Will you give trade signals?</summary><p>No. There are no buy or sell signals, guaranteed returns, or promises about what a security will do.</p></details></div>
       <div class="faq"><details><summary>What will I leave with?</summary><p>A clearer understanding of how to start your analysis, what responsible risk looks like, and whether trading fits your money, time, and temperament.</p></details></div>
       <div class="faq"><details><summary>What happens after I register?</summary><p>You can download the one-page prep sheet and you will receive the workshop email series with the details you need.</p></details></div>
-      <div class="landing-cta"><button class="workshop-submit" type="button" onclick="openWorkshopPopup(true)">Register for the workshop</button></div>
+      <div class="landing-cta"><button class="workshop-submit" type="button" onclick="openZoomRegistration('button')">Register for the workshop</button></div>
     </div>
   </div>
 
@@ -763,7 +764,7 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
       <p class="about-workshop-copy">I’m Gabrielle: a Navy veteran, a mom, and a down-to-earth person with a passion for excellence, self-improvement, and self-love. I teach trading the same way I try to look at life: zoom out, take in the full view, accept the peaks and valleys, cut losses when necessary, and protect what matters.</p>
 
       <div style="text-align:center;margin-top:1.25rem">
-        <button class="workshop-submit" type="button" onclick="openWorkshopPopup(true)" style="max-width:430px">Learn with me in the free workshop</button>
+        <button class="workshop-submit" type="button" onclick="openZoomRegistration('button')" style="max-width:430px">Learn with me in the free workshop</button>
       </div>
     </div>
   </div>
@@ -778,7 +779,7 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
   <div class="start-btn"><span class="start-flag"></span> Start</div>
   <div class="taskbar-divider"></div>
   <div class="taskbar-item">💰 free_workshop.exe</div>
-  <button class="taskbar-workshop-cta" type="button" onclick="openWorkshopPopup(true)">Register for the workshop</button>
+  <button class="taskbar-workshop-cta" type="button" onclick="openZoomRegistration('button')">Register for the workshop</button>
   <div class="clock-box" id="clock">12:00 PM</div>
 </div>
 
@@ -996,7 +997,32 @@ const WORKSHOP_PREP_FILE=WORKSHOP_HAS_ROLLED_OVER
 const WORKSHOP_SIGNUP_KEY=`dcWorkshopSignedUp:${WORKSHOP_SLUG}`;
 const WORKSHOP_DISMISS_KEY=`dcWorkshopDismissed:${WORKSHOP_SLUG}`;
 document.querySelectorAll('.workshop-date-label').forEach(el=>{ el.textContent=WORKSHOP_DATE; });
+// After Oct 3: no workshop scheduled yet, so every CTA becomes a waitlist signup
+if(WORKSHOP_HAS_ROLLED_OVER){
+  document.querySelectorAll('.workshop-kicker').forEach(el=>{
+    el.textContent=el.closest('.workshop-popup') ? 'Free trading workshop · waitlist' : 'Start here';
+  });
+  document.getElementById('workshop-popup-title').textContent='Join the waitlist for the next workshop';
+  document.querySelector('.workshop-popup-bar span').textContent='workshop_waitlist.exe';
+  document.querySelector('.workshop-signup-copy').textContent='The October 3 workshop has wrapped. Join the waitlist and you’ll be the first to know when the next free workshop opens: higher-time-frame analysis, charting and candlesticks, risk management, and institutional order flow.';
+  document.querySelector('label[for="workshop-email"]').textContent='Where should I send the next workshop date?';
+  document.getElementById('workshop-submit').textContent='Join the waitlist';
+  document.querySelectorAll('.workshop-signup .workshop-fineprint:not(#workshop-zoom-direct)').forEach(el=>{
+    el.textContent='You’ll immediately receive the 100 AI Money Prompts gift, plus first notice when the next workshop date is set. Unsubscribe anytime.';
+  });
+  const zoomDirect=document.getElementById('workshop-zoom-direct'); if(zoomDirect) zoomDirect.remove();
+  document.querySelectorAll('button[onclick^="openZoomRegistration"]').forEach(btn=>{ btn.textContent='Join the waitlist'; });
+  document.title='Free Trading Workshop Waitlist | Dotcom Trading Club';
+  const art=document.querySelector('.workshop-popup-art'); if(art){ art.remove(); document.querySelector('.workshop-popup-grid').style.gridTemplateColumns='1fr'; }
+  document.querySelectorAll('button[onclick="openWorkshopPopup(true)"]').forEach(btn=>{ btn.textContent='Join the waitlist'; });
+}
 
+const WORKSHOP_ZOOM_URL='https://us05web.zoom.us/meeting/register/k-Kp7MURSNawpWnNpbsG8w#/registration';
+function openZoomRegistration(source='cta'){
+  if(WORKSHOP_HAS_ROLLED_OVER){ openWorkshopPopup(true); return; }
+  if(typeof gtag==='function') gtag('event','workshop_zoom_click',{workshop:WORKSHOP_SLUG,source});
+  window.open(WORKSHOP_ZOOM_URL,'_blank','noopener');
+}
 function openWorkshopPopup(force=false){
   if(!force && localStorage.getItem(WORKSHOP_SIGNUP_KEY)==='1') return;
   if(!force && sessionStorage.getItem(WORKSHOP_DISMISS_KEY)==='1') return;
@@ -1028,13 +1054,14 @@ async function submitWorkshopSignup(event){
     const response=await fetch('/.netlify/functions/brevo-subscribe',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({email,tag:`workshop-${WORKSHOP_SLUG}-prep`})
+      body:JSON.stringify({email,tag:WORKSHOP_HAS_ROLLED_OVER?'workshop-waitlist':`workshop-${WORKSHOP_SLUG}-prep`})
     });
     if(!response.ok) throw new Error('Signup request failed');
 
     localStorage.setItem(WORKSHOP_SIGNUP_KEY,'1');
     document.getElementById('workshop-signup-form').style.display='none';
-    status.innerHTML=`You’re registered. <a href='${WORKSHOP_PREP_FILE}' download style='color:#0b5f43;font-weight:800;text-decoration:underline'>Download the one-page prep sheet</a>, then check your inbox for your 100 AI Money Prompts gift and workshop emails.`;
+    if(WORKSHOP_HAS_ROLLED_OVER) status.innerHTML='You’re on the waitlist. Check your inbox for your 100 AI Money Prompts gift, and I’ll email you as soon as the next workshop date is set.';
+    else status.innerHTML=`<a href='${WORKSHOP_ZOOM_URL}' target='_blank' rel='noopener' onclick="if(typeof gtag==='function') gtag('event','workshop_zoom_click',{workshop:WORKSHOP_SLUG,source:'popup_success'})" class='workshop-submit' style='display:block;text-align:center;text-decoration:none;margin:0 0 10px'>Last step: grab your seat on Zoom →</a>You’re on the list. <a href='${WORKSHOP_PREP_FILE}' download style='color:#0b5f43;font-weight:800;text-decoration:underline'>Download the one-page prep sheet</a>, then check your inbox for your 100 AI Money Prompts gift and workshop emails.`;
     status.style.display='block';
     if(typeof gtag==='function') gtag('event','workshop_signup',{workshop:WORKSHOP_SLUG});
   }catch(error){
@@ -1042,7 +1069,7 @@ async function submitWorkshopSignup(event){
     status.classList.add('error');
     status.style.display='block';
     submitBtn.disabled=false;
-    submitBtn.textContent='Register me for the workshop';
+    submitBtn.textContent=WORKSHOP_HAS_ROLLED_OVER?'Join the waitlist':'Register me for the workshop';
   }
 }
 
