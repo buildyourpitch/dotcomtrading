@@ -323,6 +323,24 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
 /* ===== CONVERSION LAYER ===== */
 .conversion-kicker{font-family:'VT323',monospace;color:#FFB000;font-size:15px;letter-spacing:.06em;text-transform:uppercase}.offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.offer-card{background:#0b0b0b;border:2px solid #333;border-radius:12px;padding:18px;text-align:center;position:relative}.offer-card.primary{border:3px solid #39FF14;box-shadow:0 0 24px rgba(57,255,20,.18)}.offer-card.secondary{border-color:#00F0FF}.offer-badge{display:inline-block;background:#39FF14;color:#062b00;font-family:'VT323',monospace;padding:4px 9px;border-radius:5px;font-size:13px;margin-bottom:8px}.offer-card h3{color:#fff;font-size:21px;margin-bottom:6px}.offer-price{font-size:36px;font-weight:800;color:#fff}.offer-price span{font-size:14px;color:#999;font-weight:400}.offer-card p{color:#bbb;font-size:12.5px;line-height:1.6;margin:8px 0 12px}.offer-list{text-align:left;list-style:none;color:#ddd;font-size:12.5px;line-height:1.8;margin:12px 0 16px}.offer-list li:before{content:'✓';color:#39FF14;font-weight:900;margin-right:7px}.no-signals{background:#1a1400;border:2px solid #FFB000;border-radius:9px;padding:14px;margin:16px 0;text-align:center}.no-signals strong{display:block;color:#FFB000;font-family:'VT323',monospace;font-size:20px;margin-bottom:5px}.no-signals p{color:#e8d8b0;font-size:12.5px;line-height:1.6}.journey-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}.journey-step{background:#111;border:1px solid #333;border-radius:8px;padding:10px;text-align:center}.journey-step b{display:block;color:#00F0FF;font-family:'VT323',monospace;font-size:15px}.journey-step span{display:block;color:#bbb;font-size:11px;margin-top:4px;line-height:1.4}.club-perks{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}.club-perk{background:#161616;border-left:3px solid #39FF14;border-radius:5px;padding:10px;color:#ddd;font-size:12px;line-height:1.5}.club-perk strong{color:#fff;display:block;margin-bottom:2px}.faq{border-top:1px solid #333;padding:13px 0}.faq summary{cursor:pointer;color:#fff;font-weight:800;font-size:13px}.faq p{color:#bbb;font-size:12px;line-height:1.6;margin-top:8px}@media(max-width:640px){.offer-grid,.club-perks{grid-template-columns:1fr}.journey-steps{grid-template-columns:1fr 1fr}}
 
+/* ===== REPLAY BUNDLE (shown after the live workshop) ===== */
+.replay-bundle{display:none;margin:16px 0 18px;padding:22px;background:linear-gradient(135deg,#fff 0%,#fff2f8 55%,#eaf4ff 100%);border:3px solid #df2179;box-shadow:5px 5px 0 #0b1c50;text-align:left}
+.replay-bundle.show{display:block}
+.replay-bundle .rb-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;align-items:start}
+.replay-bundle h3{font-size:clamp(23px,4vw,31px);line-height:1.1;color:#0b1c50;margin:3px 0 8px}
+.replay-bundle p{font-size:14px;line-height:1.6;color:#26324a;margin:0 0 10px}
+.replay-bundle .offer-list{color:#26324a;font-size:14px;margin:6px 0 0}
+.replay-bundle .offer-list li:before{color:#df2179}
+.rb-call{background:#0b1c50;color:#fff;border-radius:10px;padding:12px 14px;margin:12px 0 0;font-size:13.5px;line-height:1.55}
+.rb-call strong{color:#ffd1e6}
+.rb-buy{background:#fff;border:2px solid #0b1c50;border-radius:12px;padding:16px;text-align:center}
+.rb-price{font-size:40px;font-weight:800;color:#0b1c50;line-height:1}
+.rb-price s{font-size:18px;color:#8a93a8;font-weight:400;margin-left:6px}
+.rb-spots{font-family:'VT323',monospace;font-size:16px;color:#b41662;margin:6px 0 12px}
+.rb-buy .workshop-submit{width:100%}
+.rb-fine{font-size:11.5px!important;color:#5a6378!important;margin:10px 0 0!important}
+@media(max-width:680px){.replay-bundle .rb-grid{grid-template-columns:1fr}}
+
 /* Conversion sections inherit the lighter skin too. */
 .offer-card{background:linear-gradient(155deg,#fff,#f6f9ff);border-color:#a8b3c7;box-shadow:0 12px 26px rgba(24,46,88,.08)}
 .offer-card.primary{border-color:#df2179;box-shadow:0 12px 30px rgba(223,33,121,.13)}
@@ -373,7 +391,7 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
   data-next-workshop-date="Next"
   data-next-workshop-slug="waitlist"
   data-next-workshop-prep=""
-  data-workshop-rollover="2026-10-03T15:15:00Z">
+  data-workshop-rollover="2026-10-03T16:00:00Z">
 
 <!-- ============ CURRENT WORKSHOP EMAIL POPUP ============ -->
 <div class="workshop-popup-overlay" id="workshop-popup-overlay" role="dialog" aria-modal="true" aria-labelledby="workshop-popup-title">
@@ -545,6 +563,30 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
       <div class="section-title green">💿 Your one next step</div>
       <p class="journey-text">You do not need a membership, a coaching package, or a funded trading account. Start with the free workshop and decide what makes sense afterward.</p>
       <div class="no-signals"><strong>THE DOTCOM PROMISE</strong><p>No signals. No guaranteed returns. No “secret” strategy. No pretending I can predict tomorrow. I teach what I know, show you how I think, and let you make your own decisions.</p></div>
+      <!-- ============ WORKSHOP REPLAY BUNDLE (appears after the live workshop) ============ -->
+      <div class="replay-bundle" id="section-replay-bundle">
+        <div class="rb-grid">
+          <div>
+            <div class="workshop-kicker">Missed it live? Get the replay</div>
+            <h3>October 3 Workshop Replay Bundle</h3>
+            <p>Watch the full workshop on your own time, pause on every chart, and then get 30 minutes with me to talk through your questions.</p>
+            <ul class="offer-list">
+              <li>Full workshop replay (about 60 minutes)</li>
+              <li>Higher time frames, candlesticks, risk management, and institutional order flow</li>
+              <li>One-page workshop prep sheet</li>
+              <li>100 AI Money Prompts</li>
+            </ul>
+            <div class="rb-call"><strong>+ One 30-minute one-on-one with me.</strong> Bring your charts, your questions, or your “is trading even for me?” doubts. We’ll walk through them together on Zoom.</div>
+          </div>
+          <div class="rb-buy">
+            <div class="workshop-kicker" style="margin-bottom:6px">Replay + 1:1 call</div>
+            <div class="rb-price" id="replay-bundle-price">$97</div>
+            <div class="rb-spots" id="replay-bundle-spots">Only 10 one-on-one spots</div>
+            <button class="workshop-submit" type="button" id="replay-bundle-buy" onclick="buyReplayBundle()">Get the replay + my 1:1 call</button>
+            <p class="rb-fine">After checkout you’ll get the replay by email plus a link to book your 30-minute call. Educational content only, not personalized financial advice.</p>
+          </div>
+        </div>
+      </div>
       <div class="workshop-offer-card" id="section-workshop-offer">
         <div>
           <div class="workshop-kicker">Start here - <span class="workshop-date-label">October 3</span></div>
@@ -983,8 +1025,8 @@ if('IntersectionObserver' in window){
 }
 
 // ── CURRENT WORKSHOP POPUP + BREVO CAPTURE ──
-const WORKSHOP_ROLLOVER=new Date(document.body.dataset.workshopRollover || '2026-10-03T15:15:00Z');
-const WORKSHOP_HAS_ROLLED_OVER=Date.now()>=WORKSHOP_ROLLOVER.getTime();
+const WORKSHOP_ROLLOVER=new Date(document.body.dataset.workshopRollover || '2026-10-03T16:00:00Z');
+const WORKSHOP_HAS_ROLLED_OVER=Date.now()>=WORKSHOP_ROLLOVER.getTime() || new URLSearchParams(location.search).get('preview')==='after';
 const WORKSHOP_DATE=WORKSHOP_HAS_ROLLED_OVER
   ? document.body.dataset.nextWorkshopDate
   : document.body.dataset.currentWorkshopDate;
@@ -1013,10 +1055,21 @@ if(WORKSHOP_HAS_ROLLED_OVER){
   const zoomDirect=document.getElementById('workshop-zoom-direct'); if(zoomDirect) zoomDirect.remove();
   document.querySelectorAll('button[onclick^="openZoomRegistration"]').forEach(btn=>{ btn.textContent='Join the waitlist'; });
   document.title='Free Trading Workshop Waitlist | Dotcom Trading Club';
+  document.getElementById('section-replay-bundle').classList.add('show');
+  if(new URLSearchParams(location.search).get('replay')==='1') setTimeout(()=>document.getElementById('section-replay-bundle').scrollIntoView({behavior:'smooth'}),400);
   const art=document.querySelector('.workshop-popup-art'); if(art){ art.remove(); document.querySelector('.workshop-popup-grid').style.gridTemplateColumns='1fr'; }
   document.querySelectorAll('button[onclick="openWorkshopPopup(true)"]').forEach(btn=>{ btn.textContent='Join the waitlist'; });
 }
 
+// Replay bundle: paste the Stripe Payment Link here once it exists
+const REPLAY_BUNDLE_CHECKOUT_URL='';
+function buyReplayBundle(){
+  if(typeof gtag==='function') gtag('event','replay_bundle_click',{workshop:'october-3'});
+  if(REPLAY_BUNDLE_CHECKOUT_URL){ window.location.href=REPLAY_BUNDLE_CHECKOUT_URL; return; }
+  const btn=document.getElementById('replay-bundle-buy');
+  btn.textContent='Checkout opens soon. Join the waitlist';
+  openWorkshopPopup(true);
+}
 const WORKSHOP_ZOOM_URL='https://us05web.zoom.us/meeting/register/k-Kp7MURSNawpWnNpbsG8w#/registration';
 function openZoomRegistration(source='cta'){
   if(WORKSHOP_HAS_ROLLED_OVER){ openWorkshopPopup(true); return; }
