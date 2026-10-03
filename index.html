@@ -106,6 +106,12 @@ body::before{
 .announce-item i{font-style:normal;color:#39FF14}
 @media (prefers-reduced-motion:reduce){.announce-track,.ticker-track{animation:none}}
 
+/* FAQ + ABOUT SIDE BY SIDE */
+.faq-about-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch;margin-bottom:28px}
+.faq-about-row>.win95-window{margin-bottom:0;display:flex;flex-direction:column}
+.faq-about-row>.win95-window>.win-body{flex:1}
+@media(max-width:760px){.faq-about-row{grid-template-columns:1fr;gap:0}.faq-about-row>.win95-window{margin-bottom:28px}}
+
 /* COMPACT FREE REPLAY ROW */
 .replay-free{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:4px 2px}
 .replay-free h3{margin:2px 0 0;font-size:clamp(18px,3.4vw,24px);line-height:1.15;color:#0b1c50}
@@ -840,6 +846,7 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
   </div>
 
   <!-- ============ FAQ ============ -->
+  <div class="faq-about-row">
   <div class="win95-window" id="section-faq">
     <div class="win-titlebar"><div class="win-title-left"><div class="win-icon"></div> faq.exe</div><div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div></div>
     <div class="win-body" style="background:#0d0d0d">
@@ -849,7 +856,6 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
       <div class="faq"><details><summary>Will you give trade signals?</summary><p>No. There are no buy or sell signals, guaranteed returns, or promises about what a security will do.</p></details></div>
       <div class="faq"><details><summary>What will I leave with?</summary><p>A clearer understanding of how to start your analysis, what responsible risk looks like, and whether trading fits your money, time, and temperament.</p></details></div>
       <div class="faq"><details><summary>What happens after I register?</summary><p>You can download the one-page prep sheet and you will receive the workshop email series with the details you need.</p></details></div>
-      <div class="landing-cta"><button class="workshop-submit" type="button" onclick="openZoomRegistration('button')">Register for the workshop</button></div>
     </div>
   </div>
 
@@ -874,10 +880,8 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
 
       <p class="about-workshop-copy">I’m Gabrielle: a Navy veteran, a mom, and a down-to-earth person with a passion for excellence, self-improvement, and self-love. I teach trading the same way I try to look at life: zoom out, take in the full view, accept the peaks and valleys, cut losses when necessary, and protect what matters.</p>
 
-      <div style="text-align:center;margin-top:1.25rem">
-        <button class="workshop-submit" type="button" onclick="openZoomRegistration('button')" style="max-width:430px">Learn with me in the free workshop</button>
-      </div>
     </div>
+  </div>
   </div>
 
   <div class="foot-disclaimer" id="disclaimer-full">
