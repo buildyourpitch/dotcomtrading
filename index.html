@@ -106,6 +106,18 @@ body::before{
 .announce-item i{font-style:normal;color:#39FF14}
 @media (prefers-reduced-motion:reduce){.announce-track,.ticker-track{animation:none}}
 
+/* LIVE CHAT PROOF */
+.chat-proof{margin-top:16px;padding-top:14px;border-top:2px dashed #e7c4d6}
+.chat-proof-label{font-family:'VT323',monospace;color:#b41662;font-size:16px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:10px}
+.chat-proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.chat-bubble{display:flex;gap:9px;align-items:flex-start}
+.chat-av{flex:0 0 30px;height:30px;border-radius:50%;color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.chat-msg{background:#fff;border:1.5px solid #e7c4d6;border-radius:4px 12px 12px 12px;padding:8px 11px}
+.chat-msg b{display:block;font-size:11px;color:#6b5f69;font-weight:700;margin-bottom:2px}
+.chat-msg span{font-size:14.5px;color:#10204d;font-weight:700;line-height:1.35}
+@media(max-width:760px){.chat-proof-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.chat-proof-grid{grid-template-columns:1fr}}
+
 /* REPLAY THUMBNAIL BANNER */
 .replay-thumb{display:block;position:relative;width:100%;padding:0;margin:0 0 12px;border:3px solid #0b1c50;border-radius:12px;overflow:hidden;cursor:pointer;background:#000;box-shadow:5px 5px 0 #df2179}
 .replay-thumb img{display:block;width:100%;height:auto;aspect-ratio:16/9}
@@ -522,6 +534,11 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
             <p class="rb-fine">After checkout you’ll go straight to my calendar to pick your 30-minute time. The replay and checklist arrive by email. Educational content only, not personalized financial advice.</p>
           </div>
         </div>
+        <div class="chat-proof">
+          <div class="chat-proof-label">💬 From the live chat · Oct 3</div>
+          <div class="chat-proof-grid"><div class="chat-bubble"><div class="chat-av" style="background:#d9534f">GM</div><div class="chat-msg"><b>George M.</b><span>“I see it now.”</span></div></div><div class="chat-bubble"><div class="chat-av" style="background:#1aa58a">CM</div><div class="chat-msg"><b>Chalea M.</b><span>“No more fake outs!”</span></div></div><div class="chat-bubble"><div class="chat-av" style="background:#3a8fd8">MP</div><div class="chat-msg"><b>Mary P.</b><span>“Love this!”</span></div></div><div class="chat-bubble"><div class="chat-av" style="background:#1aa58a">CM</div><div class="chat-msg"><b>Chalea M.</b><span>“It makes sense to wait though!”</span></div></div></div>
+        </div>
+
       </div>
     </div>
   </div>
