@@ -47,7 +47,7 @@ exports.handler = async (event) => {
 
     // Send the matching welcome email right away (never blocks the signup)
     const WELCOME_TEMPLATES = {
-      'workshop-october-17': 28,        // Oct 17 welcome: Zoom link + 100 AI Money Prompts
+      'workshop-october-17': 29,        // Oct 17 welcome: Zoom link + prep sheet + 100 AI Money Prompts
       'workshop-october-3-replay': 27   // Replay link + Oct 17 invite
     };
     const templateId = WELCOME_TEMPLATES[tag];

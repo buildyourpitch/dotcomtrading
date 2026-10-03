@@ -445,7 +445,7 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
   data-current-workshop-prep="october-3-trading-workshop-prep-sheet.pdf"
   data-next-workshop-date="Next"
   data-next-workshop-slug="waitlist"
-  data-next-workshop-prep=""
+  data-next-workshop-prep="options-for-beginners-prep-sheet.pdf"
   data-workshop-rollover="2026-10-03T16:00:00Z">
 
 <!-- ============ CURRENT WORKSHOP EMAIL POPUP ============ -->
@@ -1102,7 +1102,7 @@ if(WORKSHOP_HAS_ROLLED_OVER){
   document.querySelector('label[for="workshop-email"]').textContent='Where should I send your workshop reminders?';
   document.getElementById('workshop-submit').textContent='Save my seat';
   document.querySelectorAll('.workshop-signup .workshop-fineprint:not(#workshop-zoom-direct)').forEach(el=>{
-    el.textContent='You’ll immediately receive the 100 AI Money Prompts gift, plus reminders before October 17. Unsubscribe anytime.';
+    el.textContent='You’ll immediately get your one-page prep sheet and the 100 AI Money Prompts gift by email, plus reminders before October 17. Unsubscribe anytime.';
   });
   const zoomDirect=document.getElementById('workshop-zoom-direct'); if(zoomDirect) zoomDirect.innerHTML='Just want the link? <a href="https://us06web.zoom.us/meeting/register/k-Kp7MURSNawpWnNpbsG8w" target="_blank" rel="noopener" style="font-weight:800;text-decoration:underline">Register directly on Zoom</a>';
   document.querySelectorAll('button[onclick^="openZoomRegistration"]').forEach(btn=>{ btn.textContent='Save my Oct 17 seat'; });
