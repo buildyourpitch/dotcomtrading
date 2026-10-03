@@ -573,8 +573,7 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
             <ul class="offer-list">
               <li>Full workshop replay (about 60 minutes)</li>
               <li>Higher time frames, candlesticks, risk management, and institutional order flow</li>
-              <li>One-page workshop prep sheet</li>
-              <li>100 AI Money Prompts</li>
+              <li>Printable pre-trade checklist: the exact steps I run before every trade</li>
             </ul>
             <div class="rb-call"><strong>+ One 30-minute one-on-one with me.</strong> Bring your charts, your questions, or your “is trading even for me?” doubts. We’ll walk through them together on Zoom.</div>
           </div>
@@ -1062,7 +1061,7 @@ if(WORKSHOP_HAS_ROLLED_OVER){
 }
 
 // Replay bundle: paste the Stripe Payment Link here once it exists
-const REPLAY_BUNDLE_CHECKOUT_URL='';
+const REPLAY_BUNDLE_CHECKOUT_URL='https://buy.stripe.com/14AeVd3Ob4yx5DF7GF2B204';
 function buyReplayBundle(){
   if(typeof gtag==='function') gtag('event','replay_bundle_click',{workshop:'october-3'});
   if(REPLAY_BUNDLE_CHECKOUT_URL){ window.location.href=REPLAY_BUNDLE_CHECKOUT_URL; return; }
