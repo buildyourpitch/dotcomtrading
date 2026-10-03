@@ -460,8 +460,8 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
 <div class="content">
 
   <!-- ============ NEXT WORKSHOP ANNOUNCEMENT (scrolling) ============ -->
-  <button class="announce-tape" type="button" onclick="openWorkshopPopup(true)" aria-label="Free trading workshop, Saturday October 17 at 10 AM Central. Save your seat.">
-    <span class="announce-track" aria-hidden="true"><span class="announce-item"><b>★</b> Free trading workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span><span class="announce-item"><b>★</b> Free trading workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span><span class="announce-item"><b>★</b> Free trading workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span><span class="announce-item"><b>★</b> Free trading workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span><span class="announce-item"><b>★</b> Free trading workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span><span class="announce-item"><b>★</b> Free trading workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span><span class="announce-item"><b>★</b> Free trading workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span><span class="announce-item"><b>★</b> Free trading workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span></span>
+  <button class="announce-tape" type="button" onclick="openWorkshopPopup(true)" aria-label="Free Options for Beginners workshop, Saturday October 17 at 10 AM Central. Save your seat.">
+    <span class="announce-track" aria-hidden="true"><span class="announce-item"><b>★</b> Free Options for Beginners workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span><span class="announce-item"><b>★</b> Free Options for Beginners workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span><span class="announce-item"><b>★</b> Free Options for Beginners workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span><span class="announce-item"><b>★</b> Free Options for Beginners workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span><span class="announce-item"><b>★</b> Free Options for Beginners workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span><span class="announce-item"><b>★</b> Free Options for Beginners workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span><span class="announce-item"><b>★</b> Free Options for Beginners workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span><span class="announce-item"><b>★</b> Free Options for Beginners workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span></span>
   </button>
 
   <!-- ============ TICKER TAPE ============ -->
@@ -495,7 +495,7 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
       <!-- ============ WORKSHOP REPLAY: FREE + BUNDLE (appears after the live workshop) ============ -->
       <div class="replay-bundle" id="section-replay-bundle">
         <div class="rb-kicker">Missed it live? Two ways to catch up</div>
-        <h3>October 3 Workshop Replay</h3>
+        <h3>Options for Beginners: Workshop Replay</h3>
         <p>Watch the full workshop on your own time and pause on every chart. Take the free replay, or add a 30-minute call with me.</p>
         <div class="rb-options">
           <div class="rb-option">
@@ -1092,19 +1092,19 @@ document.querySelectorAll('.workshop-date-label').forEach(el=>{ el.textContent=W
 if(WORKSHOP_HAS_ROLLED_OVER){
   document.querySelectorAll('.workshop-kicker').forEach(el=>{
     if(el.closest('.replay-bundle')) return;
-    el.textContent=el.closest('.workshop-popup') ? 'Free workshop · Sat, Oct 17 · 10 AM CT' : 'Next up · Saturday, October 17';
+    el.textContent=el.closest('.workshop-popup') ? 'Free · Options for Beginners · Oct 17' : 'Next up · Options for Beginners · Oct 17';
   });
-  document.getElementById('workshop-popup-title').textContent='Save your seat for October 17';
+  document.getElementById('workshop-popup-title').textContent='Options for Beginners: save your seat for October 17';
   document.querySelector('.workshop-popup-bar span').textContent='workshop_waitlist.exe';
-  document.querySelector('.workshop-signup-copy').textContent='The next free trading workshop is Saturday, October 17 at 10 AM Central on Zoom. Join the list and I’ll send you the registration link: higher-time-frame analysis, charting and candlesticks, risk management, and institutional order flow.';
-  document.querySelector('label[for="workshop-email"]').textContent='Where should I send your workshop link?';
+  document.querySelector('.workshop-signup-copy').textContent='Free live workshop on Zoom, Saturday, October 17 at 10 AM Central. Learn what options are, how to read the chart before you buy one, and how to protect your money with real risk rules. Enter your email, then grab your Zoom seat on the next screen.';
+  document.querySelector('label[for="workshop-email"]').textContent='Where should I send your workshop reminders?';
   document.getElementById('workshop-submit').textContent='Save my seat';
   document.querySelectorAll('.workshop-signup .workshop-fineprint:not(#workshop-zoom-direct)').forEach(el=>{
-    el.textContent='You’ll immediately receive the 100 AI Money Prompts gift, plus your October 17 workshop details. Unsubscribe anytime.';
+    el.textContent='You’ll immediately receive the 100 AI Money Prompts gift, plus reminders before October 17. Unsubscribe anytime.';
   });
-  const zoomDirect=document.getElementById('workshop-zoom-direct'); if(zoomDirect) zoomDirect.remove();
+  const zoomDirect=document.getElementById('workshop-zoom-direct'); if(zoomDirect) zoomDirect.innerHTML='Just want the link? <a href="https://us06web.zoom.us/meeting/register/k-Kp7MURSNawpWnNpbsG8w" target="_blank" rel="noopener" style="font-weight:800;text-decoration:underline">Register directly on Zoom</a>';
   document.querySelectorAll('button[onclick^="openZoomRegistration"]').forEach(btn=>{ btn.textContent='Save my Oct 17 seat'; });
-  document.title='Free Trading Workshop · Oct 17 | Dotcom Trading Club';
+  document.title='Options for Beginners: Free Workshop Oct 17 | Dotcom Trading Club';
   document.getElementById('section-replay').style.display='';
   document.getElementById('section-replay-bundle').classList.add('show');
   if(new URLSearchParams(location.search).get('replay')==='1') setTimeout(()=>document.getElementById('section-replay-bundle').scrollIntoView({behavior:'smooth'}),400);
@@ -1133,6 +1133,7 @@ function setPopupMode(mode){
   document.querySelector('.workshop-popup .workshop-kicker').textContent=replay?'Free · October 3 replay':POPUP_DEFAULT_TEXT.kicker;
   document.getElementById('workshop-signup-form').style.display='';
   document.getElementById('workshop-status').style.display='none';
+  const zd=document.getElementById('workshop-zoom-direct'); if(zd) zd.style.display=replay?'none':'';
 }
 function openReplayPopup(){
   setPopupMode('replay');
@@ -1149,6 +1150,7 @@ function buyReplayBundle(){
   btn.textContent='Checkout opens soon. Join the waitlist';
   openWorkshopPopup(true);
 }
+const NEXT_WORKSHOP_ZOOM_URL='https://us06web.zoom.us/meeting/register/k-Kp7MURSNawpWnNpbsG8w';
 const WORKSHOP_ZOOM_URL='https://us05web.zoom.us/meeting/register/k-Kp7MURSNawpWnNpbsG8w#/registration';
 function openZoomRegistration(source='cta'){
   if(WORKSHOP_HAS_ROLLED_OVER){ openWorkshopPopup(true); return; }
@@ -1194,7 +1196,11 @@ async function submitWorkshopSignup(event){
     localStorage.setItem(WORKSHOP_SIGNUP_KEY,'1');
     document.getElementById('workshop-signup-form').style.display='none';
     if(POPUP_MODE==='replay') status.innerHTML='You’re in! <a href="https://youtu.be/t83eVwfoHHg" target="_blank" rel="noopener" style="display:block;margin:10px 0;padding:12px;background:#f61c68;color:#fff;border-radius:8px;text-align:center;font-weight:800;text-decoration:none">▶ Watch the replay now</a>I’m also emailing you the link. Want help applying it? The <a href="#section-replay-bundle" onclick="closeWorkshopPopup()" style="color:#0b5f43;font-weight:800;text-decoration:underline">replay bundle</a> adds a 30-minute call with me.';
-    else if(WORKSHOP_HAS_ROLLED_OVER) status.innerHTML='You’re on the list for October 17. Check your inbox for your 100 AI Money Prompts gift, and watch for your Zoom registration link.';
+    else if(WORKSHOP_HAS_ROLLED_OVER){
+      status.innerHTML='Almost done! <a href="'+NEXT_WORKSHOP_ZOOM_URL+'" style="display:block;margin:10px 0;padding:13px;background:#f61c68;color:#fff;border-radius:8px;text-align:center;font-weight:800;text-decoration:none">Last step: grab your Zoom seat →</a>Taking you to Zoom now so you get your personal join link for Saturday, October 17 at 10 AM CT.';
+      if(typeof gtag==='function') gtag('event','workshop_zoom_click',{workshop:'october-17',source:'popup_auto'});
+      setTimeout(()=>{ window.location.href=NEXT_WORKSHOP_ZOOM_URL; },2500);
+    }
     else status.innerHTML=`<a href='${WORKSHOP_ZOOM_URL}' target='_blank' rel='noopener' onclick="if(typeof gtag==='function') gtag('event','workshop_zoom_click',{workshop:WORKSHOP_SLUG,source:'popup_success'})" class='workshop-submit' style='display:block;text-align:center;text-decoration:none;margin:0 0 10px'>Last step: grab your seat on Zoom →</a>You’re on the list. <a href='${WORKSHOP_PREP_FILE}' download style='color:#0b5f43;font-weight:800;text-decoration:underline'>Download the one-page prep sheet</a>, then check your inbox for your 100 AI Money Prompts gift and workshop emails.`;
     status.style.display='block';
     if(typeof gtag==='function') gtag('event','workshop_signup',{workshop:WORKSHOP_SLUG});
