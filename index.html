@@ -505,8 +505,8 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
               <li>Full workshop replay (about 60 minutes)</li>
               <li>Higher time frames, candlesticks, risk management, and institutional order flow</li>
             </ul>
-            <button class="workshop-submit rb-free-btn" type="button" id="replay-free-btn" onclick="openReplayPopup()">Send me the free replay</button>
-            <p class="rb-fine">Enter your email and you can watch right away.</p>
+            <button class="workshop-submit rb-free-btn" type="button" id="replay-free-btn" onclick="openReplayPopup()">▶ Watch the free replay</button>
+            <p class="rb-fine">Free, no sign-up needed. Opens on YouTube.</p>
           </div>
           <div class="rb-option featured">
             <div class="rb-badge">Most support</div>
@@ -1135,10 +1135,11 @@ function setPopupMode(mode){
   document.getElementById('workshop-status').style.display='none';
   const zd=document.getElementById('workshop-zoom-direct'); if(zd) zd.style.display=replay?'none':'';
 }
+const REPLAY_YOUTUBE_URL='https://youtu.be/t83eVwfoHHg';
 function openReplayPopup(){
-  setPopupMode('replay');
+  // Free replay goes straight to YouTube, no email gate
   if(typeof gtag==='function') gtag('event','replay_free_click',{workshop:'october-3'});
-  openWorkshopPopup(true);
+  window.open(REPLAY_YOUTUBE_URL,'_blank','noopener');
 }
 
 // Replay bundle checkout (Stripe Payment Link)
