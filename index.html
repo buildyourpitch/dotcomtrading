@@ -506,7 +506,7 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
               <li>Higher time frames, candlesticks, risk management, and institutional order flow</li>
             </ul>
             <button class="workshop-submit rb-free-btn" type="button" id="replay-free-btn" onclick="openReplayPopup()">▶ Watch the free replay</button>
-            <p class="rb-fine">Free, no sign-up needed. Opens on YouTube.</p>
+            <p class="rb-fine">Enter your email and the replay opens instantly.</p>
           </div>
           <div class="rb-option featured">
             <div class="rb-badge">Most support</div>
@@ -1126,20 +1126,44 @@ function setPopupMode(mode){
   if(!POPUP_DEFAULT_TEXT.title) snapshotPopupText();
   POPUP_MODE=mode;
   const replay=mode==='replay';
-  document.getElementById('workshop-popup-title').textContent=replay?'Get the free workshop replay':POPUP_DEFAULT_TEXT.title;
-  document.querySelector('.workshop-signup-copy').textContent=replay?'Missed the live session? I’ll email you the full October 3 workshop replay: higher-time-frame analysis, charting and candlesticks, risk management, and institutional order flow.':POPUP_DEFAULT_TEXT.copy;
-  document.querySelector('label[for="workshop-email"]').textContent=replay?'Where should I send the replay?':POPUP_DEFAULT_TEXT.label;
-  document.getElementById('workshop-submit').textContent=replay?'Send me the replay':POPUP_DEFAULT_TEXT.btn;
+  document.getElementById('workshop-popup-title').textContent=replay?'Watch the free workshop replay':POPUP_DEFAULT_TEXT.title;
+  document.querySelector('.workshop-signup-copy').textContent=replay?'Enter your email and the full Options for Beginners replay opens right away: higher time frames, charts and candlesticks, risk management, and institutional order flow.':POPUP_DEFAULT_TEXT.copy;
+  document.querySelector('label[for="workshop-email"]').textContent=replay?'Your email':POPUP_DEFAULT_TEXT.label;
+  document.getElementById('workshop-submit').textContent=replay?'▶ Watch the replay now':POPUP_DEFAULT_TEXT.btn;
   document.querySelector('.workshop-popup .workshop-kicker').textContent=replay?'Free · October 3 replay':POPUP_DEFAULT_TEXT.kicker;
   document.getElementById('workshop-signup-form').style.display='';
   document.getElementById('workshop-status').style.display='none';
   const zd=document.getElementById('workshop-zoom-direct'); if(zd) zd.style.display=replay?'none':'';
 }
 const REPLAY_YOUTUBE_URL='https://youtu.be/t83eVwfoHHg';
+// Anyone who has already given us their email on this browser skips the form
+function hasGivenEmail(){
+  try{
+    if(localStorage.getItem('dcReplayUnlocked')==='1' || localStorage.getItem('dcRoadmapEmail')) return true;
+    for(let i=0;i<localStorage.length;i++){ const k=localStorage.key(i); if(k && k.indexOf('dcWorkshopSignedUp:')===0 && localStorage.getItem(k)==='1') return true; }
+  }catch(e){}
+  return false;
+}
 function openReplayPopup(){
-  // Free replay goes straight to YouTube, no email gate
   if(typeof gtag==='function') gtag('event','replay_free_click',{workshop:'october-3'});
-  window.open(REPLAY_YOUTUBE_URL,'_blank','noopener');
+  if(hasGivenEmail()){ window.open(REPLAY_YOUTUBE_URL,'_blank','noopener'); return; }
+  setPopupMode('replay');
+  openWorkshopPopup(true);
+}
+async function submitReplaySignup(email,submitBtn,status){
+  submitBtn.disabled=true;
+  submitBtn.textContent='Opening the replay...';
+  try{
+    await Promise.race([
+      fetch('/.netlify/functions/brevo-subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,tag:'workshop-october-3-replay'})}),
+      new Promise(res=>setTimeout(res,2500))
+    ]);
+  }catch(e){ /* never block the video on a signup hiccup */ }
+  try{ localStorage.setItem('dcReplayUnlocked','1'); }catch(e){}
+  if(typeof gtag==='function') gtag('event','replay_signup',{workshop:'october-3'});
+  status.innerHTML='Opening the replay… <a href="'+REPLAY_YOUTUBE_URL+'" style="color:#0b5f43;font-weight:800;text-decoration:underline">tap here if it doesn’t open</a>.';
+  status.style.display='block';
+  window.location.href=REPLAY_YOUTUBE_URL;
 }
 
 // Replay bundle checkout (Stripe Payment Link)
@@ -1180,6 +1204,7 @@ async function submitWorkshopSignup(event){
   const status=document.getElementById('workshop-status');
   const email=emailInput.value.trim().toLowerCase();
   if(!email || !emailInput.checkValidity()){ emailInput.reportValidity(); return; }
+  if(POPUP_MODE==='replay'){ return submitReplaySignup(email,submitBtn,status); }
 
   submitBtn.disabled=true;
   submitBtn.textContent='Registering you...';
