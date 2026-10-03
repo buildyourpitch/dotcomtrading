@@ -106,6 +106,18 @@ body::before{
 .announce-item i{font-style:normal;color:#39FF14}
 @media (prefers-reduced-motion:reduce){.announce-track,.ticker-track{animation:none}}
 
+/* COMPACT FREE REPLAY ROW */
+.replay-free{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:4px 2px}
+.replay-free h3{margin:2px 0 0;font-size:clamp(18px,3.4vw,24px);line-height:1.15;color:#0b1c50}
+.rf-btn{flex:0 0 auto;background:#fff;color:#0b1c50;border:2px solid #0b1c50;border-radius:8px;padding:9px 14px;font-weight:800;font-size:14px;cursor:pointer;box-shadow:3px 3px 0 #0b1c50}
+.rf-btn:hover{background:#fdf0f5}
+/* BUNDLE BOX */
+.bundle-box{background:#fff;border:3px solid #df2179;border-radius:14px;padding:12px;box-shadow:5px 5px 0 #0b1c50}
+.bundle-img{display:block;border-radius:10px;overflow:hidden}
+.bundle-img img{display:block;width:100%;height:auto;aspect-ratio:3/2}
+.bundle-btn{width:100%;margin-top:12px;font-size:18px}
+.bundle-box .rb-fine{text-align:center;margin:8px 0 0}
+
 /* LIVE CHAT PROOF */
 .chat-proof{margin-top:16px;padding-top:14px;border-top:2px dashed #e7c4d6}
 .chat-proof-label{font-family:'VT323',monospace;color:#b41662;font-size:16px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:10px}
@@ -504,44 +516,35 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
         <span class="play" aria-hidden="true"></span>
         <span class="thumb-cta">Watch the free replay</span>
       </button>
-      <!-- ============ WORKSHOP REPLAY: FREE + BUNDLE (appears after the live workshop) ============ -->
-      <div class="replay-bundle" id="section-replay-bundle">
-        <div class="rb-kicker">Missed it live? Two ways to catch up</div>
-        <h3>Options for Beginners: Workshop Replay</h3>
-        <p>Watch the full workshop on your own time and pause on every chart. Take the free replay, or add a 30-minute call with me.</p>
-        <div class="rb-options">
-          <div class="rb-option">
-            <div class="rb-kicker">Free replay</div>
-            <div class="rb-price">Free</div>
-            <ul class="offer-list">
-              <li>Full workshop replay (about 60 minutes)</li>
-              <li>Higher time frames, candlesticks, risk management, and institutional order flow</li>
-            </ul>
-            <button class="workshop-submit rb-free-btn" type="button" id="replay-free-btn" onclick="openReplayPopup()">▶ Watch the free replay</button>
-            <p class="rb-fine">Enter your email and the replay opens instantly.</p>
-          </div>
-          <div class="rb-option featured">
-            <div class="rb-badge">Most support</div>
-            <div class="rb-kicker">Replay bundle</div>
-            <div class="rb-price" id="replay-bundle-price">$97</div>
-            <ul class="offer-list">
-              <li>Full workshop replay</li>
-              <li>Printable pre-trade checklist: the exact steps I run before every trade</li>
-              <li><strong>One 30-minute one-on-one with me on Zoom.</strong> Bring your charts, your questions, or your “is trading even for me?” doubts.</li>
-            </ul>
-            <div class="rb-spots" id="replay-bundle-spots">Only 10 one-on-one spots</div>
-            <button class="workshop-submit" type="button" id="replay-bundle-buy" onclick="buyReplayBundle()">Get the replay + my 1:1 call</button>
-            <p class="rb-fine">After checkout you’ll go straight to my calendar to pick your 30-minute time. The replay and checklist arrive by email. Educational content only, not personalized financial advice.</p>
-          </div>
+      <!-- ============ FREE REPLAY (compact) ============ -->
+      <div class="replay-free">
+        <div class="rf-text">
+          <div class="rb-kicker">Missed it live? Free replay</div>
+          <h3>Options for Beginners: Workshop Replay</h3>
         </div>
+        <button class="rf-btn" type="button" id="replay-free-btn" onclick="openReplayPopup()">▶ Watch free</button>
+      </div>
         <div class="chat-proof">
           <div class="chat-proof-label">💬 From the live chat · Oct 3</div>
           <div class="chat-proof-grid"><div class="chat-bubble"><div class="chat-av" style="background:#d9534f">GM</div><div class="chat-msg"><b>George M.</b><span>“I see it now.”</span></div></div><div class="chat-bubble"><div class="chat-av" style="background:#1aa58a">CM</div><div class="chat-msg"><b>Chalea M.</b><span>“No more fake outs!”</span></div></div><div class="chat-bubble"><div class="chat-av" style="background:#3a8fd8">MP</div><div class="chat-msg"><b>Mary P.</b><span>“Love this!”</span></div></div><div class="chat-bubble"><div class="chat-av" style="background:#1aa58a">CM</div><div class="chat-msg"><b>Chalea M.</b><span>“It makes sense to wait though!”</span></div></div></div>
         </div>
+    </div>
+  </div>
 
+  <!-- ============ REPLAY BUNDLE (own box, appears after the live workshop) ============ -->
+  <div class="win95-window" id="section-replay-bundle" style="display:none">
+    <div class="win-titlebar"><div class="win-title-left"><div class="win-icon"></div> replay_bundle.exe</div><div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div></div>
+    <div class="win-body" style="padding:12px">
+      <div class="bundle-box">
+        <a class="bundle-img" href="https://buy.stripe.com/14AeVd3Ob4yx5DF7GF2B204" onclick="buyReplayBundle();return false;">
+          <img src="replay-bundle-offer.jpg" width="1200" height="800" alt="The Replay Bundle: full workshop replay, printable pre-trade checklist, and a 30-minute one-on-one on Zoom with Gabrielle Pickens. $97, only 10 spots." loading="lazy">
+        </a>
+        <button class="workshop-submit bundle-btn" type="button" id="replay-bundle-buy" onclick="buyReplayBundle()">Get the Replay Bundle · $97 →</button>
+        <p class="rb-fine">After checkout you’ll go straight to my calendar to pick your 30-minute time. The replay and checklist arrive by email. Educational content only, not personalized financial advice.</p>
       </div>
     </div>
   </div>
+
 
   <div class="win95-window" id="section-hero">
     <div class="win-titlebar">
@@ -1123,7 +1126,7 @@ if(WORKSHOP_HAS_ROLLED_OVER){
   document.querySelectorAll('button[onclick^="openZoomRegistration"]').forEach(btn=>{ btn.textContent='Save my Oct 17 seat'; });
   document.title='Options for Beginners: Free Workshop Oct 17 | Dotcom Trading Club';
   document.getElementById('section-replay').style.display='';
-  document.getElementById('section-replay-bundle').classList.add('show');
+  document.getElementById('section-replay-bundle').style.display='';
   if(new URLSearchParams(location.search).get('replay')==='1') setTimeout(()=>document.getElementById('section-replay-bundle').scrollIntoView({behavior:'smooth'}),400);
   const art=document.querySelector('.workshop-popup-art'); if(art){ art.remove(); document.querySelector('.workshop-popup-grid').style.gridTemplateColumns='1fr'; }
   document.querySelectorAll('button[onclick="openWorkshopPopup(true)"]:not(.announce-tape)').forEach(btn=>{ btn.textContent='Save my Oct 17 seat'; });
