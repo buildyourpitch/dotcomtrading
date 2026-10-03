@@ -373,7 +373,7 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
   data-next-workshop-date="Next"
   data-next-workshop-slug="waitlist"
   data-next-workshop-prep=""
-  data-workshop-rollover="2026-10-04T05:00:00Z">
+  data-workshop-rollover="2026-10-03T15:15:00Z">
 
 <!-- ============ CURRENT WORKSHOP EMAIL POPUP ============ -->
 <div class="workshop-popup-overlay" id="workshop-popup-overlay" role="dialog" aria-modal="true" aria-labelledby="workshop-popup-title">
@@ -983,7 +983,7 @@ if('IntersectionObserver' in window){
 }
 
 // ── CURRENT WORKSHOP POPUP + BREVO CAPTURE ──
-const WORKSHOP_ROLLOVER=new Date(document.body.dataset.workshopRollover || '2026-10-04T05:00:00Z');
+const WORKSHOP_ROLLOVER=new Date(document.body.dataset.workshopRollover || '2026-10-03T15:15:00Z');
 const WORKSHOP_HAS_ROLLED_OVER=Date.now()>=WORKSHOP_ROLLOVER.getTime();
 const WORKSHOP_DATE=WORKSHOP_HAS_ROLLED_OVER
   ? document.body.dataset.nextWorkshopDate
@@ -1004,7 +1004,7 @@ if(WORKSHOP_HAS_ROLLED_OVER){
   });
   document.getElementById('workshop-popup-title').textContent='Join the waitlist for the next workshop';
   document.querySelector('.workshop-popup-bar span').textContent='workshop_waitlist.exe';
-  document.querySelector('.workshop-signup-copy').textContent='The October 3 workshop has wrapped. Join the waitlist and you’ll be the first to know when the next free workshop opens: higher-time-frame analysis, charting and candlesticks, risk management, and institutional order flow.';
+  document.querySelector('.workshop-signup-copy').textContent='Registration for the October 3 workshop is closed. Join the waitlist and you’ll be the first to know when the next free workshop opens: higher-time-frame analysis, charting and candlesticks, risk management, and institutional order flow.';
   document.querySelector('label[for="workshop-email"]').textContent='Where should I send the next workshop date?';
   document.getElementById('workshop-submit').textContent='Join the waitlist';
   document.querySelectorAll('.workshop-signup .workshop-fineprint:not(#workshop-zoom-direct)').forEach(el=>{
