@@ -45,6 +45,25 @@ exports.handler = async (event) => {
       return { statusCode: 502, body: JSON.stringify({ error: 'Brevo subscription failed' }) };
     }
 
+    // Send the matching welcome email right away (never blocks the signup)
+    const WELCOME_TEMPLATES = {
+      'workshop-october-17': 28,        // Oct 17 welcome: Zoom link + 100 AI Money Prompts
+      'workshop-october-3-replay': 27   // Replay link + Oct 17 invite
+    };
+    const templateId = WELCOME_TEMPLATES[tag];
+    if (templateId) {
+      try {
+        const sendRes = await fetch('https://api.brevo.com/v3/smtp/email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'api-key': BREVO_API_KEY },
+          body: JSON.stringify({ templateId, to: [{ email }] })
+        });
+        if (!sendRes.ok) console.error('Welcome email error:', sendRes.status, await sendRes.text());
+      } catch (mailErr) {
+        console.error('Welcome email failed:', mailErr);
+      }
+    }
+
     return { statusCode: 200, body: JSON.stringify({ success: true }) };
   } catch (err) {
     console.error('brevo-subscribe error:', err);
