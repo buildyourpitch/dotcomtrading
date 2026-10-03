@@ -478,9 +478,6 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
   <button class="d-icon" onclick="document.getElementById('section-roadmap').scrollIntoView({behavior:'smooth'})">
     <div class="d-icon-emoji">🗺️</div>Roadmap
   </button>
-  <button class="d-icon" onclick="document.getElementById('section-community').scrollIntoView({behavior:'smooth'})">
-    <div class="d-icon-emoji">💬</div>Community
-  </button>
   <button class="d-icon" onclick="document.getElementById('section-faq').scrollIntoView({behavior:'smooth'})"><div class="d-icon-emoji">❓</div>FAQ</button>
   <button class="d-icon" onclick="document.querySelector('.foot-disclaimer').scrollIntoView({behavior:'smooth'})">
     <div class="d-icon-emoji">🗑️</div>Disclaimer
@@ -826,25 +823,6 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
     </div>
   </div>
 
-  <!-- ============ WORKSHOP EXPERIENCE ============ -->
-  <div class="win95-window" id="section-community">
-    <div class="win-titlebar">
-      <div class="win-title-left"><div class="win-icon"></div> community.exe</div>
-      <div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div>
-    </div>
-    <div class="win-body" style="background:#0d0d0d">
-      <div class="section-title">💬 What this workshop is—and is not</div>
-      <p class="journey-text">This is a clear, beginner-friendly education session. No live trading, no signals, no pressure to fund an account, and no pitch that promises trading will make you rich.</p>
-
-      <div style="background:#1a1400;border:2px solid #FFB000;border-radius:8px;padding:12px 14px;margin:0.75rem 0;text-align:center">
-        <div style="font-family:'VT323',monospace;color:#FFB000;font-size:15px;font-weight:700;letter-spacing:0.03em">THE GOAL: MAKE AN INFORMED DECISION</div>
-        <div style="color:#fff4cf;font-size:12.5px;margin-top:4px">You can leave ready to learn more—or confident that trading is not for you right now. Both are valid outcomes.</div>
-      </div>
-
-      <div class="landing-cta"><button class="workshop-submit" type="button" onclick="openZoomRegistration('button')">Register for the workshop</button></div>
-    </div>
-  </div>
-
   <!-- ============ FAQ ============ -->
   <div class="faq-about-row">
   <div class="win95-window" id="section-faq">
@@ -1075,7 +1053,7 @@ function handlePhilosophyUnlock(event){
 }
 
 // ── SCROLL DEPTH TRACKING ──
-const SCROLL_SECTIONS=['section-hero','section-fit','section-roadmap','section-community','section-about'];
+const SCROLL_SECTIONS=['section-hero','section-fit','section-roadmap','section-about'];
 let deepestSectionIndex=-1;
 
 if('IntersectionObserver' in window){
