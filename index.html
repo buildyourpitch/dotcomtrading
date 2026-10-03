@@ -478,7 +478,7 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
               <li>Higher time frames, candlesticks, risk management, and institutional order flow</li>
             </ul>
             <button class="workshop-submit rb-free-btn" type="button" id="replay-free-btn" onclick="openReplayPopup()">Send me the free replay</button>
-            <p class="rb-fine">Registered for the workshop? It’s already on its way to your inbox.</p>
+            <p class="rb-fine">Enter your email and you can watch right away.</p>
           </div>
           <div class="rb-option featured">
             <div class="rb-badge">Most support</div>
@@ -1165,7 +1165,7 @@ async function submitWorkshopSignup(event){
 
     localStorage.setItem(WORKSHOP_SIGNUP_KEY,'1');
     document.getElementById('workshop-signup-form').style.display='none';
-    if(POPUP_MODE==='replay') status.innerHTML='You’re set. I’ll email you the replay as soon as it’s ready. Want more help? The <a href="#section-replay-bundle" onclick="closeWorkshopPopup()" style="color:#0b5f43;font-weight:800;text-decoration:underline">replay bundle</a> adds a 30-minute call with me.';
+    if(POPUP_MODE==='replay') status.innerHTML='You’re in! <a href="https://youtu.be/t83eVwfoHHg" target="_blank" rel="noopener" style="display:block;margin:10px 0;padding:12px;background:#f61c68;color:#fff;border-radius:8px;text-align:center;font-weight:800;text-decoration:none">▶ Watch the replay now</a>I’m also emailing you the link. Want help applying it? The <a href="#section-replay-bundle" onclick="closeWorkshopPopup()" style="color:#0b5f43;font-weight:800;text-decoration:underline">replay bundle</a> adds a 30-minute call with me.';
     else if(WORKSHOP_HAS_ROLLED_OVER) status.innerHTML='You’re on the waitlist. Check your inbox for your 100 AI Money Prompts gift, and I’ll email you as soon as the next workshop date is set.';
     else status.innerHTML=`<a href='${WORKSHOP_ZOOM_URL}' target='_blank' rel='noopener' onclick="if(typeof gtag==='function') gtag('event','workshop_zoom_click',{workshop:WORKSHOP_SLUG,source:'popup_success'})" class='workshop-submit' style='display:block;text-align:center;text-decoration:none;margin:0 0 10px'>Last step: grab your seat on Zoom →</a>You’re on the list. <a href='${WORKSHOP_PREP_FILE}' download style='color:#0b5f43;font-weight:800;text-decoration:underline'>Download the one-page prep sheet</a>, then check your inbox for your 100 AI Money Prompts gift and workshop emails.`;
     status.style.display='block';
