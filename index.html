@@ -470,6 +470,37 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
 .cwm-price span{font-size:14px;color:#46516a;font-weight:700}
 .cwm-btn{width:auto!important;min-width:240px;background:linear-gradient(180deg,#2bd47d,#0b5f43)!important}
 @media(max-width:520px){.cwm-btn{width:100%!important}}
+
+/* Club price hidden while it's being figured out */
+.club-soon{font-size:22px!important;color:#df2179!important}
+/* Workshop screengrab collage */
+.ws-collage{display:grid;grid-template-columns:1.6fr 1fr;grid-template-rows:auto auto;gap:8px;margin:0 0 12px}
+.ws-tile{position:relative;margin:0;padding:0;border:3px solid #0b1c50;border-radius:10px;overflow:hidden;background:#111;box-shadow:4px 4px 0 #df2179}
+.ws-tile img{display:block;width:100%;height:100%;object-fit:cover}
+.ws-main img{object-position:78% 30%}
+.ws-main{grid-row:1/3;cursor:pointer;aspect-ratio:auto}
+.ws-a{transform:rotate(1.2deg)}.ws-b{transform:rotate(-1deg)}
+.ws-c{grid-column:1/3;max-height:120px}
+.ws-tile figcaption{position:absolute;left:6px;bottom:6px;background:#fff;color:#0b1c50;font-family:'VT323',monospace;font-size:14px;padding:1px 7px;border:2px solid #0b1c50}
+.ws-main .play{position:absolute;left:50%;top:72%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:rgba(246,28,104,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.35)}
+.ws-main .play:before{content:"";margin-left:5px;border-left:20px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent}
+.ws-main:hover .play{transform:translate(-50%,-50%) scale(1.08)}
+.ws-main:after{content:'▶ watch the replay';position:absolute;left:6px;top:6px;background:#df2179;color:#fff;font-family:'VT323',monospace;font-size:15px;padding:1px 8px;border:2px solid #0b1c50}
+/* Replay + bundle side by side */
+.replay-row{display:grid;grid-template-columns:1.15fr 1fr;gap:22px;align-items:start;margin-bottom:28px}
+.replay-row>.win95-window{margin-bottom:0}
+.replay-row .chat-proof-grid{grid-template-columns:1fr 1fr}
+@media(max-width:860px){.replay-row{grid-template-columns:1fr;gap:28px}}
+/* Compact bundle */
+.bundle-2col{display:grid;grid-template-columns:1fr;gap:12px;padding:12px}
+.bundle-2col .bundle-img img{aspect-ratio:3/2;object-fit:cover}
+.bundle-copy{text-align:left}
+.bundle-list{list-style:none;padding:0;margin:6px 0 8px;color:#26324a;font-size:14px;line-height:1.5}
+.bundle-list li:before{content:"✓ ";color:#df2179;font-weight:800}
+.bundle-price{font-size:26px;font-weight:800;color:#0b1c50;margin-bottom:8px}
+.bundle-price span{font-size:13px;color:#b41662}
+.bundle-2col .bundle-btn{margin-top:0;font-size:16px}
+@media(max-width:860px) and (min-width:520px){.bundle-2col{grid-template-columns:.9fr 1fr;align-items:center}}
 </style>
 </head>
 <body
@@ -681,7 +712,7 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
         <button class="workshop-submit" type="button" onclick="openZoomRegistration('button')">Register for the workshop</button>
       </div>
       <div class="offer-grid">
-        <div class="offer-card primary"><div class="offer-badge">INVITE ONLY</div><h3>Dotcom Trading Club</h3><div class="offer-price">$39<span>/month</span></div><ul class="offer-list"><li>Private Discord</li><li>New + archived videos</li><li>Weekly 1-hour live roundtable</li><li>Trading + money discussions</li><li>Member discussion channels</li></ul><button class="glossy-btn invite-only-btn" type="button" disabled aria-disabled="true">Invite only 🔒</button><p>Enrollment is closed for now. Current members keep their access.</p></div>
+        <div class="offer-card primary"><div class="offer-badge">INVITE ONLY</div><h3>Dotcom Trading Club</h3><div class="offer-price club-soon">Coming soon</div><ul class="offer-list"><li>Private Discord</li><li>New + archived videos</li><li>Weekly 1-hour live roundtable</li><li>Trading + money discussions</li><li>Member discussion channels</li></ul><button class="glossy-btn invite-only-btn" type="button" disabled aria-disabled="true">Invite only 🔒</button><p>Details coming soon. Current members keep their access.</p></div>
       </div>
       <p class="proof-caption" style="text-align:center;margin-top:10px">Want the best next step? Register for the workshop above and start there.</p>
     </div>
@@ -722,15 +753,20 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
     </div>
   </div>
 
+  <div class="replay-row">
   <!-- ============ WORKSHOP REPLAY WINDOW (top of page, appears after the live workshop) ============ -->
   <div class="win95-window" id="section-replay" style="display:none">
     <div class="win-titlebar"><div class="win-title-left"><div class="win-icon"></div> october_3_replay.exe</div><div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div></div>
     <div class="win-body" style="padding:12px">
-      <button class="replay-thumb" type="button" onclick="openReplayPopup()" aria-label="Watch the free Options for Beginners workshop replay">
-        <img src="october-3-replay-thumbnail.jpg" width="1280" height="720" alt="Options for Beginners workshop replay with Gabrielle, Dotcom Trading Club" loading="eager">
-        <span class="play" aria-hidden="true"></span>
-        <span class="thumb-cta">Watch the free replay</span>
-      </button>
+      <div class="ws-collage" aria-label="Screengrabs from the October 3 workshop">
+        <button class="ws-tile ws-main" type="button" onclick="openReplayPopup()" aria-label="Watch the free workshop replay">
+          <img src="october-3-replay-thumbnail.jpg" width="1280" height="720" alt="Gabrielle teaching the Options for Beginners workshop" loading="lazy">
+          <span class="play" aria-hidden="true"></span>
+        </button>
+        <figure class="ws-tile ws-a"><img src="workshop-grab-xsp-zones.jpg" alt="XSP chart from the workshop with supply and demand zones marked" loading="lazy"><figcaption>marking zones on XSP</figcaption></figure>
+        <figure class="ws-tile ws-b"><img src="workshop-grab-candles.jpg" alt="Candlestick chart from the workshop" loading="lazy"><figcaption>reading the candles</figcaption></figure>
+        <figure class="ws-tile ws-c"><img src="workshop-grab-low.jpg" alt="Workshop chart showing the low at 761.12" loading="lazy"><figcaption>where the low held</figcaption></figure>
+      </div>
       <!-- ============ FREE REPLAY (compact) ============ -->
       <div class="replay-free">
         <div class="rf-text">
@@ -750,16 +786,18 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
   <div class="win95-window" id="section-replay-bundle" style="display:none">
     <div class="win-titlebar"><div class="win-title-left"><div class="win-icon"></div> replay_bundle.exe</div><div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div></div>
     <div class="win-body" style="padding:12px">
-      <div class="bundle-box">
+      <div class="bundle-box bundle-2col">
         <a class="bundle-img" href="https://buy.stripe.com/14AeVd3Ob4yx5DF7GF2B204" onclick="buyReplayBundle();return false;">
           <img src="replay-bundle-offer.jpg" width="1200" height="800" alt="The Replay Bundle: full workshop replay, printable pre-trade checklist, and a 30-minute one-on-one on Zoom with Gabrielle Pickens. $97, only 10 spots." loading="lazy">
         </a>
-        <button class="workshop-submit bundle-btn" type="button" id="replay-bundle-buy" onclick="buyReplayBundle()">Get the Replay Bundle · $97 →</button>
-        <p class="rb-fine">After checkout you’ll go straight to my calendar to pick your 30-minute time. The replay and checklist arrive by email. Educational content only, not personalized financial advice.</p>
+        <div class="bundle-copy">
+          <button class="workshop-submit bundle-btn" type="button" id="replay-bundle-buy" onclick="buyReplayBundle()">Get the Replay Bundle · $97 →</button>
+          <p class="rb-fine">After checkout you pick your call time on my calendar. Education only, not financial advice.</p>
+        </div>
       </div>
     </div>
   </div>
-
+  </div>
 
   <!-- ============ THE ROADMAP ============ -->
   <div class="win95-window" id="section-roadmap">
