@@ -437,6 +437,39 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
 @media(max-width:640px){.taskbar-workshop-cta{font-size:12px;padding:5px 9px}.taskbar .clock-box{display:none}}
 .philosophy-expanded h4{color:#005ca8}
 .conversion-kicker{color:#b41662}
+
+/* Oct 17 workshop hero */
+.wk-hero{background:linear-gradient(135deg,#0b1c50 0%,#174c9c 55%,#df2179 130%)!important;color:#fff;text-align:center;padding:28px 20px 22px!important}
+.wk-badge{display:inline-block;font-family:'VT323',monospace;font-size:17px;letter-spacing:.08em;background:#39FF14;color:#07143d;padding:3px 12px;border:2px solid #07143d;box-shadow:3px 3px 0 #07143d;transform:rotate(-1.5deg)}
+.wk-title{font-size:clamp(34px,7vw,56px);line-height:1.02;margin:14px 0 6px;color:#fff;text-shadow:3px 3px 0 #df2179}
+.wk-when{font-weight:800;font-size:clamp(16px,3.4vw,20px);color:#ffe36b;margin:0 0 10px}
+.wk-countdown{font-family:'VT323',monospace;font-size:clamp(19px,4.6vw,28px);color:#fff;background:rgba(7,20,61,.55);display:inline-block;padding:4px 14px;border:2px solid rgba(255,255,255,.6);margin-bottom:12px}
+.wk-countdown:empty{display:none}
+.wk-lead{max-width:560px;margin:0 auto 14px;font-size:15px;line-height:1.6;color:#eef3ff}
+.wk-points{list-style:none;padding:0;margin:0 auto 18px;max-width:520px;text-align:left;display:grid;gap:8px}
+.wk-points li{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);padding:9px 12px;font-size:14px;line-height:1.4;color:#fff}
+.wk-points b{color:#39FF14;font-family:'VT323',monospace;font-size:18px;margin-right:8px}
+.wk-cta{display:block;margin:0 auto;max-width:430px;font-size:19px!important;padding:16px!important;animation:wkPulse 2.2s ease-in-out infinite}
+@keyframes wkPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+@media(prefers-reduced-motion:reduce){.wk-cta{animation:none}}
+.wk-fine{font-size:12px;color:#c9d4f0;margin:12px auto 0;max-width:460px}
+/* Chart With Me */
+.cwm{background:linear-gradient(135deg,#fff 0%,#f3fbf6 55%,#eaf4ff 100%)!important;padding:22px!important;text-align:left}
+.cwm-kicker{font-family:'VT323',monospace;font-size:16px;letter-spacing:.06em;text-transform:uppercase;color:#0b5f43}
+.cwm-title{font-size:clamp(28px,5vw,40px);line-height:1.05;color:#0b1c50;margin:4px 0 6px}
+.cwm-lead{font-size:15px;line-height:1.55;color:#26324a;margin:0 0 16px;font-weight:700}
+.cwm-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:680px){.cwm-grid{grid-template-columns:1fr}}
+.cwm-col{background:#fff;border:2px solid #0b5f43;padding:14px;box-shadow:4px 4px 0 #0b1c50}
+.cwm-label{font-weight:800;color:#0b5f43;font-size:14px;margin-bottom:8px}
+.cwm-list{margin:0;padding-left:18px;color:#26324a;font-size:14px;line-height:1.55}
+.cwm-list li{margin-bottom:6px}
+.cwm-for{margin-top:12px;font-size:13px;color:#46516a;background:#f3fbf6;padding:8px 10px;border-left:3px solid #39FF14}
+.cwm-buy{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:18px;flex-wrap:wrap}
+.cwm-price{font-size:30px;font-weight:800;color:#0b1c50}
+.cwm-price span{font-size:14px;color:#46516a;font-weight:700}
+.cwm-btn{width:auto!important;min-width:240px;background:linear-gradient(180deg,#2bd47d,#0b5f43)!important}
+@media(max-width:520px){.cwm-btn{width:100%!important}}
 </style>
 </head>
 <body
@@ -467,7 +500,7 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
           <button class="workshop-submit" id="workshop-submit" type="submit">Register me for the workshop</button>
         </form>
         <div class="workshop-status" id="workshop-status" aria-live="polite"></div>
-        <p class="workshop-fineprint" id="workshop-zoom-direct" style="margin-top:8px">Just want the link? <a href="https://us05web.zoom.us/meeting/register/k-Kp7MURSNawpWnNpbsG8w#/registration" target="_blank" rel="noopener" onclick="openZoomRegistration('popup_direct');return false;" style="font-weight:800;text-decoration:underline">Register directly on Zoom</a></p>
+        <p class="workshop-fineprint" id="workshop-zoom-direct" style="margin-top:8px">Just want the link? <a href="https://us06web.zoom.us/meeting/register/k-Kp7MURSNawpWnNpbsG8w" target="_blank" rel="noopener" onclick="openZoomRegistration('popup_direct');return false;" style="font-weight:800;text-decoration:underline">Register directly on Zoom</a></p>
         <p class="workshop-fineprint">You’ll immediately receive the 100 AI Money Prompts gift, plus the one-page prep sheet and four-part workshop email series. Unsubscribe anytime.</p>
       </div>
     </div>
@@ -487,7 +520,7 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
 <div class="content">
 
   <!-- ============ NEXT WORKSHOP ANNOUNCEMENT (scrolling) ============ -->
-  <button class="announce-tape" type="button" onclick="openWorkshopPopup(true)" aria-label="Free Options for Beginners workshop, Saturday October 17 at 10 AM Central. Save your seat.">
+  <button class="announce-tape" type="button" onclick="openZoomRegistration('announce_tape')" aria-label="Free Options for Beginners workshop, Saturday October 17 at 10 AM Central. Save your seat.">
     <span class="announce-track" aria-hidden="true"><span class="announce-item"><b>★</b> Free Options for Beginners workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span><span class="announce-item"><b>★</b> Free Options for Beginners workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span><span class="announce-item"><b>★</b> Free Options for Beginners workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span><span class="announce-item"><b>★</b> Free Options for Beginners workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span><span class="announce-item"><b>★</b> Free Options for Beginners workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span><span class="announce-item"><b>★</b> Free Options for Beginners workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span><span class="announce-item"><b>★</b> Free Options for Beginners workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span><span class="announce-item"><b>★</b> Free Options for Beginners workshop <i>·</i> Saturday, October 17 <i>·</i> 10 AM CT <b>→ Save your seat</b></span></span>
   </button>
 
@@ -509,45 +542,25 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
     </div>
   </div>
 
-  <!-- ============ HERO — VIDEO ============ -->
-  <!-- ============ WORKSHOP REPLAY WINDOW (top of page, appears after the live workshop) ============ -->
-  <div class="win95-window" id="section-replay" style="display:none">
-    <div class="win-titlebar"><div class="win-title-left"><div class="win-icon"></div> october_3_replay.exe</div><div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div></div>
-    <div class="win-body" style="padding:12px">
-      <button class="replay-thumb" type="button" onclick="openReplayPopup()" aria-label="Watch the free Options for Beginners workshop replay">
-        <img src="october-3-replay-thumbnail.jpg" width="1280" height="720" alt="Options for Beginners workshop replay with Gabrielle, Dotcom Trading Club" loading="eager">
-        <span class="play" aria-hidden="true"></span>
-        <span class="thumb-cta">Watch the free replay</span>
-      </button>
-      <!-- ============ FREE REPLAY (compact) ============ -->
-      <div class="replay-free">
-        <div class="rf-text">
-          <div class="rb-kicker">Missed it live? Free replay</div>
-          <h3>Options for Beginners: Workshop Replay</h3>
-        </div>
-        <button class="rf-btn" type="button" id="replay-free-btn" onclick="openReplayPopup()">▶ Watch free</button>
-      </div>
-        <div class="chat-proof">
-          <div class="chat-proof-label">💬 From the live chat · Oct 3</div>
-          <div class="chat-proof-grid"><div class="chat-bubble"><div class="chat-av" style="background:#d9534f">GM</div><div class="chat-msg"><b>George M.</b><span>“I see it now.”</span></div></div><div class="chat-bubble"><div class="chat-av" style="background:#1aa58a">CM</div><div class="chat-msg"><b>Chalea M.</b><span>“No more fake outs!”</span></div></div><div class="chat-bubble"><div class="chat-av" style="background:#3a8fd8">MP</div><div class="chat-msg"><b>Mary P.</b><span>“Love this!”</span></div></div><div class="chat-bubble"><div class="chat-av" style="background:#1aa58a">CM</div><div class="chat-msg"><b>Chalea M.</b><span>“It makes sense to wait though!”</span></div></div></div>
-        </div>
+  <!-- ============ OCT 17 WORKSHOP — FRONT AND CENTER ============ -->
+  <div class="win95-window" id="section-workshop">
+    <div class="win-titlebar"><div class="win-title-left"><div class="win-icon"></div> options_for_beginners_LIVE.exe</div><div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div></div>
+    <div class="win-body wk-hero">
+      <div class="wk-badge">FREE · LIVE ON ZOOM</div>
+      <h1 class="wk-title">Options for Beginners</h1>
+      <p class="wk-when">Saturday, October 17 · 10 AM CT · 100% free</p>
+      <div class="wk-countdown" id="wk-countdown" aria-live="polite"></div>
+      <button class="workshop-submit wk-cta" type="button" onclick="openZoomRegistration('workshop_hero')">Save my free seat on Zoom →</button>
+      <p class="wk-fine" style="margin:10px auto 18px">Registering on Zoom sends your personal join link straight to your inbox. Educational content only, not financial advice.</p>
+      <p class="wk-lead">Learn what options actually are, how to read the chart <em>before</em> you buy one, and how to protect your money with real risk rules. Beginner-friendly. No signals, no hype.</p>
+      <ul class="wk-points">
+        <li><b>01</b> What a call and a put really are, in plain English</li>
+        <li><b>02</b> Zoom out: read the higher time frame before you pick a contract</li>
+        <li><b>03</b> Real risk rules: decide your max loss before you enter</li>
+        <li><b>04</b> Live Q&amp;A, so bring your questions</li>
+      </ul>
     </div>
   </div>
-
-  <!-- ============ REPLAY BUNDLE (own box, appears after the live workshop) ============ -->
-  <div class="win95-window" id="section-replay-bundle" style="display:none">
-    <div class="win-titlebar"><div class="win-title-left"><div class="win-icon"></div> replay_bundle.exe</div><div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div></div>
-    <div class="win-body" style="padding:12px">
-      <div class="bundle-box">
-        <a class="bundle-img" href="https://buy.stripe.com/14AeVd3Ob4yx5DF7GF2B204" onclick="buyReplayBundle();return false;">
-          <img src="replay-bundle-offer.jpg" width="1200" height="800" alt="The Replay Bundle: full workshop replay, printable pre-trade checklist, and a 30-minute one-on-one on Zoom with Gabrielle Pickens. $97, only 10 spots." loading="lazy">
-        </a>
-        <button class="workshop-submit bundle-btn" type="button" id="replay-bundle-buy" onclick="buyReplayBundle()">Get the Replay Bundle · $97 →</button>
-        <p class="rb-fine">After checkout you’ll go straight to my calendar to pick your 30-minute time. The replay and checklist arrive by email. Educational content only, not personalized financial advice.</p>
-      </div>
-    </div>
-  </div>
-
 
   <div class="win95-window" id="section-hero">
     <div class="win-titlebar">
@@ -673,6 +686,80 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
       <p class="proof-caption" style="text-align:center;margin-top:10px">Want the best next step? Register for the workshop above and start there.</p>
     </div>
   </div>
+
+  <!-- ============ CHART WITH ME — 1:1 CHARTING ============ -->
+  <div class="win95-window" id="section-chart-with-me">
+    <div class="win-titlebar"><div class="win-title-left"><div class="win-icon"></div> chart_with_me.exe</div><div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div></div>
+    <div class="win-body cwm">
+      <div class="cwm-kicker">New · 1:1 Charting on Zoom</div>
+      <h2 class="cwm-title">Chart With Me</h2>
+      <p class="cwm-lead">Bring your watchlist. We chart it together, live, on your screen, until you can find the zones yourself.</p>
+      <div class="cwm-grid">
+        <div class="cwm-col">
+          <div class="cwm-label">What we do in 60 minutes</div>
+          <ul class="cwm-list">
+            <li>You bring 2–3 tickers you’re already watching</li>
+            <li>We start on the higher time frame, then mark supply &amp; demand zones together on <em>your</em> platform</li>
+            <li>You practice spotting the setup while I coach, not the other way around</li>
+            <li>We write your personal pre-trade checklist: entry trigger, max loss, target</li>
+          </ul>
+        </div>
+        <div class="cwm-col">
+          <div class="cwm-label">You leave with</div>
+          <ul class="cwm-list">
+            <li>The session recording to rewatch</li>
+            <li>Your marked-up charts</li>
+            <li>A trading process written in your own words</li>
+          </ul>
+          <div class="cwm-for"><b>Best for:</b> you’ve been to a workshop (or watched the replay) and now want reps on your own charts.</div>
+        </div>
+      </div>
+      <div class="cwm-buy">
+        <div class="cwm-price">$197 <span>/ 60-min session</span></div>
+        <button class="workshop-submit cwm-btn" type="button" onclick="bookChartWithMe()">Book Chart With Me →</button>
+      </div>
+      <p class="rb-fine">No signals. I won’t tell you what to buy. I’ll teach you how to read it yourself. Educational content only, not personalized financial advice.</p>
+    </div>
+  </div>
+
+  <!-- ============ WORKSHOP REPLAY WINDOW (top of page, appears after the live workshop) ============ -->
+  <div class="win95-window" id="section-replay" style="display:none">
+    <div class="win-titlebar"><div class="win-title-left"><div class="win-icon"></div> october_3_replay.exe</div><div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div></div>
+    <div class="win-body" style="padding:12px">
+      <button class="replay-thumb" type="button" onclick="openReplayPopup()" aria-label="Watch the free Options for Beginners workshop replay">
+        <img src="october-3-replay-thumbnail.jpg" width="1280" height="720" alt="Options for Beginners workshop replay with Gabrielle, Dotcom Trading Club" loading="eager">
+        <span class="play" aria-hidden="true"></span>
+        <span class="thumb-cta">Watch the free replay</span>
+      </button>
+      <!-- ============ FREE REPLAY (compact) ============ -->
+      <div class="replay-free">
+        <div class="rf-text">
+          <div class="rb-kicker">Missed it live? Free replay</div>
+          <h3>Options for Beginners: Workshop Replay</h3>
+        </div>
+        <button class="rf-btn" type="button" id="replay-free-btn" onclick="openReplayPopup()">▶ Watch free</button>
+      </div>
+        <div class="chat-proof">
+          <div class="chat-proof-label">💬 From the live chat · Oct 3</div>
+          <div class="chat-proof-grid"><div class="chat-bubble"><div class="chat-av" style="background:#d9534f">GM</div><div class="chat-msg"><b>George M.</b><span>“I see it now.”</span></div></div><div class="chat-bubble"><div class="chat-av" style="background:#1aa58a">CM</div><div class="chat-msg"><b>Chalea M.</b><span>“No more fake outs!”</span></div></div><div class="chat-bubble"><div class="chat-av" style="background:#3a8fd8">MP</div><div class="chat-msg"><b>Mary P.</b><span>“Love this!”</span></div></div><div class="chat-bubble"><div class="chat-av" style="background:#1aa58a">CM</div><div class="chat-msg"><b>Chalea M.</b><span>“It makes sense to wait though!”</span></div></div></div>
+        </div>
+    </div>
+  </div>
+
+  <!-- ============ REPLAY BUNDLE (own box, appears after the live workshop) ============ -->
+  <div class="win95-window" id="section-replay-bundle" style="display:none">
+    <div class="win-titlebar"><div class="win-title-left"><div class="win-icon"></div> replay_bundle.exe</div><div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div></div>
+    <div class="win-body" style="padding:12px">
+      <div class="bundle-box">
+        <a class="bundle-img" href="https://buy.stripe.com/14AeVd3Ob4yx5DF7GF2B204" onclick="buyReplayBundle();return false;">
+          <img src="replay-bundle-offer.jpg" width="1200" height="800" alt="The Replay Bundle: full workshop replay, printable pre-trade checklist, and a 30-minute one-on-one on Zoom with Gabrielle Pickens. $97, only 10 spots." loading="lazy">
+        </a>
+        <button class="workshop-submit bundle-btn" type="button" id="replay-bundle-buy" onclick="buyReplayBundle()">Get the Replay Bundle · $97 →</button>
+        <p class="rb-fine">After checkout you’ll go straight to my calendar to pick your 30-minute time. The replay and checklist arrive by email. Educational content only, not personalized financial advice.</p>
+      </div>
+    </div>
+  </div>
+
 
   <!-- ============ THE ROADMAP ============ -->
   <div class="win95-window" id="section-roadmap">
@@ -1053,7 +1140,7 @@ function handlePhilosophyUnlock(event){
 }
 
 // ── SCROLL DEPTH TRACKING ──
-const SCROLL_SECTIONS=['section-hero','section-fit','section-roadmap','section-about'];
+const SCROLL_SECTIONS=['section-workshop','section-hero','section-fit','section-offers','section-chart-with-me','section-replay','section-roadmap','section-about'];
 let deepestSectionIndex=-1;
 
 if('IntersectionObserver' in window){
@@ -1105,7 +1192,7 @@ if(WORKSHOP_HAS_ROLLED_OVER){
     el.textContent='You’ll immediately get your one-page prep sheet and the 100 AI Money Prompts gift by email, plus reminders before October 17. Unsubscribe anytime.';
   });
   const zoomDirect=document.getElementById('workshop-zoom-direct'); if(zoomDirect) zoomDirect.innerHTML='Just want the link? <a href="https://us06web.zoom.us/meeting/register/k-Kp7MURSNawpWnNpbsG8w" target="_blank" rel="noopener" style="font-weight:800;text-decoration:underline">Register directly on Zoom</a>';
-  document.querySelectorAll('button[onclick^="openZoomRegistration"]').forEach(btn=>{ btn.textContent='Save my Oct 17 seat'; });
+  document.querySelectorAll('button[onclick^="openZoomRegistration"]:not(.wk-cta):not(.announce-tape)').forEach(btn=>{ btn.textContent='Save my Oct 17 seat'; });
   document.title='Options for Beginners: Free Workshop Oct 17 | Dotcom Trading Club';
   document.getElementById('section-replay').style.display='';
   document.getElementById('section-replay-bundle').style.display='';
@@ -1177,13 +1264,37 @@ function buyReplayBundle(){
   btn.textContent='Checkout opens soon. Join the waitlist';
   openWorkshopPopup(true);
 }
-const NEXT_WORKSHOP_ZOOM_URL='https://us06web.zoom.us/meeting/register/k-Kp7MURSNawpWnNpbsG8w';
-const WORKSHOP_ZOOM_URL='https://us05web.zoom.us/meeting/register/k-Kp7MURSNawpWnNpbsG8w#/registration';
+// Every workshop button goes straight to Zoom registration — one link, no email gate.
+const ZOOM_REGISTRATION_URL='https://us06web.zoom.us/meeting/register/k-Kp7MURSNawpWnNpbsG8w';
+const NEXT_WORKSHOP_ZOOM_URL=ZOOM_REGISTRATION_URL;
+const WORKSHOP_ZOOM_URL=ZOOM_REGISTRATION_URL;
 function openZoomRegistration(source='cta'){
-  if(WORKSHOP_HAS_ROLLED_OVER){ openWorkshopPopup(true); return; }
-  if(typeof gtag==='function') gtag('event','workshop_zoom_click',{workshop:WORKSHOP_SLUG,source});
-  window.open(WORKSHOP_ZOOM_URL,'_blank','noopener');
+  if(typeof gtag==='function') gtag('event','workshop_zoom_click',{workshop:'october-17',source});
+  const w=window.open(ZOOM_REGISTRATION_URL,'_blank','noopener');
+  if(!w) window.location.href=ZOOM_REGISTRATION_URL;
 }
+
+// Chart With Me — 1:1 charting. Paste the Stripe Payment Link here when it exists;
+// until then the button opens an email to book.
+const CHART_WITH_ME_CHECKOUT_URL='';
+function bookChartWithMe(){
+  if(typeof gtag==='function') gtag('event','chart_with_me_click');
+  if(CHART_WITH_ME_CHECKOUT_URL){ window.location.href=CHART_WITH_ME_CHECKOUT_URL; return; }
+  window.location.href='mailto:info@dotcomtrading.tech?subject='+encodeURIComponent('Chart With Me: 1:1 Charting')+'&body='+encodeURIComponent('Hi Gabrielle! I want to book a Chart With Me session.\n\nTickers I want to chart:\nPlatform I use:\nBest days/times for me:');
+}
+
+// Countdown to the Oct 17 workshop (10 AM CT = 15:00 UTC)
+(function(){
+  const el=document.getElementById('wk-countdown'); if(!el) return;
+  const start=new Date('2026-10-17T15:00:00Z').getTime();
+  function tick(){
+    const ms=start-Date.now();
+    if(ms<=0){ el.textContent=ms>-2*3600e3?'● LIVE NOW, join on Zoom':''; return; }
+    const d=Math.floor(ms/864e5),h=Math.floor(ms/36e5)%24,m=Math.floor(ms/6e4)%60;
+    el.textContent=(d?d+'d ':'')+h+'h '+m+'m until we go live';
+  }
+  tick(); setInterval(tick,30000);
+})();
 function openWorkshopPopup(force=false){
   if(!force && localStorage.getItem(WORKSHOP_SIGNUP_KEY)==='1') return;
   if(!force && sessionStorage.getItem(WORKSHOP_DISMISS_KEY)==='1') return;
@@ -1247,7 +1358,6 @@ document.getElementById('workshop-popup-overlay').addEventListener('click',event
 document.addEventListener('keydown',event=>{
   if(event.key==='Escape' && document.getElementById('workshop-popup-overlay').classList.contains('open')) closeWorkshopPopup();
 });
-setTimeout(()=>openWorkshopPopup(false),3500);
 
 // ── TRADING READINESS QUIZ ──
 document.getElementById('trading-readiness-form').addEventListener('submit',event=>{
@@ -1269,7 +1379,7 @@ document.getElementById('trading-readiness-form').addEventListener('submit',even
     message='The smartest decision may be to learn without funding an account yet. The workshop is designed to help you make an informed choice, not pressure you into trading.';
   }
 
-  result.innerHTML=`<h3>${title}</h3><p>${message}</p><div class="quiz-actions"><button type="button" onclick="openWorkshopPopup(true)">Get the free prep sheet</button><a href="https://www.tiktok.com/@notyouraveragepublicist/video/7688752101618421006?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener">Watch the TikTok</a></div>`;
+  result.innerHTML=`<h3>${title}</h3><p>${message}</p><div class="quiz-actions"><button type="button" onclick="openZoomRegistration(\'quiz\')">Save my free Oct 17 seat</button><a href="https://www.tiktok.com/@notyouraveragepublicist/video/7688752101618421006?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener">Watch the TikTok</a></div>`;
   result.style.display='block';
   result.scrollIntoView({behavior:'smooth',block:'nearest'});
   if(typeof gtag==='function') gtag('event','trading_readiness_quiz_complete',{score});
