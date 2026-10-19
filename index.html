@@ -502,6 +502,31 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
 .bundle-price span{font-size:13px;color:#b41662}
 .bundle-2col .bundle-btn{margin-top:0;font-size:16px}
 @media(max-width:860px) and (min-width:520px){.bundle-2col{grid-template-columns:.9fr 1fr;align-items:center}}
+
+/* Offer hero */
+.oh{padding:12px!important;background:#fff!important}
+.oh-img{display:block;width:100%;padding:0;margin:0;border:3px solid #0b1c50;border-radius:12px;overflow:hidden;cursor:pointer;background:#fff;box-shadow:5px 5px 0 #df2179}
+.oh-img img{display:block;width:100%;height:auto;aspect-ratio:1672/941}
+.oh-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:14px;padding:12px 14px;background:#0b1c50;border-radius:10px}
+.oh-count-label{font-family:'VT323',monospace;font-size:16px;letter-spacing:.05em;color:#39FF14;text-transform:uppercase}
+.oh-count-time{font-family:'VT323',monospace;font-size:clamp(22px,5vw,30px);color:#fff;line-height:1.1}
+.oh-count-time:empty:before{content:'Next free Zoom coming soon'}
+.oh-ctas{display:flex;flex-direction:column;align-items:stretch;gap:6px;min-width:260px;flex:0 1 340px}
+.oh-cta{width:100%!important;font-size:17px!important}
+.oh-alt{background:none;border:none;color:#c9d4f0;font-weight:700;font-size:13px;text-decoration:underline;cursor:pointer;padding:2px}
+.oh-fine{font-size:11.5px;color:#5a6378;margin:10px 2px 0;line-height:1.5}
+@media(max-width:560px){.oh-ctas{min-width:0;flex:1 1 100%}}
+/* Workshop clips */
+.clips{background:#fff!important;padding:20px!important;text-align:left}
+.clips-title{font-size:clamp(22px,4.4vw,30px);line-height:1.1;color:#0b1c50;margin:4px 0 14px}
+.clips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:760px){.clips-grid{grid-template-columns:1fr}}
+.clip{margin:0;background:#fff;border:2px solid #0b1c50;border-radius:10px;overflow:hidden;box-shadow:4px 4px 0 #df2179}
+.clip-frame{position:relative;aspect-ratio:16/9;background:#000}
+.clip-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.clip figcaption{padding:9px 11px;display:flex;flex-direction:column;gap:2px}
+.clip figcaption b{color:#0b1c50;font-size:14px}
+.clip figcaption span{color:#5a6378;font-size:12px}
 </style>
 </head>
 <body
@@ -574,14 +599,35 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
     </div>
   </div>
 
-  <!-- ============ OCT 17 WORKSHOP — FRONT AND CENTER ============ -->
+  <!-- ============ OFFER HERO: 1:1 CHART SESSION ============ -->
+  <div class="win95-window" id="section-offer-hero">
+    <div class="win-titlebar"><div class="win-title-left"><div class="win-icon"></div> chart_session_1on1.exe</div><div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div></div>
+    <div class="win-body oh">
+      <button data-keep-label class="oh-img" type="button" onclick="openZoomRegistration('offer_hero_image')" aria-label="Register for the free Zoom workshop to get your $50-off Chart Session link">
+        <img src="chart-session-offer.jpg" width="1672" height="941" alt="1 hour 1:1 Chart Session with Gabrielle, Dotcom Trading Club. $50 off for subscribers and workshop attendees. Live charts, personalized analysis, actionable strategy." loading="eager">
+      </button>
+      <div class="oh-bar">
+        <div class="oh-count">
+          <div class="oh-count-label">Free Zoom · Sat, Oct 31 · 10 AM CT</div>
+          <div class="oh-count-time" data-countdown aria-live="polite"></div>
+        </div>
+        <div class="oh-ctas">
+          <button data-keep-label class="workshop-submit oh-cta" type="button" onclick="openZoomRegistration('offer_hero')">Save my free seat + get $50 off →</button>
+          <button class="oh-alt" type="button" onclick="bookChartWithMe()">Or book now at $150</button>
+        </div>
+      </div>
+      <p class="oh-fine">Register for the free Oct 31 workshop and you’ll get your special $50-off link for a 1:1 Chart Session. Wins shown are my own trades from Oct 16, not typical results, and not a promise of what you’ll make. Most traders lose money. Educational only, not financial advice.</p>
+    </div>
+  </div>
+
+  <!-- ============ FREE ZOOM WORKSHOP ============ -->
   <div class="win95-window" id="section-workshop">
     <div class="win-titlebar"><div class="win-title-left"><div class="win-icon"></div> stop_getting_faked_out_LIVE.exe</div><div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div></div>
     <div class="win-body wk-hero">
       <div class="wk-badge">FREE · LIVE ON ZOOM</div>
       <h1 class="wk-title">Stop getting faked out.</h1>
       <p class="wk-when">Free live workshop · Saturday, October 31 · 10 AM CT</p>
-      <div class="wk-countdown" id="wk-countdown" aria-live="polite"></div>
+      <div class="wk-countdown" id="wk-countdown" data-countdown aria-live="polite"></div>
       <button class="workshop-submit wk-cta" type="button" onclick="openZoomRegistration('workshop_hero')">Save my free seat on Zoom →</button>
       <p class="wk-fine" style="margin:10px auto 18px">Registering on Zoom sends your personal join link straight to your inbox. Educational content only, not financial advice.</p>
       <p class="wk-lead">Watch me mark real zones live, from the monthly chart down to the entry, so you stop chasing price and start waiting for it to come to you. New or a year in, you’ll leave knowing where to look. No signals, no hype.</p>
@@ -591,6 +637,21 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
         <li><b>03</b> Set alerts and wait, so you only trade when price comes to you</li>
         <li><b>04</b> Calls and puts in plain English, plus live Q&amp;A</li>
       </ul>
+    </div>
+  </div>
+
+  <!-- ============ WORKSHOP CLIPS ============ -->
+  <div class="win95-window" id="section-clips">
+    <div class="win-titlebar"><div class="win-title-left"><div class="win-icon"></div> workshop_clips.exe</div><div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div></div>
+    <div class="win-body clips">
+      <div class="cwm-kicker">From the Oct 3 workshop</div>
+      <h2 class="clips-title">See how I teach before you sign up</h2>
+      <div class="clips-grid">
+        <figure class="clip"><div class="clip-frame"><iframe src="https://www.youtube-nocookie.com/embed/t83eVwfoHHg?start=3218&amp;end=3443&amp;rel=0" title="Marking a demand zone live on Wells Fargo" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><figcaption><b>Marking a zone live</b><span>Wells Fargo, starting on the monthly · 3:45</span></figcaption></figure>
+        <figure class="clip"><div class="clip-frame"><iframe src="https://www.youtube-nocookie.com/embed/t83eVwfoHHg?start=3926&amp;end=4103&amp;rel=0" title="How the monthly zone stops fake-outs" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><figcaption><b>“No more fake outs!”</b><span>Why the higher time frame catches the trap · 3:00</span></figcaption></figure>
+        <figure class="clip"><div class="clip-frame"><iframe src="https://www.youtube-nocookie.com/embed/t83eVwfoHHg?start=4549&amp;end=4624&amp;rel=0" title="Why I don't trade every day" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><figcaption><b>Why I don’t trade every day</b><span>Alerts, waiting, and 2:1 trades · 1:15</span></figcaption></figure>
+      </div>
+      <div class="landing-cta"><button data-keep-label class="workshop-submit" type="button" onclick="openZoomRegistration('clips')">Get the full thing live, free, Oct 31 →</button></div>
     </div>
   </div>
 
@@ -712,10 +773,7 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
         </div>
         <button class="workshop-submit" type="button" onclick="openZoomRegistration('button')">Register for the workshop</button>
       </div>
-      <div class="offer-grid">
-        <div class="offer-card primary"><div class="offer-badge">INVITE ONLY</div><h3>Dotcom Trading Club</h3><div class="offer-price club-soon">Coming soon</div><ul class="offer-list"><li>Private Discord</li><li>New + archived videos</li><li>Weekly 1-hour live roundtable</li><li>Trading + money discussions</li><li>Member discussion channels</li></ul><button class="glossy-btn invite-only-btn" type="button" disabled aria-disabled="true">Invite only 🔒</button><p>Details coming soon. Current members keep their access.</p></div>
-      </div>
-      <p class="proof-caption" style="text-align:center;margin-top:10px">Want the best next step? Register for the workshop above and start there.</p>
+      
     </div>
   </div>
 
@@ -747,7 +805,7 @@ body::before{background-image:radial-gradient(circle,rgba(0,0,128,.08) 1px,trans
         </div>
       </div>
       <div class="cwm-buy">
-        <div class="cwm-price">$150 <span>/ 60-min session</span></div>
+        <div class="cwm-price">$150 <span>/ 60-min session · $50 off for subscribers &amp; workshop attendees</span></div>
         <button class="workshop-submit cwm-btn" type="button" onclick="bookChartWithMe()">Book Chart With Me →</button>
       </div>
       <div class="cwm-guarantee"><b>🛡️ Money-back guarantee.</b> If you don’t leave the session able to mark a supply or demand zone on your own chart, email me within 7 days and I’ll refund you in full. No awkward back-and-forth.</div>
@@ -1165,7 +1223,7 @@ function handlePhilosophyUnlock(event){
 }
 
 // ── SCROLL DEPTH TRACKING ──
-const SCROLL_SECTIONS=['section-workshop','section-hero','section-fit','section-offers','section-chart-with-me','section-replay','section-roadmap','section-about'];
+const SCROLL_SECTIONS=['section-offer-hero','section-workshop','section-clips','section-hero','section-fit','section-offers','section-chart-with-me','section-replay','section-roadmap','section-about'];
 let deepestSectionIndex=-1;
 
 if('IntersectionObserver' in window){
@@ -1217,7 +1275,7 @@ if(WORKSHOP_HAS_ROLLED_OVER){
     el.textContent='You’ll immediately get your one-page prep sheet and the 100 AI Money Prompts gift by email, plus reminders before October 31. Unsubscribe anytime.';
   });
   const zoomDirect=document.getElementById('workshop-zoom-direct'); if(zoomDirect) zoomDirect.innerHTML='Just want the link? <a href="https://us06web.zoom.us/meeting/register/UHEa7o0FRpGToJRshRhk5A" target="_blank" rel="noopener" style="font-weight:800;text-decoration:underline">Register directly on Zoom</a>';
-  document.querySelectorAll('button[onclick^="openZoomRegistration"]:not(.wk-cta):not(.announce-tape)').forEach(btn=>{ btn.textContent='Save my Oct 31 seat'; });
+  document.querySelectorAll('button[onclick^="openZoomRegistration"]:not(.wk-cta):not(.announce-tape):not([data-keep-label])').forEach(btn=>{ btn.textContent='Save my Oct 31 seat'; });
   document.title='Options for Beginners: Free Workshop Oct 31 | Dotcom Trading Club';
   document.getElementById('section-replay').style.display='';
   const art=document.querySelector('.workshop-popup-art'); if(art){ art.remove(); document.querySelector('.workshop-popup-grid').style.gridTemplateColumns='1fr'; }
@@ -1308,13 +1366,13 @@ function bookChartWithMe(){
 
 // Countdown to the Oct 31 workshop (10 AM CT = 15:00 UTC)
 (function(){
-  const el=document.getElementById('wk-countdown'); if(!el) return;
+  const els=document.querySelectorAll('[data-countdown]'); if(!els.length) return;
   const start=new Date('2026-10-31T15:00:00Z').getTime();
   function tick(){
-    const ms=start-Date.now();
-    if(ms<=0){ el.textContent=ms>-2*3600e3?'● LIVE NOW, join on Zoom':''; return; }
-    const d=Math.floor(ms/864e5),h=Math.floor(ms/36e5)%24,m=Math.floor(ms/6e4)%60;
-    el.textContent=(d?d+'d ':'')+h+'h '+m+'m until we go live';
+    const ms=start-Date.now(); let t;
+    if(ms<=0){ t=ms>-2*3600e3?'● LIVE NOW, join on Zoom':''; }
+    else { const d=Math.floor(ms/864e5),h=Math.floor(ms/36e5)%24,m=Math.floor(ms/6e4)%60; t=(d?d+'d ':'')+h+'h '+m+'m until we go live'; }
+    els.forEach(el=>{ el.textContent=t; });
   }
   tick(); setInterval(tick,30000);
 })();
