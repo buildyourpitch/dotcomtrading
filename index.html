@@ -677,7 +677,7 @@ h3{font-family:var(--dc-body);font-weight:800}
     <div class="win-titlebar"><div class="win-title-left"><div class="win-icon"></div> Gabrielle's 1:1</div><div class="win-controls"><span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">✕</span></div></div>
     <div class="win-body oh">
       <button data-keep-label class="oh-img" type="button" onclick="openZoomRegistration('offer_hero_image')" aria-label="Register for the free Zoom workshop to get your $50-off Chart Session link">
-        <img src="chart-session-offer.jpg" width="1672" height="941" alt="1 hour 1:1 Chart Session with Gabrielle, Dotcom Trading Club. $50 off for subscribers and workshop attendees. Live charts, personalized analysis, actionable strategy." loading="eager">
+        <img src="chart-session-1on1.png" width="1672" height="941" alt="Gabrielle of Dotcom Trading Club in front of a trading chart: 1 Hour. 1:1. On Your Charts." loading="eager">
       </button>
       <div class="oh-bar">
         <div class="oh-count">
@@ -689,7 +689,7 @@ h3{font-family:var(--dc-body);font-weight:800}
           <button class="oh-alt" type="button" onclick="bookChartWithMe()">Or book now at $150</button>
         </div>
       </div>
-      <p class="oh-fine">Register for the free Oct 31 workshop and you’ll get your special $50-off link for a 1:1 Chart Session. Wins shown are my own trades from Oct 16, not typical results, and not a promise of what you’ll make. Most traders lose money. Educational only, not financial advice.</p>
+      <p class="oh-fine">Register for the free Oct 31 workshop and you’ll get your special $50-off link for a 1:1 Chart Session. Results vary and are never guaranteed. Most traders lose money. Educational only, not financial advice.</p>
     </div>
   </div>
 
@@ -1007,7 +1007,7 @@ h3{font-family:var(--dc-body);font-weight:800}
 
       <div class="no-signals"><strong>NO SIGNALS. EVER.</strong><p>I am teaching you how I think and what I look for. I am not telling you what to buy, when to buy it, or when to sell it. Your account stays yours. Your decisions stay yours.</p></div>
 
-      <p class="proof-caption" style="text-align:center;margin-top:10px">Already unlocked on another device? <a href="access.html?video_id=all-access" style="color:#2B4C9B">verify your access →</a></p>
+      <p class="proof-caption" style="text-align:center;margin-top:10px">Already unlocked on another device? <a href="access.html?video_id=all-access" target="_blank" rel="noopener" style="color:#2B4C9B">verify your access →</a></p>
     </div>
   </div>
 
@@ -1209,6 +1209,7 @@ async function manageBotSubscription(event){
   event.preventDefault();
   const email=prompt("Enter the email you subscribed with:");
   if(!email) return;
+  const tab=window.open('','_blank'); if(tab) tab.opener=null;
   try{
     const res=await fetch('/.netlify/functions/create-portal-session', {
       method:'POST',
@@ -1217,8 +1218,9 @@ async function manageBotSubscription(event){
     });
     if(!res.ok) throw new Error('portal session failed');
     const data=await res.json();
-    window.location.href=data.url;
+    if(tab) tab.location.href=data.url; else window.location.href=data.url;
   } catch(e){
+    if(tab) tab.close();
     alert("Couldn't find a subscription for that email. Double check it, or email pickens.g2012@gmail.com.");
   }
 }
@@ -1349,16 +1351,16 @@ async function submitReplaySignup(email,submitBtn,status){
   }catch(e){ /* never block the video on a signup hiccup */ }
   try{ localStorage.setItem('dcReplayUnlocked','1'); }catch(e){}
   if(typeof gtag==='function') gtag('event','replay_signup',{workshop:'october-3'});
-  status.innerHTML='Opening the replay… <a href="'+REPLAY_YOUTUBE_URL+'" style="color:#0b5f43;font-weight:800;text-decoration:underline">tap here if it doesn’t open</a>.';
+  status.innerHTML='Opening the replay… <a href="'+REPLAY_YOUTUBE_URL+'" target="_blank" rel="noopener" style="color:#0b5f43;font-weight:800;text-decoration:underline">tap here if it doesn’t open</a>.';
   status.style.display='block';
-  window.location.href=REPLAY_YOUTUBE_URL;
+  window.open(REPLAY_YOUTUBE_URL,'_blank','noopener');
 }
 
 // Replay bundle checkout (Stripe Payment Link)
 const REPLAY_BUNDLE_CHECKOUT_URL='https://buy.stripe.com/14AeVd3Ob4yx5DF7GF2B204';
 function buyReplayBundle(){
   if(typeof gtag==='function') gtag('event','replay_bundle_click',{workshop:'october-3'});
-  if(REPLAY_BUNDLE_CHECKOUT_URL){ window.location.href=REPLAY_BUNDLE_CHECKOUT_URL; return; }
+  if(REPLAY_BUNDLE_CHECKOUT_URL){ const w=window.open(REPLAY_BUNDLE_CHECKOUT_URL,'_blank','noopener'); if(!w) window.location.href=REPLAY_BUNDLE_CHECKOUT_URL; return; }
   const btn=document.getElementById('replay-bundle-buy');
   btn.textContent='Checkout opens soon. Join the waitlist';
   openWorkshopPopup(true);
@@ -1378,7 +1380,7 @@ function openZoomRegistration(source='cta'){
 const CHART_WITH_ME_CHECKOUT_URL='https://buy.stripe.com/5kQ28rfwT0ihgij5yx2B205';
 function bookChartWithMe(){
   if(typeof gtag==='function') gtag('event','chart_with_me_click');
-  if(CHART_WITH_ME_CHECKOUT_URL){ window.location.href=CHART_WITH_ME_CHECKOUT_URL; return; }
+  if(CHART_WITH_ME_CHECKOUT_URL){ const w=window.open(CHART_WITH_ME_CHECKOUT_URL,'_blank','noopener'); if(!w) window.location.href=CHART_WITH_ME_CHECKOUT_URL; return; }
   window.location.href='mailto:info@dotcomtrading.tech?subject='+encodeURIComponent('Chart With Me: 1:1 Charting')+'&body='+encodeURIComponent('Hi Gabrielle! I want to book a Chart With Me session.\n\nTickers I want to chart:\nPlatform I use:\nBest days/times for me:');
 }
 
@@ -1435,9 +1437,8 @@ async function submitWorkshopSignup(event){
     document.getElementById('workshop-signup-form').style.display='none';
     if(POPUP_MODE==='replay') status.innerHTML='You’re in! <a href="https://youtu.be/t83eVwfoHHg" target="_blank" rel="noopener" style="display:block;margin:10px 0;padding:12px;background:#f61c68;color:#fff;border-radius:8px;text-align:center;font-weight:800;text-decoration:none">▶ Watch the replay now</a>I’m also emailing you the link. Want help applying it? <a href="#" onclick="closeWorkshopPopup();bookChartWithMe();return false;" style="color:#0b5f43;font-weight:800;text-decoration:underline">Chart With Me</a> is a 60-minute 1:1 on your own charts.';
     else if(WORKSHOP_HAS_ROLLED_OVER){
-      status.innerHTML='Almost done! <a href="'+NEXT_WORKSHOP_ZOOM_URL+'" style="display:block;margin:10px 0;padding:13px;background:#f61c68;color:#fff;border-radius:8px;text-align:center;font-weight:800;text-decoration:none">Last step: grab your Zoom seat →</a>Taking you to Zoom now so you get your personal join link for Saturday, October 31 at 10 AM CT.';
+      status.innerHTML='Almost done! <a href="'+NEXT_WORKSHOP_ZOOM_URL+'" target="_blank" rel="noopener" style="display:block;margin:10px 0;padding:13px;background:#f61c68;color:#fff;border-radius:8px;text-align:center;font-weight:800;text-decoration:none">Last step: grab your Zoom seat →</a>Tap the button to get your personal Zoom join link for Saturday, October 31 at 10 AM CT.';
       if(typeof gtag==='function') gtag('event','workshop_zoom_click',{workshop:'october-31',source:'popup_auto'});
-      setTimeout(()=>{ window.location.href=NEXT_WORKSHOP_ZOOM_URL; },2500);
     }
     else status.innerHTML=`<a href='${WORKSHOP_ZOOM_URL}' target='_blank' rel='noopener' onclick="if(typeof gtag==='function') gtag('event','workshop_zoom_click',{workshop:WORKSHOP_SLUG,source:'popup_success'})" class='workshop-submit' style='display:block;text-align:center;text-decoration:none;margin:0 0 10px'>Last step: grab your seat on Zoom →</a>You’re on the list. <a href='${WORKSHOP_PREP_FILE}' download style='color:#0b5f43;font-weight:800;text-decoration:underline'>Download the one-page prep sheet</a>, then check your inbox for your 100 AI Money Prompts gift and workshop emails.`;
     status.style.display='block';
